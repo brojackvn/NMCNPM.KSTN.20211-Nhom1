@@ -68,18 +68,20 @@
                               <Component id="F2Checkbox" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="234" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="InButton" min="-2" pref="144" max="-2" attributes="0"/>
-                          <Component id="SaveButton" min="-2" pref="144" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="CMCDCovidtextField" min="-2" pref="430" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
+              <Component id="SaveButton" min="-2" pref="144" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+              <Component id="InButton" min="-2" pref="144" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,39 +91,35 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="CMCDCovidtextField" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Kieu" min="-2" max="-2" attributes="0"/>
-                          <Component id="F1Checkbox" min="-2" max="-2" attributes="0"/>
-                          <Component id="F0Checkbox" min="-2" max="-2" attributes="0"/>
-                          <Component id="F2Checkbox" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="KhongSaoCheckbox" min="-2" max="-2" attributes="0"/>
-                          <Component id="HoCamSotCheckbox" min="-2" max="-2" attributes="0"/>
-                          <Component id="TinhTrangSucKhoe" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="SoMuiTiem" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="KhongMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="MotMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="HaiMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="SaveButton" min="-2" pref="42" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="InButton" min="-2" pref="42" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Kieu" min="-2" max="-2" attributes="0"/>
+                  <Component id="F1Checkbox" min="-2" max="-2" attributes="0"/>
+                  <Component id="F0Checkbox" min="-2" max="-2" attributes="0"/>
+                  <Component id="F2Checkbox" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="KhongSaoCheckbox" min="-2" max="-2" attributes="0"/>
+                  <Component id="HoCamSotCheckbox" min="-2" max="-2" attributes="0"/>
+                  <Component id="TinhTrangSucKhoe" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="SoMuiTiem" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="KhongMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="MotMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="HaiMuiTiemCheckbox" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="LanTestGanNhattextField" min="-2" pref="63" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="DiaDiemDiChuyentextField" min="-2" pref="61" max="-2" attributes="0"/>
-              <EmptySpace pref="92" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="SaveButton" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="InButton" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="54" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
