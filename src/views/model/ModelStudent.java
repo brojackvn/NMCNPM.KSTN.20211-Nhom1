@@ -13,6 +13,17 @@ public class ModelStudent {
     private String course;
     private double fees;
     
+    public ModelStudent(Icon icon, String name, String gender, String course, double fees) {
+        this.icon = icon;
+        this.name = name;
+        this.gender = gender;
+        this.course = course;
+        this.fees = fees;
+    }
+
+    public ModelStudent() {
+    }
+    
     public Object[] toRowTable(EventAction event) {
         DecimalFormat df = new DecimalFormat("$#,##0.00");
         return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};

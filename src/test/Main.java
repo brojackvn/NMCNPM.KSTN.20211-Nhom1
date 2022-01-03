@@ -3,7 +3,6 @@ package test;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.crypto.Mac;
 import javax.swing.JFrame;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
@@ -13,7 +12,27 @@ import views.component.Header;
 import views.component.Menu;
 import views.event.EventMenuSelected;
 import views.event.EventShowPopupMenu;
+import views.form.FormBaoTu;
+import views.form.FormDangKiHoKhau;
+import views.form.FormDanhMucHoKhau;
+import views.form.FormDanhMucNhanKhau;
+import views.form.FormDanhMucTamTru;
+import views.form.FormDanhMucTamVang;
+import views.form.FormHeThong;
 import views.form.FormHome;
+import views.form.FormKhaiBaoCovid;
+import views.form.FormLichSu;
+import views.form.FormSuaNhanKhau;
+import views.form.FormTachHoKhau;
+import views.form.FormTamTru;
+import views.form.FormTamVang;
+import views.form.FormThemNhanKhau;
+import views.form.FormThongKeCovid;
+import views.form.FormThongKeDanCu;
+import views.form.FormTraCuuHoKhau;
+import views.form.FormTraCuuNhanKhau;
+import views.form.FormTruyVetCovid;
+import views.form.FormXoaNhanKhau;
 import views.form.MainForm;
 import views.swing.MenuItem;
 import views.swing.PopupMenu;
@@ -49,53 +68,57 @@ public class Main extends javax.swing.JFrame {
                 if (menuIndex == 0) { // Hiển thị trang chủ
                     main.showForm(new FormHome());
                 } else if (menuIndex == 1) { // Phần Tra cứu
-                    if (subMenuIndex == 0) { // Hiển thị Tra cứu Nhân khẩu 
-                        
-                    } else if (subMenuIndex == 1) { // Hiển thị Tra cứu Hộ Khẩu
-                        
+                    if (subMenuIndex == 0) { // Hiển thị Tra cứu Ho Khau 
+                        main.showForm(new FormTraCuuHoKhau());
+                    } else if (subMenuIndex == 1) { // Hiển thị Tra cứu Nhan Khẩu
+                        main.showForm(new FormTraCuuNhanKhau());
                     }
                 } else if (menuIndex == 2) { // Thủ tục Hộ Khẩu
                     if (subMenuIndex == 0) { // Đăng kí Hộ Khẩu
-                        
+                        main.showForm(new FormDangKiHoKhau());
                     } else if (subMenuIndex == 1) { // Tách Hộ Khẩu
-                        
+                        main.showForm(new FormTachHoKhau());
                     }
                 } else if (menuIndex == 3) { // Thủ tục nhân khẩu
                     if (subMenuIndex == 0) { // Thêm mới nhân khẩu
-                        
-                    } else if (subMenuIndex == 1) { // Nhập Khẩu
-                        
-                    } else if (subMenuIndex == 2) { // Tách Khẩu
-                        
+                        main.showForm(new FormThemNhanKhau());
+                    } else if (subMenuIndex == 1) { // Sua Nhan Khẩu
+                        main.showForm(new FormSuaNhanKhau());
+                    } else if (subMenuIndex == 2) { // Xoa Nhan Khẩu
+                        main.showForm(new FormXoaNhanKhau());
                     } else if (subMenuIndex == 3) { // Tạm Vắng
-                        
+                        main.showForm(new FormTamVang());
                     } else if (subMenuIndex == 4) { // Tạm trú
-                        
+                        main.showForm(new FormTamTru());
                     } else if (subMenuIndex == 5) { // Báo tử
-                        
+                        main.showForm(new FormBaoTu());
                     }
                 } else if (menuIndex == 4) { // Danh mục
-                    if (subMenuIndex == 0) { // Nhân Khẩu
-                        
-                    } else if (subMenuIndex == 1) { // Hộ Khẩu
-                        
+                    if (subMenuIndex == 0) { // Ho Khẩu
+                        main.showForm(new FormDanhMucHoKhau());
+                    } else if (subMenuIndex == 1) { // Nhan Khẩu
+                        main.showForm(new FormDanhMucNhanKhau());
+                    } else if (subMenuIndex == 2) {
+                        main.showForm(new FormDanhMucTamTru());
+                    } else if (subMenuIndex == 3) {
+                        main.showForm(new FormDanhMucTamVang());
                     }
                 } else if (menuIndex == 5) { 
                     if (subMenuIndex == 0) { // Khai báo covid
-                        
+                        main.showForm(new FormKhaiBaoCovid());
                     } else if (subMenuIndex == 1) { // Truy vết
-                        
+                        main.showForm(new FormTruyVetCovid());
                     }
                 } else if (menuIndex == 6) { // Thống kê 
                     if (subMenuIndex == 0) { // Thống kê Dân cư
-                        
+                        main.showForm(new FormThongKeDanCu());
                     } else if (subMenuIndex == 1) { // Thống kê COVID
-                    
+                        main.showForm(new FormThongKeCovid());
                     }
                 } else if (menuIndex == 7) { // Lịch sử
-                    
+                    main.showForm(new FormLichSu());
                 } else if (menuIndex == 8) { // Hệ thống
-                    
+                    main.showForm(new FormHeThong());
                 }
             }
         });
