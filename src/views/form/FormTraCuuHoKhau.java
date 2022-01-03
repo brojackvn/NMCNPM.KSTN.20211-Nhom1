@@ -21,6 +21,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     }
     
     public void initTableData() {
+        // 
         table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1, "Kinh", "Không", "Quảng Bình").toRowTable());
         
     }
