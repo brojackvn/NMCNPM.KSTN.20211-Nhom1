@@ -80,6 +80,11 @@ public class Message extends javax.swing.JDialog {
 
         button1.setText("Hủy");
         button1.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         button2.setText("Đồng ý");
         button2.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
@@ -141,6 +146,7 @@ public class Message extends javax.swing.JDialog {
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        ok = true;
         closeMenu();
     }//GEN-LAST:event_button1ActionPerformed
 
