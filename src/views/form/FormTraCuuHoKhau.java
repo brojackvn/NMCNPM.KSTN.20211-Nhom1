@@ -21,7 +21,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     }
     
     public void initTableData() {
-        // 
+        // Các data thì mình sẽ lấy từ database
         table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1, "Kinh", "Không", "Quảng Bình").toRowTable());
         
     }
@@ -185,10 +185,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         System.out.println("Helloew wwww");
         System.out.println(textFieldNhapSoHoKhau.getText());
-//        textFieldNhapSoHoKhau.setText("");
-        JFrame newframe = new JFrame();
-        newframe.setSize(100, 500);
-        newframe.setVisible(true);
+        textFieldNhapSoHoKhau.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void textFieldhoVaTenChuHoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHoActionPerformed

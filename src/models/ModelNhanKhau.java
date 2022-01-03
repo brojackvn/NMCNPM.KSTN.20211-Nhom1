@@ -7,7 +7,7 @@ public class ModelNhanKhau {
     private String hoVaTen;
     private String tenGoiKhac;
     private String ngaySinh;
-    private int gioiTinh;
+    private int gioiTinh; // 0: nu; 1 nam
     private String danToc;
     private String noiSinh;
     private String queQuan;
@@ -22,6 +22,9 @@ public class ModelNhanKhau {
     private String ngheNghiepHienTai;
     private String noiLamViec;
     private String ghiChu;
+    private String liDoXoaDKThuongTru;
+    private String quanHeChuHo;
+    private String nguoiTao;
     
     public ModelNhanKhau() {
     }
@@ -190,4 +193,29 @@ public class ModelNhanKhau {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
+
+    public String getLiDoXoaDKThuongTru() {
+        return liDoXoaDKThuongTru;
+    }
+
+    public void setLiDoXoaDKThuongTru(String liDoXoaDKThuongTru) {
+        this.liDoXoaDKThuongTru = liDoXoaDKThuongTru;
+    }
+
+    public String getQuanHeChuHo() {
+        return quanHeChuHo;
+    }
+
+    public void setQuanHeChuHo(String quanHeChuHo) {
+        this.quanHeChuHo = quanHeChuHo;
+    }
+
+    public String getNguoiTao() {
+        return nguoiTao;
+    }
+
+    public void setNguoiTao(String nguoiTao) {
+        this.nguoiTao = nguoiTao;
+    }
+
 }

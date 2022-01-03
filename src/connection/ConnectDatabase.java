@@ -13,6 +13,4 @@ public class ConnectDatabase {
         String password = "";
         return DriverManager.getConnection(connectionURL, username, password);
     }
-    
-    
 }
