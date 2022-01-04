@@ -25,6 +25,7 @@ public class Table extends JTable {
 //                if (i1 == 4) {
 //                    header.setHorizontalAlignment(JLabel.CENTER);
 //                }
+                header.setHorizontalAlignment(JLabel.CENTER);
                 return header;
             }     
         });
@@ -85,5 +86,11 @@ public class Table extends JTable {
         JPanel p = new JPanel();
         scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
         scroll.setBorder(new EmptyBorder(5,10,5,10));
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        for (int x = 0; x < getColumnCount(); x++){
+            getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
+        }
     }
 }

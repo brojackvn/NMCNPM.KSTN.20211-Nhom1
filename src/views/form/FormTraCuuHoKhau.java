@@ -13,6 +13,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     public FormTraCuuHoKhau() {
         initComponents();
         table1.fixTable(jScrollPane1);
+        
         initData();
     }
     
@@ -22,7 +23,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     
     public void initTableData() {
         // Các data thì mình sẽ lấy từ database
-        table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1, "Kinh", "Không", "Quảng Bình").toRowTable());
+        table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1 , "Quảng Bình").toRowTable());
         
     }
     
@@ -112,11 +113,11 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
 
             },
             new String [] {
-                "NHÂN KHẨU", "NGÀY SINH", "GIỚI TÍNH", "DÂN TỘC", "TÔN GIÁO", "NƠI Ở HIỆN TẠI"
+                "NHÂN KHẨU", "NGÀY SINH", "GIỚI TÍNH", "NƠI Ở HIỆN TẠI"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -124,6 +125,10 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(table1);
+        if (table1.getColumnModel().getColumnCount() > 0) {
+            table1.getColumnModel().getColumn(0).setMinWidth(120);
+            table1.getColumnModel().getColumn(3).setMinWidth(270);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

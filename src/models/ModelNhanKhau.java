@@ -29,7 +29,7 @@ public class ModelNhanKhau {
     public ModelNhanKhau() {
     }
     
-    public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String danToc, String tonGiao, String noiOHienTai) {
+    public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String noiOHienTai) {
         this.hoVaTen = hoVaTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
@@ -39,7 +39,7 @@ public class ModelNhanKhau {
     }
 
     public Object[] toRowTable() {
-        return new Object[]{hoVaTen, ngaySinh,gioiTinh, danToc, tonGiao, noiOHienTai};
+        return new Object[]{hoVaTen, ngaySinh, gioiTinh, noiOHienTai};
     } 
 
     public String getSoHoKhau() {
