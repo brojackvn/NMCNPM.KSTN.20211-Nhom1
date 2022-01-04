@@ -69,7 +69,7 @@ public class FormBaoTu extends javax.swing.JPanel {
 
         GhiChutextField.setBackground(new java.awt.Color(245, 245, 245));
         GhiChutextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        GhiChutextField.setLabelText("GHI CHÚ");
+        GhiChutextField.setLabelText("LÝ DO");
         GhiChutextField.setOpaque(false);
         GhiChutextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

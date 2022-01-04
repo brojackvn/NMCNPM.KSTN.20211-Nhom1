@@ -21,41 +21,43 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="CMCDtextField" min="-2" pref="430" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="HoVaTentextField" min="-2" pref="430" max="-2" attributes="0"/>
-                              <EmptySpace pref="106" max="32767" attributes="0"/>
-                              <Component id="NgaySinhtextField" min="-2" pref="423" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="DiaChiThuongTrutextField" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="NgayCaptextField" alignment="0" min="-2" pref="430" max="-2" attributes="0"/>
-                                  <Component id="NoiDentextField" alignment="0" min="-2" pref="430" max="-2" attributes="0"/>
-                                  <Component id="LyDotextField" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="CMCDtextField" min="-2" pref="430" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="HoVaTentextField" min="-2" pref="430" max="-2" attributes="0"/>
+                                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                                  <Component id="NgaySinhtextField" min="-2" pref="423" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="ThoiHantextField" min="-2" pref="414" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="SaveButton" min="-2" pref="144" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="InButton" min="-2" pref="144" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="DiaChiThuongTrutextField" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="NgayCaptextField" alignment="0" min="-2" pref="430" max="-2" attributes="0"/>
+                                      <Component id="LyDotextField" min="-2" pref="430" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="ThoiHantextField" min="-2" pref="414" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="SaveButton" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                          <Component id="InButton" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="DiaChiThuongTrutextField1" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -72,9 +74,9 @@
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="DiaChiThuongTrutextField" min="-2" pref="61" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Component id="NoiDentextField" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="DiaChiThuongTrutextField1" min="-2" pref="61" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="NgayCaptextField" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -200,21 +202,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ThoiHantextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="NoiDentextField">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f5" green="f5" red="f5" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="14" style="1"/>
-        </Property>
-        <Property name="labelText" type="java.lang.String" value="N&#x1a0;I &#x110;&#x1ebe;N"/>
-        <Property name="opaque" type="boolean" value="false"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NoiDentextFieldActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="views.swing.Button" name="SaveButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -252,6 +239,21 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="views.swing.textfield.TextField" name="DiaChiThuongTrutextField1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f5" green="f5" red="f5" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="14" style="1"/>
+        </Property>
+        <Property name="labelText" type="java.lang.String" value="&#x110;&#x1eca;A CH&#x1ec8; T&#x1ea0;M TR&#xda;"/>
+        <Property name="opaque" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DiaChiThuongTrutextField1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -3,6 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package views.form;
+import controllers.ControllerKhaiBaoCovid;
+import java.sql.SQLException;
+import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.AbstractButton;
+import models.ModelKhaiBaoCovid;
+import models.ModelUser;
+import javax.swing.*;
 
 /**
  *
@@ -17,6 +26,20 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         initComponents();
      
     }
+    
+    public String getSelectedButtonText(ButtonGroup buttonGroup) {
+        for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+
+            if (button.isSelected()) {
+                return button.getText();
+            }
+        }
+
+        return null;
+    }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,6 +70,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         HaiMuiTiemRadioButton = new javax.swing.JRadioButton();
         MotMuiTiemRadioButton = new javax.swing.JRadioButton();
         KhongMuiTiemRadioButton = new javax.swing.JRadioButton();
+        F1RadioButton1 = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -123,6 +147,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         KieuButtonGroup.add(F0RadioButton);
         F0RadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         F0RadioButton.setForeground(new java.awt.Color(153, 153, 153));
+        F0RadioButton.setActionCommand("asdf");
         F0RadioButton.setLabel("F0");
 
         F1RadioButton.setBackground(new java.awt.Color(245, 245, 245));
@@ -190,6 +215,12 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         KhongMuiTiemRadioButton.setForeground(new java.awt.Color(153, 153, 153));
         KhongMuiTiemRadioButton.setLabel("0");
 
+        F1RadioButton1.setBackground(new java.awt.Color(245, 245, 245));
+        KieuButtonGroup.add(F1RadioButton1);
+        F1RadioButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        F1RadioButton1.setForeground(new java.awt.Color(153, 153, 153));
+        F1RadioButton1.setText("Không");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,7 +228,6 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,7 +235,11 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TinhTrangSucKhoe, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kieu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Kieu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(F1RadioButton1)
+                                        .addGap(20, 20, 20)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(3, 3, 3)
@@ -223,8 +257,10 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                                 .addComponent(MotMuiTiemRadioButton)
                                 .addGap(47, 47, 47)
                                 .addComponent(HaiMuiTiemRadioButton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(503, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
                 .addGap(233, 233, 233)
                 .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -243,7 +279,9 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                         .addComponent(Kieu))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(F1RadioButton1)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TinhTrangSucKhoe)
@@ -281,7 +319,21 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     }//GEN-LAST:event_LanTestGanNhattextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        ControllerKhaiBaoCovid khaiBaoCovidController = new ControllerKhaiBaoCovid();
+        ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(),Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)) , getSelectedButtonText(TinhTrangSucKhoeButtonGroup),"user1" ,LanTestGanNhattextField.getText(),getSelectedButtonText(KieuButtonGroup));
+        System.out.println(SoMuiTiemButton.getSelection().getMnemonic());
+        x.printKhaiBaoCovid();
+       
+        CMCDCovidtextField.setText("");
+        DiaDiemDiChuyentextField.setText("");
+        KieuButtonGroup.clearSelection();
+        TinhTrangSucKhoeButtonGroup.getSelection();
+        TinhTrangSucKhoeButtonGroup.clearSelection();
+        SoMuiTiemButton.clearSelection();
+        LanTestGanNhattextField.setText("");
+        DiaDiemDiChuyentextField.setText("");
         
+       
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
@@ -294,6 +346,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     private views.swing.textfield.TextField DiaDiemDiChuyentextField;
     private javax.swing.JRadioButton F0RadioButton;
     private javax.swing.JRadioButton F1RadioButton;
+    private javax.swing.JRadioButton F1RadioButton1;
     private javax.swing.JRadioButton F2RadioButton;
     private javax.swing.JRadioButton HaiMuiTiemRadioButton;
     private javax.swing.JRadioButton HoCamSotRadioButton;

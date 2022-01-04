@@ -7,9 +7,26 @@ public class ModelKhaiBaoCovid {
     private String nguoiTao;
     private String lanTestGanNhat;
     private String laFmay;
+    
+  
 
-    public ModelKhaiBaoCovid() {
+    public ModelKhaiBaoCovid(String CMND, int soMuiTiem, String tinhTrangSucKhoe, String nguoiTao, String lanTestGanNhat, String laFmay) {
+        this.CMND = CMND;
+        this.soMuiTiem = soMuiTiem;
+        this.tinhTrangSucKhoe = tinhTrangSucKhoe;
+        this.nguoiTao = nguoiTao;
+        this.lanTestGanNhat = lanTestGanNhat;
+        this.laFmay = laFmay;
     }
+    public void printKhaiBaoCovid(){
+        System.out.println("CMND" + this.CMND);
+        System.out.println("soMuitiem" + this.soMuiTiem);
+        System.out.println("tinhTrangSucKhoe" + this.tinhTrangSucKhoe);
+        System.out.println("Nguoitao" + this.nguoiTao);
+        System.out.println("lanTestgannhat"+this.lanTestGanNhat);
+        System.out.println("laFmay"+this.laFmay);
+    }
+    
     
     public String getlaFmay(){
         return laFmay;
