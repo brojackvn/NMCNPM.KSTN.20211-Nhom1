@@ -5,9 +5,14 @@ public class ModelKhaiBaoCovid {
     private int soMuiTiem;
     private String tinhTrangSucKhoe;
     private String nguoiTao;
-    private int soLanTest;
+    private String lanTestGanNhat;
+    private String laFmay;
 
     public ModelKhaiBaoCovid() {
+    }
+    
+    public String getlaFmay(){
+        return laFmay;
     }
 
     public String getCMND() {
@@ -20,6 +25,10 @@ public class ModelKhaiBaoCovid {
 
     public int getSoMuiTiem() {
         return soMuiTiem;
+    }
+    
+    public void setlaFmay(String laFmay){
+        this.laFmay = laFmay;
     }
 
     public void setSoMuiTiem(int soMuiTiem) {
@@ -42,11 +51,11 @@ public class ModelKhaiBaoCovid {
         this.nguoiTao = nguoiTao;
     }
 
-    public int getSoLanTest() {
-        return soLanTest;
+    public String getlanTestGanNhat() {
+        return lanTestGanNhat;
     }
 
-    public void setSoLanTest(int soLanTest) {
-        this.soLanTest = soLanTest;
+    public void setlanTestGanNhat(String lanTestGanNhat) {
+        this.lanTestGanNhat = lanTestGanNhat;
     }
 }

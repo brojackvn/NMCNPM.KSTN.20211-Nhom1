@@ -26,19 +26,87 @@ public class FormTruyVetCovid extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        CMCDtextField = new views.swing.textfield.TextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table1 = new views.swing.table.Table();
+        SaveButton = new views.swing.Button();
+
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        CMCDtextField.setBackground(new java.awt.Color(245, 245, 245));
+        CMCDtextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        CMCDtextField.setLabelText("SỐ CMND/CCCD");
+        CMCDtextField.setOpaque(false);
+        CMCDtextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CMCDtextFieldActionPerformed(evt);
+            }
+        });
+
+        table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "HỌ VÀ TÊN", "ĐỊA CHỈ"
+            }
+        ));
+        table1.setCellSelectionEnabled(true);
+        jScrollPane1.setViewportView(table1);
+        table1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+        SaveButton.setBackground(new java.awt.Color(89, 89, 255));
+        SaveButton.setForeground(new java.awt.Color(255, 255, 255));
+        SaveButton.setToolTipText("");
+        SaveButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        SaveButton.setLabel("TRUY VẾT");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1)
+                .addGap(10, 10, 10))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(CMCDtextField, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                .addGap(83, 83, 83)
+                .addComponent(SaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CMCDtextField, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                .addGap(15, 15, 15))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CMCDtextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CMCDtextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CMCDtextFieldActionPerformed
+
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+
+    }//GEN-LAST:event_SaveButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private views.swing.textfield.TextField CMCDtextField;
+    private views.swing.Button SaveButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private views.swing.table.Table table1;
     // End of variables declaration//GEN-END:variables
 }

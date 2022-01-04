@@ -3,8 +3,8 @@ package models;
 public class ModelTamVang {
     private String CMND;
     private String noiTamTru;
-    private String tuNgay;
-    private String denNgay;
+    private String ngayBatDau;
+    private String ngayKetThuc;
     private String lyDo;
     private String nguoiTao;
 
@@ -27,20 +27,20 @@ public class ModelTamVang {
         this.noiTamTru = noiTamTru;
     }
 
-    public String getTuNgay() {
-        return tuNgay;
+    public String getngayBatDau() {
+        return ngayBatDau;
     }
 
-    public void setTuNgay(String tuNgay) {
-        this.tuNgay = tuNgay;
+    public void setngayBatDau(String ngayBatDau) {
+        this.ngayBatDau = ngayBatDau;
     }
 
-    public String getDenNgay() {
-        return denNgay;
+    public String getngayKetThuc() {
+        return ngayKetThuc;
     }
 
-    public void setDenNgay(String denNgay) {
-        this.denNgay = denNgay;
+    public void setngayKetThuc(String ngayKetThuc) {
+        this.ngayKetThuc = ngayKetThuc;
     }
 
     public String getLyDo() {
