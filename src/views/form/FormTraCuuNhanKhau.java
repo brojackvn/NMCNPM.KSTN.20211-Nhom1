@@ -39,6 +39,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textField14 = new views.swing.textfield.TextField();
         textField15 = new views.swing.textfield.TextField();
         textField16 = new views.swing.textfield.TextField();
+        searchButton1 = new views.swing.Button();
 
         setOpaque(false);
 
@@ -168,6 +169,17 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textField16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         textField16.setLabelText("CHỖ Ở HIỆN TẠI");
 
+        searchButton1.setBackground(new java.awt.Color(89, 89, 255));
+        searchButton1.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton1.setText("IN PDF");
+        searchButton1.setToolTipText("");
+        searchButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        searchButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -221,6 +233,10 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
                         .addGap(35, 35, 35)
                         .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,6 +279,8 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
                 .addComponent(textField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(textField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -277,12 +295,17 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textFieldNhapSoHoKhau.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
+    private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator2;
     private views.swing.Button searchButton;
+    private views.swing.Button searchButton1;
     private views.swing.textfield.TextField textField1;
     private views.swing.textfield.TextField textField10;
     private views.swing.textfield.TextField textField11;

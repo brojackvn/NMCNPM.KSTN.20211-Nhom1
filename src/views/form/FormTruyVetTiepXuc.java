@@ -8,12 +8,12 @@ package views.form;
  *
  * @author HO ANH
  */
-public class FormThongKeDanCu extends javax.swing.JPanel {
+public class FormTruyVetTiepXuc extends javax.swing.JPanel {
 
     /**
-     * Creates new form FormThongKeDanCu
+     * Creates new form FormTruyVetTiepXuc
      */
-    public FormThongKeDanCu() {
+    public FormTruyVetTiepXuc() {
         initComponents();
     }
 

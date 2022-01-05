@@ -20,6 +20,7 @@ import views.form.FormDanhMucTamTru;
 import views.form.FormDanhMucTamVang;
 import views.form.FormHeThong;
 import views.form.FormHome;
+import views.form.FormKhaiBaoCachLy;
 import views.form.FormKhaiBaoCovid;
 import views.form.FormLichSu;
 import views.form.FormSuaNhanKhau;
@@ -27,11 +28,11 @@ import views.form.FormTachHoKhau;
 import views.form.FormTamTru;
 import views.form.FormTamVang;
 import views.form.FormThemNhanKhau;
-import views.form.FormThongKeCovid;
-import views.form.FormThongKeDanCu;
+import views.form.FormThongKe;
 import views.form.FormTraCuuHoKhau;
 import views.form.FormTraCuuNhanKhau;
-import views.form.FormTruyVetCovid;
+import views.form.FormTruyVetDiaDiem;
+import views.form.FormTruyVetTiepXuc;
 import views.form.FormXoaNhanKhau;
 import views.form.MainForm;
 import views.swing.MenuItem;
@@ -106,15 +107,15 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 5) { 
                     if (subMenuIndex == 0) { // Khai báo covid
                         main.showForm(new FormKhaiBaoCovid());
-                    } else if (subMenuIndex == 1) { // Truy vết
-                        main.showForm(new FormTruyVetCovid());
+                    } else if (subMenuIndex == 1) { // Khai bao cach ly
+                        main.showForm(new FormKhaiBaoCachLy());
+                    } else if (subMenuIndex == 2) { // Truy vết tiep xuc
+                        main.showForm(new FormTruyVetTiepXuc());
+                    } else if (subMenuIndex == 3) { // Truy vet dia diem
+                        main.showForm(new FormTruyVetDiaDiem());
                     }
                 } else if (menuIndex == 6) { // Thống kê 
-                    if (subMenuIndex == 0) { // Thống kê Dân cư
-                        main.showForm(new FormThongKeDanCu());
-                    } else if (subMenuIndex == 1) { // Thống kê COVID
-                        main.showForm(new FormThongKeCovid());
-                    }
+                    main.showForm(new FormThongKe());
                 } else if (menuIndex == 7) { // Lịch sử
                     main.showForm(new FormLichSu());
                 } else if (menuIndex == 8) { // Hệ thống
