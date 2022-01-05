@@ -53,61 +53,21 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         KieuButtonGroup = new javax.swing.ButtonGroup();
         TinhTrangSucKhoeButtonGroup = new javax.swing.ButtonGroup();
         SoMuiTiemButton = new javax.swing.ButtonGroup();
-        CMCDCovidtextField = new views.swing.textfield.TextField();
-        DiaDiemDiChuyentextField = new views.swing.textfield.TextField();
-        LanTestGanNhattextField = new views.swing.textfield.TextField();
-        Kieu = new javax.swing.JLabel();
         SoMuiTiem = new javax.swing.JLabel();
         TinhTrangSucKhoe = new javax.swing.JLabel();
         SaveButton = new views.swing.Button();
         InButton = new views.swing.Button();
-        jPanel1 = new javax.swing.JPanel();
-        F0RadioButton = new javax.swing.JRadioButton();
-        F1RadioButton = new javax.swing.JRadioButton();
-        F2RadioButton = new javax.swing.JRadioButton();
         KhongRadioButton = new javax.swing.JRadioButton();
         HoCamSotRadioButton = new javax.swing.JRadioButton();
         HaiMuiTiemRadioButton = new javax.swing.JRadioButton();
         MotMuiTiemRadioButton = new javax.swing.JRadioButton();
         KhongMuiTiemRadioButton = new javax.swing.JRadioButton();
-        F1RadioButton1 = new javax.swing.JRadioButton();
+        DiaDiemDiChuyentextField = new views.swing.textfield.TextField();
+        CMCDCovidtextField = new views.swing.textfield.TextField();
+        LanTestGanNhattextField = new views.swing.textfield.TextField();
+        ketQuaLanTestGanNhattextField = new views.swing.textfield.TextField();
 
         setBackground(new java.awt.Color(245, 245, 245));
-
-        CMCDCovidtextField.setBackground(new java.awt.Color(245, 245, 245));
-        CMCDCovidtextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        CMCDCovidtextField.setLabelText("SỐ CMND/CCCD");
-        CMCDCovidtextField.setOpaque(false);
-        CMCDCovidtextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CMCDCovidtextFieldActionPerformed(evt);
-            }
-        });
-
-        DiaDiemDiChuyentextField.setBackground(new java.awt.Color(245, 245, 245));
-        DiaDiemDiChuyentextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        DiaDiemDiChuyentextField.setLabelText("ĐÃ ĐI ĐÂU TRONG 14 NGÀY (NHẬP ĐỊA ĐIỂM CÁCH NHAU BỞI \";\")");
-        DiaDiemDiChuyentextField.setOpaque(false);
-        DiaDiemDiChuyentextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DiaDiemDiChuyentextFieldActionPerformed(evt);
-            }
-        });
-
-        LanTestGanNhattextField.setBackground(new java.awt.Color(245, 245, 245));
-        LanTestGanNhattextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        LanTestGanNhattextField.setLabelText("LẦN TEST GẦN NHẤT");
-        LanTestGanNhattextField.setOpaque(false);
-        LanTestGanNhattextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LanTestGanNhattextFieldActionPerformed(evt);
-            }
-        });
-
-        Kieu.setBackground(new java.awt.Color(245, 245, 245));
-        Kieu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        Kieu.setForeground(new java.awt.Color(153, 153, 153));
-        Kieu.setText("KIỂU:");
 
         SoMuiTiem.setBackground(new java.awt.Color(245, 245, 245));
         SoMuiTiem.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -141,50 +101,6 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(245, 245, 245));
-
-        F0RadioButton.setBackground(new java.awt.Color(245, 245, 245));
-        KieuButtonGroup.add(F0RadioButton);
-        F0RadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F0RadioButton.setForeground(new java.awt.Color(153, 153, 153));
-        F0RadioButton.setActionCommand("asdf");
-        F0RadioButton.setLabel("F0");
-
-        F1RadioButton.setBackground(new java.awt.Color(245, 245, 245));
-        KieuButtonGroup.add(F1RadioButton);
-        F1RadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F1RadioButton.setForeground(new java.awt.Color(153, 153, 153));
-        F1RadioButton.setLabel("F1");
-
-        F2RadioButton.setBackground(new java.awt.Color(245, 245, 245));
-        KieuButtonGroup.add(F2RadioButton);
-        F2RadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F2RadioButton.setForeground(new java.awt.Color(153, 153, 153));
-        F2RadioButton.setLabel("F2");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(F0RadioButton)
-                .addGap(53, 53, 53)
-                .addComponent(F1RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(F2RadioButton)
-                .addGap(30, 30, 30))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(F0RadioButton)
-                    .addComponent(F2RadioButton)
-                    .addComponent(F1RadioButton))
-                .addGap(0, 24, Short.MAX_VALUE))
-        );
-
         KhongRadioButton.setBackground(new java.awt.Color(245, 245, 245));
         TinhTrangSucKhoeButtonGroup.add(KhongRadioButton);
         KhongRadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -202,12 +118,22 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         HaiMuiTiemRadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         HaiMuiTiemRadioButton.setForeground(new java.awt.Color(153, 153, 153));
         HaiMuiTiemRadioButton.setLabel("2");
+        HaiMuiTiemRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HaiMuiTiemRadioButtonActionPerformed(evt);
+            }
+        });
 
         MotMuiTiemRadioButton.setBackground(new java.awt.Color(245, 245, 245));
         SoMuiTiemButton.add(MotMuiTiemRadioButton);
         MotMuiTiemRadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         MotMuiTiemRadioButton.setForeground(new java.awt.Color(153, 153, 153));
         MotMuiTiemRadioButton.setLabel("1");
+        MotMuiTiemRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MotMuiTiemRadioButtonActionPerformed(evt);
+            }
+        });
 
         KhongMuiTiemRadioButton.setBackground(new java.awt.Color(245, 245, 245));
         SoMuiTiemButton.add(KhongMuiTiemRadioButton);
@@ -215,123 +141,138 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         KhongMuiTiemRadioButton.setForeground(new java.awt.Color(153, 153, 153));
         KhongMuiTiemRadioButton.setLabel("0");
 
-        F1RadioButton1.setBackground(new java.awt.Color(245, 245, 245));
-        KieuButtonGroup.add(F1RadioButton1);
-        F1RadioButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F1RadioButton1.setForeground(new java.awt.Color(153, 153, 153));
-        F1RadioButton1.setText("Không");
+        DiaDiemDiChuyentextField.setBackground(new java.awt.Color(245, 245, 245));
+        DiaDiemDiChuyentextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        DiaDiemDiChuyentextField.setLabelText("ĐÃ ĐI ĐÂU TRONG 14 NGÀY (NHẬP ĐỊA ĐIỂM CÁCH NHAU BỞI \";\")");
+        DiaDiemDiChuyentextField.setOpaque(false);
+        DiaDiemDiChuyentextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiaDiemDiChuyentextFieldActionPerformed(evt);
+            }
+        });
+
+        CMCDCovidtextField.setBackground(new java.awt.Color(245, 245, 245));
+        CMCDCovidtextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        CMCDCovidtextField.setLabelText("SỐ CMND/CCCD");
+        CMCDCovidtextField.setOpaque(false);
+        CMCDCovidtextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CMCDCovidtextFieldActionPerformed(evt);
+            }
+        });
+
+        LanTestGanNhattextField.setBackground(new java.awt.Color(245, 245, 245));
+        LanTestGanNhattextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        LanTestGanNhattextField.setLabelText("LẦN TEST GẦN NHẤT");
+        LanTestGanNhattextField.setOpaque(false);
+        LanTestGanNhattextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LanTestGanNhattextFieldActionPerformed(evt);
+            }
+        });
+
+        ketQuaLanTestGanNhattextField.setBackground(new java.awt.Color(245, 245, 245));
+        ketQuaLanTestGanNhattextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        ketQuaLanTestGanNhattextField.setLabelText("KẾT QUẢ LẦN TEST GẦN NHẤT");
+        ketQuaLanTestGanNhattextField.setOpaque(false);
+        ketQuaLanTestGanNhattextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ketQuaLanTestGanNhattextFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(235, 235, 235)
+                                .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(201, 201, 201)
+                                .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TinhTrangSucKhoe, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ketQuaLanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Kieu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(F1RadioButton1)
-                                        .addGap(20, 20, 20)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(TinhTrangSucKhoe, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(HoCamSotRadioButton)
-                                        .addGap(49, 49, 49)
-                                        .addComponent(KhongRadioButton))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(KhongMuiTiemRadioButton)
-                                .addGap(65, 65, 65)
-                                .addComponent(MotMuiTiemRadioButton)
-                                .addGap(47, 47, 47)
-                                .addComponent(HaiMuiTiemRadioButton)))
-                        .addContainerGap(503, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(219, 219, 219)
-                .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 240, Short.MAX_VALUE))
+                                        .addGap(27, 27, 27)
+                                        .addComponent(KhongRadioButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(SoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(KhongMuiTiemRadioButton)
+                                        .addGap(50, 50, 50)
+                                        .addComponent(MotMuiTiemRadioButton)
+                                        .addGap(50, 50, 50)
+                                        .addComponent(HaiMuiTiemRadioButton)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(Kieu))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F1RadioButton1)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TinhTrangSucKhoe)
                     .addComponent(HoCamSotRadioButton)
                     .addComponent(KhongRadioButton))
-                .addGap(36, 36, 36)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SoMuiTiem)
                     .addComponent(KhongMuiTiemRadioButton)
                     .addComponent(MotMuiTiemRadioButton)
                     .addComponent(HaiMuiTiemRadioButton))
                 .addGap(18, 18, 18)
-                .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(ketQuaLanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CMCDCovidtextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CMCDCovidtextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CMCDCovidtextFieldActionPerformed
-
-    private void DiaDiemDiChuyentextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaDiemDiChuyentextFieldActionPerformed
-        // TODO add your handling code her
-        
-    }//GEN-LAST:event_DiaDiemDiChuyentextFieldActionPerformed
-
-    private void LanTestGanNhattextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LanTestGanNhattextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LanTestGanNhattextFieldActionPerformed
-
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         ControllerKhaiBaoCovid khaiBaoCovidController = new ControllerKhaiBaoCovid();
-        ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(),Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)) , getSelectedButtonText(TinhTrangSucKhoeButtonGroup),"user1" ,LanTestGanNhattextField.getText(),getSelectedButtonText(KieuButtonGroup));
-        System.out.println(SoMuiTiemButton.getSelection().getMnemonic());
+        ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(), Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)), getSelectedButtonText(TinhTrangSucKhoeButtonGroup), LanTestGanNhattextField.getText(), ketQuaLanTestGanNhattextField.getText(), DiaDiemDiChuyentextField.getText(), "user1");
         x.printKhaiBaoCovid();
-       
+        try {
+            khaiBaoCovidController.insertKhaiBaoCovid(x);
+        } catch (SQLException ex) {
+            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+        }
         CMCDCovidtextField.setText("");
         DiaDiemDiChuyentextField.setText("");
+        DiaDiemDiChuyentextField.setText("");
         KieuButtonGroup.clearSelection();
-        TinhTrangSucKhoeButtonGroup.getSelection();
         TinhTrangSucKhoeButtonGroup.clearSelection();
         SoMuiTiemButton.clearSelection();
         LanTestGanNhattextField.setText("");
         DiaDiemDiChuyentextField.setText("");
+        ketQuaLanTestGanNhattextField.setText("");
         
        
     }//GEN-LAST:event_SaveButtonActionPerformed
@@ -340,20 +281,39 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_InButtonActionPerformed
 
+    private void DiaDiemDiChuyentextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaDiemDiChuyentextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiaDiemDiChuyentextFieldActionPerformed
+
+    private void CMCDCovidtextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CMCDCovidtextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CMCDCovidtextFieldActionPerformed
+
+    private void LanTestGanNhattextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LanTestGanNhattextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LanTestGanNhattextFieldActionPerformed
+
+    private void MotMuiTiemRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MotMuiTiemRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MotMuiTiemRadioButtonActionPerformed
+
+    private void HaiMuiTiemRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HaiMuiTiemRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HaiMuiTiemRadioButtonActionPerformed
+
+    private void ketQuaLanTestGanNhattextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ketQuaLanTestGanNhattextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ketQuaLanTestGanNhattextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField CMCDCovidtextField;
     private views.swing.textfield.TextField DiaDiemDiChuyentextField;
-    private javax.swing.JRadioButton F0RadioButton;
-    private javax.swing.JRadioButton F1RadioButton;
-    private javax.swing.JRadioButton F1RadioButton1;
-    private javax.swing.JRadioButton F2RadioButton;
     private javax.swing.JRadioButton HaiMuiTiemRadioButton;
     private javax.swing.JRadioButton HoCamSotRadioButton;
     private views.swing.Button InButton;
     private javax.swing.JRadioButton KhongMuiTiemRadioButton;
     private javax.swing.JRadioButton KhongRadioButton;
-    private javax.swing.JLabel Kieu;
     private javax.swing.ButtonGroup KieuButtonGroup;
     private views.swing.textfield.TextField LanTestGanNhattextField;
     private javax.swing.JRadioButton MotMuiTiemRadioButton;
@@ -362,6 +322,6 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     private javax.swing.ButtonGroup SoMuiTiemButton;
     private javax.swing.JLabel TinhTrangSucKhoe;
     private javax.swing.ButtonGroup TinhTrangSucKhoeButtonGroup;
-    private javax.swing.JPanel jPanel1;
+    private views.swing.textfield.TextField ketQuaLanTestGanNhattextField;
     // End of variables declaration//GEN-END:variables
 }

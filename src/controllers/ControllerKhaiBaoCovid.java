@@ -17,7 +17,7 @@ import models.ModelKhaiBaoCovid;
 public class ControllerKhaiBaoCovid {
     
     public boolean insertKhaiBaoCovid(ModelKhaiBaoCovid ModelKhaiBaoCovid) throws SQLException, ClassNotFoundException{
-        String sql = "INSERT INTO `khai_bao_covid`(`CMND`, `soMuiTiem`, `tinhTrangSucKhoe`, `nguoiTao`, lanTestGanNhat, diaDiemDaDiQua, laFMAY ) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO `khai_bao_covid`(`CMND`, `soMuiTiem`, `tinhTrangSucKhoe`, lanTestGanNhat, ketQuaLanTestGanNhat, diaDiemDaDiQua, nguoiTao ) VALUES (?,?,?,?,?,?,?)";
         try (
                 Connection connection = ConnectDatabase.openConnection();
                 PreparedStatement pstm = connection.prepareStatement(sql);
@@ -25,8 +25,10 @@ public class ControllerKhaiBaoCovid {
             pstm.setString(1,ModelKhaiBaoCovid.getCMND());
             pstm.setInt(2, ModelKhaiBaoCovid.getSoMuiTiem());
             pstm.setString(3, ModelKhaiBaoCovid.getTinhTrangSucKhoe());
-            pstm.setString(4, ModelKhaiBaoCovid.getNguoiTao());
-            pstm.setString(5, ModelKhaiBaoCovid.getlanTestGanNhat());
+            pstm.setString(4, ModelKhaiBaoCovid.getlanTestGanNhat());
+            pstm.setString(5, ModelKhaiBaoCovid.getKetQuaLanTestGanNhat());
+            pstm.setString(6, ModelKhaiBaoCovid.getDiaDiemDaDiQua());
+            pstm.setString(7, ModelKhaiBaoCovid.getNguoiTao());
            
             return (pstm.executeUpdate() > 0 ? true : false);
         }
