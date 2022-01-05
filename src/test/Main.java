@@ -13,6 +13,7 @@ import views.component.Menu;
 import views.event.EventMenuSelected;
 import views.event.EventShowPopupMenu;
 import views.form.FormBaoTu;
+import views.form.FormCachLy;
 import views.form.FormDangKiHoKhau;
 import views.form.FormDanhMucHoKhau;
 import views.form.FormDanhMucNhanKhau;
@@ -108,7 +109,7 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) { // Khai báo covid
                         main.showForm(new FormKhaiBaoCovid());
                     } else if (subMenuIndex == 1) { // Khai bao cach ly
-                        main.showForm(new FormKhaiBaoCachLy());
+                        main.showForm(new FormCachLy());
                     } else if (subMenuIndex == 2) { // Truy vết tiep xuc
                         main.showForm(new FormTruyVetTiepXuc());
                     } else if (subMenuIndex == 3) { // Truy vet dia diem
