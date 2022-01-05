@@ -35,21 +35,24 @@ public class FormHome extends javax.swing.JPanel {
             @Override
             public void delete(ModelStudent student) {
                 showMessage("Delete Student: " + student.getName());
+                System.out.println(table1.getSelectedRow());
+                table1.removeRow(table1.getSelectedRow());
             }
 
             @Override
             public void update(ModelStudent student) {
+                System.out.println(table1.getSelectedRow());
                 showMessage("Update Student: " + student.getName());
             }
         };
         table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile.jpg")), "Jonh", "Male", "Java", 300).toRowTable(eventAction));
         table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile1.jpg")), "Dara", "Male", "C++", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "kkkk", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "llll", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "mmmm", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "nnnn", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "tttt", "Male", "C#", 300).toRowTable(eventAction));
+        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "uuuu", "Male", "C#", 300).toRowTable(eventAction));
         table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
         table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
         table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
@@ -177,6 +180,7 @@ public class FormHome extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        table1.setRowMargin(0);
         jScrollPane1.setViewportView(table1);
         if (table1.getColumnModel().getColumnCount() > 0) {
             table1.getColumnModel().getColumn(0).setPreferredWidth(150);

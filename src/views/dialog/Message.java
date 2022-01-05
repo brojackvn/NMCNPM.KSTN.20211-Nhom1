@@ -146,7 +146,7 @@ public class Message extends javax.swing.JDialog {
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        ok = true;
+        ok = false;
         closeMenu();
     }//GEN-LAST:event_button1ActionPerformed
 

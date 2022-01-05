@@ -29,17 +29,16 @@ public class ModelNhanKhau {
     public ModelNhanKhau() {
     }
     
-    public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String noiOHienTai) {
+    public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String quanHeChuHo , String noiOHienTai) {
         this.hoVaTen = hoVaTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
-        this.danToc = danToc;
-        this.tonGiao = tonGiao;
+        this.quanHeChuHo = quanHeChuHo;
         this.noiOHienTai = noiOHienTai;
     }
 
     public Object[] toRowTable() {
-        return new Object[]{hoVaTen, ngaySinh, gioiTinh, noiOHienTai};
+        return new Object[]{hoVaTen, ngaySinh, gioiTinh, quanHeChuHo, noiOHienTai};
     } 
 
     public String getSoHoKhau() {

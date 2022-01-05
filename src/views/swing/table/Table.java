@@ -25,7 +25,7 @@ public class Table extends JTable {
 //                if (i1 == 4) {
 //                    header.setHorizontalAlignment(JLabel.CENTER);
 //                }
-                header.setHorizontalAlignment(JLabel.CENTER);
+//                header.setHorizontalAlignment(JLabel.CENTER);
                 return header;
             }     
         });
@@ -80,6 +80,12 @@ public class Table extends JTable {
         mod.addRow(row);
     }
     
+    public void removeRow(int row) {
+        DefaultTableModel mod = (DefaultTableModel) getModel();
+        mod.removeRow(row);
+        mod.fireTableStructureChanged();
+    }
+    
     public void fixTable(JScrollPane scroll) {
         scroll.getViewport().setBackground(Color.white);
         scroll.setVerticalScrollBar(new ScrollBarCustom());
@@ -87,10 +93,10 @@ public class Table extends JTable {
         scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
         scroll.setBorder(new EmptyBorder(5,10,5,10));
         
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
-        for (int x = 0; x < getColumnCount(); x++){
-            getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
-        }
+//        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+//        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+//        for (int x = 0; x < getColumnCount(); x++){
+//            getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
+//        }
     }
 }
