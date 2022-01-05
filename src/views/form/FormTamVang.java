@@ -4,6 +4,12 @@
  */
 package views.form;
 
+import controllers.ControllerTamVang;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.ModelTamVang;
+
 /**
  *
  * @author HO ANH
@@ -173,7 +179,29 @@ public class FormTamVang extends javax.swing.JPanel {
     }//GEN-LAST:event_LyDotextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        
+        try {
+            ControllerTamVang tamVangController = new ControllerTamVang();
+            ModelTamVang x = new ModelTamVang();
+            x.setCMND(CMCDTamVangtextField.getText());
+            x.setLyDo(LyDotextField.getText());
+            x.setNguoiTao("user1");
+            x.setNoiTamTru(NoiTamTrutextField.getText());
+            x.setngayBatDau(NgayBatDautextField.getText());
+            x.setngayKetThuc(NgayKetThuctextField.getText());
+            
+            
+            tamVangController.insertTamVang(x);
+            
+            CMCDTamVangtextField.setText("");
+            LyDotextField.setText("");
+            NoiTamTrutextField.setText("");
+            NgayBatDautextField.setText("");
+            NgayKetThuctextField.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed

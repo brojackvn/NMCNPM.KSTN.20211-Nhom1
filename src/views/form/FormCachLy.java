@@ -67,6 +67,8 @@ public class FormCachLy extends javax.swing.JPanel {
         F2RadioButton1 = new javax.swing.JRadioButton();
         F0RadioButton2 = new javax.swing.JRadioButton();
 
+        setBackground(new java.awt.Color(245, 245, 245));
+
         F0RadioButton.setBackground(new java.awt.Color(245, 245, 245));
         mucDoCachLyButtonGroup.add(F0RadioButton);
         F0RadioButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N

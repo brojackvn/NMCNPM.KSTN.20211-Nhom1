@@ -35,7 +35,4 @@ public class ControllerTamTru {
         }
     }
 
-    public void insertKhaiBaoCovid(ModelTamTru x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
