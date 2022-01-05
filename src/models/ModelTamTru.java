@@ -5,11 +5,19 @@ public class ModelTamTru {
     private String ngaySinh;
     private String CMND;
     private String diaChiThuongTru;
-    private String noiDen;
     private String ngayCap;
     private String nguoiTao;
     private String lyDo;
     private String thoiHan;
+
+    public String getDiaChuTamTru() {
+        return diaChuTamTru;
+    }
+
+    public void setDiaChuTamTru(String diaChuTamTru) {
+        this.diaChuTamTru = diaChuTamTru;
+    }
+    private String diaChuTamTru;
     
     public ModelTamTru() {
     }
@@ -46,13 +54,7 @@ public class ModelTamTru {
         this.diaChiThuongTru = diaChiThuongTru;
     }
 
-    public String getNoiDen() {
-        return noiDen;
-    }
-
-    public void setNoiDen(String noiDen) {
-        this.noiDen = noiDen;
-    }
+ 
 
     public String getNgayCap() {
         return ngayCap;
