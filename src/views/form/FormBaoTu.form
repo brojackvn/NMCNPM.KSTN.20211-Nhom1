@@ -27,7 +27,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="NguoiKhaitextField" min="-2" pref="430" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="GhiChutextField" min="-2" pref="416" max="-2" attributes="0"/>
+                      <Component id="lyDotextField" min="-2" pref="416" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -73,7 +73,7 @@
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="GhiChutextField" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Component id="lyDotextField" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                   <Component id="NguoiKhaitextField" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
@@ -132,7 +132,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NgayKhaitextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="GhiChutextField">
+    <Component class="views.swing.textfield.TextField" name="lyDotextField">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -144,7 +144,7 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GhiChutextFieldActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lyDotextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="views.swing.Button" name="SaveButton">

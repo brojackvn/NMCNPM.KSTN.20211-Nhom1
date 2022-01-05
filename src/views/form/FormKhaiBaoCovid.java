@@ -254,6 +254,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        try{
         ControllerKhaiBaoCovid khaiBaoCovidController = new ControllerKhaiBaoCovid();
         ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(), Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)), getSelectedButtonText(TinhTrangSucKhoeButtonGroup), LanTestGanNhattextField.getText(), ketQuaLanTestGanNhattextField.getText(), DiaDiemDiChuyentextField.getText(), "user1");
         x.printKhaiBaoCovid();
@@ -273,8 +274,11 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         LanTestGanNhattextField.setText("");
         DiaDiemDiChuyentextField.setText("");
         ketQuaLanTestGanNhattextField.setText("");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Nhap sai");
         
-       
+    }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed

@@ -1,7 +1,8 @@
 package models;
 
 public class ModelKhaiTu {
-    private String CMNDNguoiKhai;
+    private String soHoKhau;
+    private String hoVaTenNguoiKhai;
     private String CMNDNguoiMat;
     private String ngayMat;
     private String lyDo;
@@ -11,13 +12,35 @@ public class ModelKhaiTu {
     public ModelKhaiTu() {
     }
 
-    public String getCMNDNguoiKhai() {
-        return CMNDNguoiKhai;
+    public ModelKhaiTu(String soHoKhau, String hoVaTenNguoiKhai, String CMNDNguoiMat, String ngayMat, String lyDo, String nguoiTao, String ngayKhai) {
+        this.soHoKhau = soHoKhau;
+        this.hoVaTenNguoiKhai = hoVaTenNguoiKhai;
+        this.CMNDNguoiMat = CMNDNguoiMat;
+        this.ngayMat = ngayMat;
+        this.lyDo = lyDo;
+        this.nguoiTao = nguoiTao;
+        this.ngayKhai = ngayKhai;
+    }
+    
+    
+
+    public String getSoHoKhau() {
+        return soHoKhau;
     }
 
-    public void setCMNDNguoiKhai(String CMNDNguoiKhai) {
-        this.CMNDNguoiKhai = CMNDNguoiKhai;
+    public void setSoHoKhau(String soHoKhau) {
+        this.soHoKhau = soHoKhau;
     }
+
+    public String getHoVaTenNguoiKhai() {
+        return hoVaTenNguoiKhai;
+    }
+
+    public void setHoVaTenNguoiKhai(String hoVaTenNguoiKhai) {
+        this.hoVaTenNguoiKhai = hoVaTenNguoiKhai;
+    }
+
+   
 
     public String getCMNDNguoiMat() {
         return CMNDNguoiMat;

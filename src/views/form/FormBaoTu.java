@@ -4,6 +4,13 @@
  */
 package views.form;
 
+import controllers.ControllerKhaiTu;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import models.ModelKhaiTu;
+
 /**
  *
  * @author HO ANH
@@ -29,7 +36,7 @@ public class FormBaoTu extends javax.swing.JPanel {
         NhapSoHoKhautextField = new views.swing.textfield.TextField();
         NgayMattextField = new views.swing.textfield.TextField();
         NgayKhaitextField = new views.swing.textfield.TextField();
-        GhiChutextField = new views.swing.textfield.TextField();
+        lyDotextField = new views.swing.textfield.TextField();
         SaveButton = new views.swing.Button();
         InButton = new views.swing.Button();
         CMNDCCCDBaoTutextField = new views.swing.textfield.TextField();
@@ -67,13 +74,13 @@ public class FormBaoTu extends javax.swing.JPanel {
             }
         });
 
-        GhiChutextField.setBackground(new java.awt.Color(245, 245, 245));
-        GhiChutextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        GhiChutextField.setLabelText("LÝ DO");
-        GhiChutextField.setOpaque(false);
-        GhiChutextField.addActionListener(new java.awt.event.ActionListener() {
+        lyDotextField.setBackground(new java.awt.Color(245, 245, 245));
+        lyDotextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lyDotextField.setLabelText("LÝ DO");
+        lyDotextField.setOpaque(false);
+        lyDotextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GhiChutextFieldActionPerformed(evt);
+                lyDotextFieldActionPerformed(evt);
             }
         });
 
@@ -129,7 +136,7 @@ public class FormBaoTu extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(NguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(GhiChutextField, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(522, 522, 522)
@@ -162,7 +169,7 @@ public class FormBaoTu extends javax.swing.JPanel {
                     .addComponent(NgayMattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GhiChutextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -184,12 +191,33 @@ public class FormBaoTu extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_NgayKhaitextFieldActionPerformed
 
-    private void GhiChutextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GhiChutextFieldActionPerformed
+    private void lyDotextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lyDotextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GhiChutextFieldActionPerformed
+    }//GEN-LAST:event_lyDotextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-
+           try{
+               ControllerKhaiTu khaiTuController = new ControllerKhaiTu();
+               ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), NguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), NgayMattextField.getText(), lyDotextField.getText(), "user1", NgayKhaitextField.getText());
+       
+        try {
+            khaiTuController.insertKhaiTu(x);
+        } catch (SQLException ex) {
+            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        CMNDCCCDBaoTutextField.setText("");
+        NguoiKhaitextField.setText("");
+        NhapSoHoKhautextField.setText("");
+        NgayMattextField.setText("");
+        lyDotextField.setText("");
+        NgayKhaitextField.setText("");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Nhap sai");
+        
+    }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
@@ -207,12 +235,12 @@ public class FormBaoTu extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField CMNDCCCDBaoTutextField;
-    private views.swing.textfield.TextField GhiChutextField;
     private views.swing.Button InButton;
     private views.swing.textfield.TextField NgayKhaitextField;
     private views.swing.textfield.TextField NgayMattextField;
     private views.swing.textfield.TextField NguoiKhaitextField;
     private views.swing.textfield.TextField NhapSoHoKhautextField;
     private views.swing.Button SaveButton;
+    private views.swing.textfield.TextField lyDotextField;
     // End of variables declaration//GEN-END:variables
 }
