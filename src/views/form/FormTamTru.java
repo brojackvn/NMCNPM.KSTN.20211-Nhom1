@@ -4,6 +4,12 @@
  */
 package views.form;
 
+import controllers.ControllerTamTru;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import models.ModelTamTru;
 import test.Main;
 import views.dialog.Message;
 
@@ -43,7 +49,7 @@ public class FormTamTru extends javax.swing.JPanel {
         ThoiHantextField = new views.swing.textfield.TextField();
         SaveButton = new views.swing.Button();
         InButton = new views.swing.Button();
-        DiaChiThuongTrutextField1 = new views.swing.textfield.TextField();
+        diaChiTamTrutextField = new views.swing.textfield.TextField();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -139,13 +145,13 @@ public class FormTamTru extends javax.swing.JPanel {
             }
         });
 
-        DiaChiThuongTrutextField1.setBackground(new java.awt.Color(245, 245, 245));
-        DiaChiThuongTrutextField1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        DiaChiThuongTrutextField1.setLabelText("ĐỊA CHỈ TẠM TRÚ");
-        DiaChiThuongTrutextField1.setOpaque(false);
-        DiaChiThuongTrutextField1.addActionListener(new java.awt.event.ActionListener() {
+        diaChiTamTrutextField.setBackground(new java.awt.Color(245, 245, 245));
+        diaChiTamTrutextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        diaChiTamTrutextField.setLabelText("ĐỊA CHỈ TẠM TRÚ");
+        diaChiTamTrutextField.setOpaque(false);
+        diaChiTamTrutextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DiaChiThuongTrutextField1ActionPerformed(evt);
+                diaChiTamTrutextFieldActionPerformed(evt);
             }
         });
 
@@ -156,31 +162,30 @@ public class FormTamTru extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(CMCDtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(HoVaTentextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                                    .addComponent(NgaySinhtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(DiaChiThuongTrutextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(NgayCaptextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(LyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ThoiHantextField, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(48, 48, 48)
-                                            .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(33, 33, 33)))))
-                            .addContainerGap(22, Short.MAX_VALUE)))
-                    .addComponent(DiaChiThuongTrutextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CMCDtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(HoVaTentextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                                .addComponent(NgaySinhtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DiaChiThuongTrutextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NgayCaptextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ThoiHantextField, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)))))
+                        .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(diaChiTamTrutextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +199,7 @@ public class FormTamTru extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addComponent(DiaChiThuongTrutextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
-                .addComponent(DiaChiThuongTrutextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(diaChiTamTrutextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NgayCaptextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -242,22 +247,50 @@ public class FormTamTru extends javax.swing.JPanel {
     }//GEN-LAST:event_ThoiHantextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-      showMessage("Đã lưu");
+      
+        try {
+            ControllerTamTru tamTruController = new ControllerTamTru();
+            ModelTamTru x = new ModelTamTru();
+            x.setCMND(CMCDtextField.getText());
+            x.setDiaChiThuongTru(DiaChiThuongTrutextField.getText());
+            x.setDiaChuTamTru(diaChiTamTrutextField.getText());
+            x.setHoVaTen(HoVaTentextField.getText());
+            x.setLyDo(LyDotextField.getText());
+            x.setNgayCap(NgayCaptextField.getText());
+            x.setNgaySinh(NgaySinhtextField.getText());
+            x.setNguoiTao("user1");
+            x.setThoiHan(ThoiHantextField.getText());
+            
+            tamTruController.insertTamTru(x);
+            
+            CMCDtextField.setText("");
+            DiaChiThuongTrutextField.setText("");
+            diaChiTamTrutextField.setText("");
+            HoVaTentextField.setText("");
+            LyDotextField.setText("");
+            NgayCaptextField.setText("");
+            NgaySinhtextField.setText("");          
+            ThoiHantextField.setText("");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nhập sai");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Nhập sai");
+        }
+    
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_InButtonActionPerformed
 
-    private void DiaChiThuongTrutextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaChiThuongTrutextField1ActionPerformed
+    private void diaChiTamTrutextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaChiTamTrutextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DiaChiThuongTrutextField1ActionPerformed
+    }//GEN-LAST:event_diaChiTamTrutextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField CMCDtextField;
     private views.swing.textfield.TextField DiaChiThuongTrutextField;
-    private views.swing.textfield.TextField DiaChiThuongTrutextField1;
     private views.swing.textfield.TextField HoVaTentextField;
     private views.swing.Button InButton;
     private views.swing.textfield.TextField LyDotextField;
@@ -265,5 +298,6 @@ public class FormTamTru extends javax.swing.JPanel {
     private views.swing.textfield.TextField NgaySinhtextField;
     private views.swing.Button SaveButton;
     private views.swing.textfield.TextField ThoiHantextField;
+    private views.swing.textfield.TextField diaChiTamTrutextField;
     // End of variables declaration//GEN-END:variables
 }
