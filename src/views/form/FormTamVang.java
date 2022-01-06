@@ -8,6 +8,7 @@ import controllers.ControllerTamVang;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.ModelTamVang;
 
 /**
@@ -179,6 +180,14 @@ public class FormTamVang extends javax.swing.JPanel {
     }//GEN-LAST:event_LyDotextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        if (CMCDTamVangtextField.getText().equals("")|| LyDotextField.getText().equals("") || NgayBatDautextField.getText().equals("")
+            || NgayKetThuctextField.getText().equals("") || NoiTamTrutextField.getText().equals("")
+            )
+            
+        {
+            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
+        }
+        else{
         try {
             ControllerTamVang tamVangController = new ControllerTamVang();
             ModelTamVang x = new ModelTamVang();
@@ -201,6 +210,7 @@ public class FormTamVang extends javax.swing.JPanel {
             Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
+        }
         }
     }//GEN-LAST:event_SaveButtonActionPerformed
 

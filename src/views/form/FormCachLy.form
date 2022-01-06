@@ -69,17 +69,17 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="Kieu" min="-2" pref="144" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Component id="F0RadioButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="KhongLanTest" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                              <Component id="F2RadioButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="BaLanTest" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="F0RadioButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="MotLanTest" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Component id="F1RadioButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="HaiLanTest" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -115,10 +115,10 @@
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Kieu" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="F0RadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="F1RadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="F2RadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="F0RadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="MotLanTest" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="HaiLanTest" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BaLanTest" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="KhongLanTest" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="DiaDiemDiChuyentextField1" min="-2" pref="44" max="-2" attributes="0"/>
@@ -315,7 +315,7 @@
         <Property name="text" type="java.lang.String" value="M&#x1ee8;C &#x110;&#x1ed8; C&#xc1;CH LY"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="F0RadioButton1">
+    <Component class="javax.swing.JRadioButton" name="MotLanTest">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -333,10 +333,10 @@
         <Property name="actionCommand" type="java.lang.String" value="asdf"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="F0RadioButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MotLanTestActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="F1RadioButton1">
+    <Component class="javax.swing.JRadioButton" name="HaiLanTest">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -353,10 +353,10 @@
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="F1RadioButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HaiLanTestActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="F2RadioButton1">
+    <Component class="javax.swing.JRadioButton" name="BaLanTest">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -373,10 +373,10 @@
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="F2RadioButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BaLanTestActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="F0RadioButton2">
+    <Component class="javax.swing.JRadioButton" name="KhongLanTest">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -394,7 +394,7 @@
         <Property name="actionCommand" type="java.lang.String" value="asdf"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="F0RadioButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KhongLanTestActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

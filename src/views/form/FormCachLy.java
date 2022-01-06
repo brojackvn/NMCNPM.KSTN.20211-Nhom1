@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 import models.ModelCachLyCovid;
 
 /*
@@ -62,10 +63,10 @@ public class FormCachLy extends javax.swing.JPanel {
         InButton = new views.swing.Button();
         DiaDiemDiChuyentextField1 = new views.swing.textfield.TextField();
         Kieu1 = new javax.swing.JLabel();
-        F0RadioButton1 = new javax.swing.JRadioButton();
-        F1RadioButton1 = new javax.swing.JRadioButton();
-        F2RadioButton1 = new javax.swing.JRadioButton();
-        F0RadioButton2 = new javax.swing.JRadioButton();
+        MotLanTest = new javax.swing.JRadioButton();
+        HaiLanTest = new javax.swing.JRadioButton();
+        BaLanTest = new javax.swing.JRadioButton();
+        KhongLanTest = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -170,49 +171,49 @@ public class FormCachLy extends javax.swing.JPanel {
         Kieu1.setForeground(new java.awt.Color(153, 153, 153));
         Kieu1.setText("MỨC ĐỘ CÁCH LY");
 
-        F0RadioButton1.setBackground(new java.awt.Color(245, 245, 245));
-        soLanTestButtonGroup.add(F0RadioButton1);
-        F0RadioButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F0RadioButton1.setForeground(new java.awt.Color(153, 153, 153));
-        F0RadioButton1.setText("1");
-        F0RadioButton1.setActionCommand("asdf");
-        F0RadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        MotLanTest.setBackground(new java.awt.Color(245, 245, 245));
+        soLanTestButtonGroup.add(MotLanTest);
+        MotLanTest.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        MotLanTest.setForeground(new java.awt.Color(153, 153, 153));
+        MotLanTest.setText("1");
+        MotLanTest.setActionCommand("asdf");
+        MotLanTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F0RadioButton1ActionPerformed(evt);
+                MotLanTestActionPerformed(evt);
             }
         });
 
-        F1RadioButton1.setBackground(new java.awt.Color(245, 245, 245));
-        soLanTestButtonGroup.add(F1RadioButton1);
-        F1RadioButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F1RadioButton1.setForeground(new java.awt.Color(153, 153, 153));
-        F1RadioButton1.setText("2");
-        F1RadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        HaiLanTest.setBackground(new java.awt.Color(245, 245, 245));
+        soLanTestButtonGroup.add(HaiLanTest);
+        HaiLanTest.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        HaiLanTest.setForeground(new java.awt.Color(153, 153, 153));
+        HaiLanTest.setText("2");
+        HaiLanTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F1RadioButton1ActionPerformed(evt);
+                HaiLanTestActionPerformed(evt);
             }
         });
 
-        F2RadioButton1.setBackground(new java.awt.Color(245, 245, 245));
-        soLanTestButtonGroup.add(F2RadioButton1);
-        F2RadioButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F2RadioButton1.setForeground(new java.awt.Color(153, 153, 153));
-        F2RadioButton1.setText("3");
-        F2RadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        BaLanTest.setBackground(new java.awt.Color(245, 245, 245));
+        soLanTestButtonGroup.add(BaLanTest);
+        BaLanTest.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        BaLanTest.setForeground(new java.awt.Color(153, 153, 153));
+        BaLanTest.setText("3");
+        BaLanTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F2RadioButton1ActionPerformed(evt);
+                BaLanTestActionPerformed(evt);
             }
         });
 
-        F0RadioButton2.setBackground(new java.awt.Color(245, 245, 245));
-        soLanTestButtonGroup.add(F0RadioButton2);
-        F0RadioButton2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        F0RadioButton2.setForeground(new java.awt.Color(153, 153, 153));
-        F0RadioButton2.setText("0");
-        F0RadioButton2.setActionCommand("asdf");
-        F0RadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        KhongLanTest.setBackground(new java.awt.Color(245, 245, 245));
+        soLanTestButtonGroup.add(KhongLanTest);
+        KhongLanTest.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        KhongLanTest.setForeground(new java.awt.Color(153, 153, 153));
+        KhongLanTest.setText("0");
+        KhongLanTest.setActionCommand("asdf");
+        KhongLanTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F0RadioButton2ActionPerformed(evt);
+                KhongLanTestActionPerformed(evt);
             }
         });
 
@@ -254,16 +255,16 @@ public class FormCachLy extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Kieu, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(32, 32, 32)
-                                        .addComponent(F0RadioButton2)
+                                        .addComponent(KhongLanTest)
                                         .addGap(42, 42, 42)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(171, 171, 171)
-                                                .addComponent(F2RadioButton1))
+                                                .addComponent(BaLanTest))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(F0RadioButton1)
+                                                .addComponent(MotLanTest)
                                                 .addGap(39, 39, 39)
-                                                .addComponent(F1RadioButton1)))))
+                                                .addComponent(HaiLanTest)))))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(DiaDiemDiChuyentextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -287,10 +288,10 @@ public class FormCachLy extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Kieu)
-                    .addComponent(F0RadioButton1)
-                    .addComponent(F1RadioButton1)
-                    .addComponent(F2RadioButton1)
-                    .addComponent(F0RadioButton2))
+                    .addComponent(MotLanTest)
+                    .addComponent(HaiLanTest)
+                    .addComponent(BaLanTest)
+                    .addComponent(KhongLanTest))
                 .addGap(18, 18, 18)
                 .addComponent(DiaDiemDiChuyentextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78)
@@ -322,7 +323,14 @@ public class FormCachLy extends javax.swing.JPanel {
     }//GEN-LAST:event_thoiGianBatDautextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-           ModelCachLyCovid x = new ModelCachLyCovid();
+        if (CMCDCovidtextField.getText().equals("") || DiaDiemDiChuyentextField1.getText().equals("") || thoiGianBatDautextField.getText().equals("") || noiCachLytextField.getText().equals("")
+            || (!F0RadioButton.isSelected() && !F1RadioButton.isSelected() && !F2RadioButton.isSelected()) 
+                ||(!KhongLanTest.isSelected()&&!MotLanTest.isSelected()&&!HaiLanTest.isSelected()&&!BaLanTest.isSelected())
+                )   {
+            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
+        }
+        else{
+        ModelCachLyCovid x = new ModelCachLyCovid();
            x.setCMND(CMCDCovidtextField.getText());
            x.setDiaDiemDaDiQua(DiaDiemDiChuyentextField1.getText());
            x.setMucDoCachLy(getSelectedButtonText(mucDoCachLyButtonGroup));
@@ -344,7 +352,7 @@ public class FormCachLy extends javax.swing.JPanel {
           noiCachLytextField.setText("");
           soLanTestButtonGroup.clearSelection();
           thoiGianBatDautextField.setText("");
-
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
@@ -355,36 +363,36 @@ public class FormCachLy extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_DiaDiemDiChuyentextField1ActionPerformed
 
-    private void F0RadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F0RadioButton1ActionPerformed
+    private void MotLanTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MotLanTestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_F0RadioButton1ActionPerformed
+    }//GEN-LAST:event_MotLanTestActionPerformed
 
-    private void F1RadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1RadioButton1ActionPerformed
+    private void HaiLanTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HaiLanTestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_F1RadioButton1ActionPerformed
+    }//GEN-LAST:event_HaiLanTestActionPerformed
 
-    private void F0RadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F0RadioButton2ActionPerformed
+    private void KhongLanTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KhongLanTestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_F0RadioButton2ActionPerformed
+    }//GEN-LAST:event_KhongLanTestActionPerformed
 
-    private void F2RadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F2RadioButton1ActionPerformed
+    private void BaLanTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaLanTestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_F2RadioButton1ActionPerformed
+    }//GEN-LAST:event_BaLanTestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BaLanTest;
     private views.swing.textfield.TextField CMCDCovidtextField;
     private views.swing.textfield.TextField DiaDiemDiChuyentextField1;
     private javax.swing.JRadioButton F0RadioButton;
-    private javax.swing.JRadioButton F0RadioButton1;
-    private javax.swing.JRadioButton F0RadioButton2;
     private javax.swing.JRadioButton F1RadioButton;
-    private javax.swing.JRadioButton F1RadioButton1;
     private javax.swing.JRadioButton F2RadioButton;
-    private javax.swing.JRadioButton F2RadioButton1;
+    private javax.swing.JRadioButton HaiLanTest;
     private views.swing.Button InButton;
+    private javax.swing.JRadioButton KhongLanTest;
     private javax.swing.JLabel Kieu;
     private javax.swing.JLabel Kieu1;
+    private javax.swing.JRadioButton MotLanTest;
     private views.swing.Button SaveButton;
     private javax.swing.ButtonGroup mucDoCachLyButtonGroup;
     private views.swing.textfield.TextField noiCachLytextField;

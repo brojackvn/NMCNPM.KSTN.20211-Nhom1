@@ -156,7 +156,7 @@ public class FormTruyVetDiaDiem extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
        if (diaDiemtextField.getText().equals("")){
-           JOptionPane.showMessageDialog(null, "Chưa nhập địa điểm");
+           JOptionPane.showMessageDialog(null, "CHƯA NHẬP ĐỊA ĐIỂM");
        }
        else{
         try {

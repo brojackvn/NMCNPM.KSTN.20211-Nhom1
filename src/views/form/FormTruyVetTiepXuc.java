@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import models.ModelTruyVetDiaDiem;  
 import models.ModelTruyVetTiepXuc;
 import views.swing.table.Table;
@@ -138,9 +139,16 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
     }//GEN-LAST:event_CMNDtextFieldActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-            mangmangTruyVetDiaDiem.clear();
-            clearTableData(table1);
-             System.out.print(table1.getRowCount()+ "rowcount");
+        
+        if (CMNDtextField.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "BẠN CHƯA NHẬP CHỨNG MINH NHÂN DÂN");
+        }
+        else{
+        mangmangTruyVetDiaDiem.clear();
+        clearTableData(table1);
+    
+            
+        System.out.print(table1.getRowCount()+ "rowcount");
         try {
            
             ModelTruyVetTiepXuc x = new ModelTruyVetTiepXuc();
@@ -175,6 +183,7 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
             Logger.getLogger(FormTruyVetTiepXuc.class.getName()).log(Level.SEVERE, null, ex);
         }
          initTableData();
+        }
     }//GEN-LAST:event_searchButtonActionPerformed
     private ArrayList<ArrayList<ModelTruyVetDiaDiem>> mangmangTruyVetDiaDiem = new ArrayList<ArrayList<ModelTruyVetDiaDiem>>();
     private ArrayList<ModelTruyVetDiaDiem> mangTruyVetDiaDiem = new ArrayList<ModelTruyVetDiaDiem>();
