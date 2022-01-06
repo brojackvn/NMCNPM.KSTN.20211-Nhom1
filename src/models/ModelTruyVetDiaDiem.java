@@ -9,22 +9,35 @@ package models;
  * @author huutu
  */
 public class ModelTruyVetDiaDiem {
-    private String CMND;
-    private String diaDiemDaDiQua;
+ 
+    private String ngaySinh;
+    private String hoVaTen;
 
-    public String getCMND() {
-        return CMND;
+    public ModelTruyVetDiaDiem(String ngaySinh, String hoVaTen){
+        this.ngaySinh = ngaySinh;
+        this.hoVaTen = hoVaTen;
+    }
+    public ModelTruyVetDiaDiem(){
+    }
+    
+    
+     public Object[] toRowTable() {
+        return new Object[]{hoVaTen, ngaySinh};
+    } 
+    
+    public String getHoVaTen() {
+        return hoVaTen;
     }
 
-    public void setCMND(String CMND) {
-        this.CMND = CMND;
+    public void setHoVaTen(String hoVaTen) {
+        this.hoVaTen = hoVaTen;
+    }
+    public String getNgaySinh() {
+        return ngaySinh;
     }
 
-    public String getDiaDiemDaDiQua() {
-        return diaDiemDaDiQua;
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
-    public void setDiaDiemDaDiQua(String diaDiemDaDiQua) {
-        this.diaDiemDaDiQua = diaDiemDaDiQua;
-    }
 }

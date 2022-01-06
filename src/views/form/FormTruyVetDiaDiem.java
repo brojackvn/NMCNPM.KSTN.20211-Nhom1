@@ -6,9 +6,13 @@ package views.form;
 
 import controllers.ControllerTruyVetDiaDiem;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import models.ModelNhanKhau;
 import models.ModelTruyVetDiaDiem;
+import views.swing.table.Table;
 
 /**
  *
@@ -21,8 +25,28 @@ public class FormTruyVetDiaDiem extends javax.swing.JPanel {
      */
     public FormTruyVetDiaDiem() {
         initComponents();
+        table1.fixTable(jScrollPane1);
+        initData();
     }
 
+    public void initData() {
+        initTableData();       
+    }
+    
+    public void initTableData() {
+        // Các data thì mình sẽ lấy từ database
+        for (int i=0; i<mangTruyVetDiaDiem.size(); i++){
+            table1.addRow(new ModelTruyVetDiaDiem(mangTruyVetDiaDiem.get(i).getNgaySinh(), mangTruyVetDiaDiem.get(i).getHoVaTen()).toRowTable());
+        }
+        
+    }
+    public void clearTableData(Table table1){
+        while (table1.getRowCount()>0)
+          {
+             table1.removeRow(0);
+          }
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -131,24 +155,33 @@ public class FormTruyVetDiaDiem extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+       if (diaDiemtextField.getText().equals("")){
+           JOptionPane.showMessageDialog(null, "Chưa nhập địa điểm");
+       }
+       else{
         try {
+            mangTruyVetDiaDiem.clear();
+            clearTableData(table1);
+         
+          
             ControllerTruyVetDiaDiem truyVetDiaDiem = new ControllerTruyVetDiaDiem();
-            truyVetDiaDiem.findNguoiByDiaDiem(diaDiemtextField.getText());
-            
-            
+           
+            mangTruyVetDiaDiem = truyVetDiaDiem.findNguoiByDiaDiem(diaDiemtextField.getText());
+          
+            initTableData();
         } catch (SQLException ex) {
             Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
         }
-        diaDiemtextField.setText("");
+        diaDiemtextField.setText("");}
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void diaDiemtextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaDiemtextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_diaDiemtextFieldActionPerformed
 
-
+    private ArrayList<ModelTruyVetDiaDiem> mangTruyVetDiaDiem = new ArrayList<ModelTruyVetDiaDiem>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField diaDiemtextField;
     private javax.swing.JPanel jPanel1;
