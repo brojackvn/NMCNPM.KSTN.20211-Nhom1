@@ -63,6 +63,7 @@ public class ControllerTruyVetDiaDiem {
       
     
      public ArrayList<ModelTruyVetDiaDiem> findNguoiByDiaDiem(String diaDiem) throws SQLException, ClassNotFoundException {
+  
         String sql = "SELECT * FROM khai_bao_covid";
         try (
                 Connection con = ConnectDatabase.openConnection();
@@ -72,7 +73,7 @@ public class ControllerTruyVetDiaDiem {
             ResultSet rs = pstmt.executeQuery();
                
             while (rs.next()) {
-               
+
                 if(rs.getString("diaDiemDaDiQua").equals(diaDiem)){
                     ControllerTruyVetDiaDiem truyvetdiadiem = new ControllerTruyVetDiaDiem();
                     ModelTruyVetDiaDiem x = new ModelTruyVetDiaDiem();
@@ -86,7 +87,7 @@ public class ControllerTruyVetDiaDiem {
                 
                 
                     mangTruyVetDiaDiem.add(x);
-                  
+           
                 }
               
                 

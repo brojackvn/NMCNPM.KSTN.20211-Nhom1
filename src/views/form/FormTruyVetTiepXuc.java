@@ -4,11 +4,15 @@
  */
 package views.form;
 
+import controllers.ControllerTruyVetDiaDiem;
 import controllers.ControllerTruyVetTiepXuc;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.ModelTruyVetDiaDiem;  
 import models.ModelTruyVetTiepXuc;
+import views.swing.table.Table;
 
 /**
  *
@@ -21,8 +25,31 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
      */
     public FormTruyVetTiepXuc() {
         initComponents();
+        table1.fixTable(jScrollPane1);
+        initData();
     }
-
+    
+       public void initData() {
+        initTableData();       
+    }
+    
+    public void initTableData() {
+        // Các data thì mình sẽ lấy từ database
+        for (int i=0; i<mangmangTruyVetDiaDiem.size(); i++){
+            for (int j=0; j<mangmangTruyVetDiaDiem.get(i).size(); j++){
+                table1.addRow(new ModelTruyVetDiaDiem(mangmangTruyVetDiaDiem.get(i).get(j).getNgaySinh(), mangmangTruyVetDiaDiem.get(i).get(j).getHoVaTen()).toRowTable());
+            }
+            
+        }
+        
+    }
+    
+        public void clearTableData(Table table1){
+        while (table1.getRowCount()>0)
+          {
+             table1.removeRow(0);
+          }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -111,26 +138,46 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
     }//GEN-LAST:event_CMNDtextFieldActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+            mangmangTruyVetDiaDiem.clear();
+            clearTableData(table1);
+             System.out.print(table1.getRowCount()+ "rowcount");
         try {
+           
             ModelTruyVetTiepXuc x = new ModelTruyVetTiepXuc();
             x.setCMND(CMNDtextField.getText());
             ControllerTruyVetTiepXuc truyVetTiepXuc = new ControllerTruyVetTiepXuc();
             String diaDiemTiepXuc = new String(truyVetTiepXuc.findDiaDiemByCMND(x.getCMND()));
-            String[] mangDiaDiemTiepXuc=diaDiemTiepXuc.split(";");
+            String[] mangDiaDiemTiepXuc=diaDiemTiepXuc.split("; ");
             for(int i=0; i<mangDiaDiemTiepXuc.length;i++){
-                System.out.println(mangDiaDiemTiepXuc[i]);
+                
+                try {
+                   
+                    ControllerTruyVetDiaDiem truyVetDiaDiem = new ControllerTruyVetDiaDiem();
+                    mangTruyVetDiaDiem = truyVetDiaDiem.findNguoiByDiaDiem(new String(mangDiaDiemTiepXuc[i]));
+              
+                    mangmangTruyVetDiaDiem.add(mangTruyVetDiaDiem);
+                   
+                } catch (SQLException ex) {
+                    Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
             }
-            truyVetTiepXuc.findNguoiByDiaDiem(mangDiaDiemTiepXuc[0]);
-
+           
+//            truyVetTiepXuc.findNguoiByDiaDiem(mangDiaDiemTiepXuc[0]);
+            
             CMNDtextField.setText("");
         } catch (SQLException ex) {
             Logger.getLogger(FormTruyVetTiepXuc.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormTruyVetTiepXuc.class.getName()).log(Level.SEVERE, null, ex);
         }
+         initTableData();
     }//GEN-LAST:event_searchButtonActionPerformed
-
-
+    private ArrayList<ArrayList<ModelTruyVetDiaDiem>> mangmangTruyVetDiaDiem = new ArrayList<ArrayList<ModelTruyVetDiaDiem>>();
+    private ArrayList<ModelTruyVetDiaDiem> mangTruyVetDiaDiem = new ArrayList<ModelTruyVetDiaDiem>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField CMNDtextField;
     private javax.swing.JScrollPane jScrollPane1;
