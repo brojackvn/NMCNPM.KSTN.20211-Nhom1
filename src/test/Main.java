@@ -1,8 +1,10 @@
 package test;
 
+import connection.ConnectDatabase;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import javax.swing.JFrame;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
@@ -48,6 +50,13 @@ public class Main extends javax.swing.JFrame {
     private Animator animator;
     
     public Main() {
+//        try(
+//            Connection connection = ConnectDatabase.openConnection();
+//        )  {
+//            System.err.println("Thanh Cong");
+//        }catch (Exception e){
+//            System.err.println("That bai");
+//        }
         initComponents();
         init();
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");

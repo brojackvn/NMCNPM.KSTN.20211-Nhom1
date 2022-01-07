@@ -8,6 +8,12 @@ package views.form;
  *
  * @author HO ANH
  */
+import controllers.ControllerSoHoKhau;
+import java.awt.Color;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import models.ModelSoHoKhau;
+
 public class FormDanhMucHoKhau extends javax.swing.JPanel {
 
     /**
@@ -15,7 +21,23 @@ public class FormDanhMucHoKhau extends javax.swing.JPanel {
      */
     public FormDanhMucHoKhau() {
         initComponents();
+        table1.fixTable(jScrollPane1);
+        try{
+           initDataTable();
+        }catch(Exception e){};
     }
+
+
+    public void initDataTable() throws SQLException, ClassNotFoundException {
+        ControllerSoHoKhau SoHoKhau = new ControllerSoHoKhau();
+        ArrayList<ModelSoHoKhau> resultListSoHoKhau = new ArrayList<ModelSoHoKhau>();
+
+        resultListSoHoKhau = SoHoKhau.selectDanhMucSoHoKhau(); 
+        for(int i=0; i<resultListSoHoKhau.size(); i++){
+            table1.addRow(resultListSoHoKhau.get(i).toRowTableSoHoKhau());
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +48,70 @@ public class FormDanhMucHoKhau extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table1 = new views.swing.table.Table();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
+
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        table1.setBackground(new java.awt.Color(245, 245, 245));
+        table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Tên chủ hộ", "Ngày đăng kí", "Địa chỉ"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(table1);
+        if (table1.getColumnModel().getColumnCount() > 0) {
+            table1.getColumnModel().getColumn(0).setResizable(false);
+            table1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            table1.getColumnModel().getColumn(1).setResizable(false);
+            table1.getColumnModel().getColumn(1).setPreferredWidth(20);
+            table1.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("Danh Mục Hộ Khẩu");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private views.swing.table.Table table1;
     // End of variables declaration//GEN-END:variables
 }

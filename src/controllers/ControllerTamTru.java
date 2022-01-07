@@ -7,7 +7,10 @@ package controllers;
 import connection.ConnectDatabase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import models.ModelTamTru;
 
 /**
@@ -29,10 +32,29 @@ public class ControllerTamTru {
             pstm.setString(6, modelTamTru.getNguoiTao());
             pstm.setString(7, modelTamTru.getLyDo());
             pstm.setString(8, modelTamTru.getThoiHan());
-            pstm.setString(9, modelTamTru.getDiaChuTamTru());
+            pstm.setString(9, modelTamTru.getDiaChiTamTru());
            
             return (pstm.executeUpdate() > 0 ? true : false);
         }
     }
 
+    //return all row from table tamtru
+    public ArrayList<ModelTamTru> selectDanhMucTamTru () throws SQLException, ClassNotFoundException{
+        ArrayList<ModelTamTru> resultList = new ArrayList<ModelTamTru>();
+
+        String sql = "SELECT * FROM tam_tru";
+        
+        try (
+            Connection con = ConnectDatabase.openConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+        ){
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                ModelTamTru newMTT = new ModelTamTru(rs.getString(2), rs.getString(11), rs.getString(9));
+                resultList.add(newMTT);
+            }
+            
+            return resultList;
+        }
+    }
 }

@@ -4,6 +4,11 @@
  */
 package views.form;
 
+import controllers.ControllerTamVang;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import models.ModelTamVang;
+
 /**
  *
  * @author HO ANH
@@ -15,7 +20,23 @@ public class FormDanhMucTamVang extends javax.swing.JPanel {
      */
     public FormDanhMucTamVang() {
         initComponents();
+        table1.fixTable(jScrollPane1);
+        try{
+           initDataTable();
+        }catch(Exception e){};
     }
+
+    public void initDataTable() throws SQLException, ClassNotFoundException{
+        ControllerTamVang TamVang = new ControllerTamVang();
+        ArrayList<ModelTamVang> resultListTamVang = new ArrayList<ModelTamVang>();
+
+        resultListTamVang = TamVang.selectDanhMucTamVang(); 
+
+        for(int i=0; i<resultListTamVang.size(); i++){
+            table1.addRow(resultListTamVang.get(i).toRowTableTamVang());
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +47,51 @@ public class FormDanhMucTamVang extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table1 = new views.swing.table.Table();
+        jLabel2 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        table1.setBackground(new java.awt.Color(245, 245, 245));
+        table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null}
+            },
+            new String [] {
+                "Họ tên", "Địa chỉ thường trú ", "Lý do"
+            }
+        ));
+        jScrollPane1.setViewportView(table1);
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("Danh Mục Tạm Vắng");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private views.swing.table.Table table1;
     // End of variables declaration//GEN-END:variables
 }

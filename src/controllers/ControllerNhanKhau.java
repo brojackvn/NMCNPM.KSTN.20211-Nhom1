@@ -1,26 +1,29 @@
 package controllers;
 
+import connection.ConnectDatabase;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import models.ModelNhanKhau;
+
 public class ControllerNhanKhau {
-    //Ví dụ:
-    /*
-    // Tham số truyền vào: Student (đầy đủ các thuộc tính của student)
-    // Trả về: true nếu update thành công và ngược lại
-    // Dùng để chèn một student vào database
-    // Người tạo: Hồ Anh
-    public boolean insert(Student student) throws SQLException, ClassNotFoundException{
-        String sql = "INSERT INTO `sinhvien`(`MaSV`, `HoTen`, `Email`, `SoDT`, `GioiTinh`, `DiaChi`) VALUES (?,?,?,?,?,?)";
+    public ArrayList<ModelNhanKhau> selectDanhMucNhanKhau () throws SQLException, ClassNotFoundException{
+        ArrayList<ModelNhanKhau> resultList = new ArrayList<ModelNhanKhau>();
+
+        String sql = "SELECT * FROM nhan_khau";
+        
         try (
-                Connection connection = DatabaseHelper.openConnection();
-                PreparedStatement pstm = connection.prepareStatement(sql);
-        ) {
-            pstm.setString(1,student.getMaSV());
-            pstm.setString(2, student.getHoTen());
-            pstm.setString(3, student.getEmail());
-            pstm.setString(4, student.getSoDT());
-            pstm.setInt(5, student.getGioiTinh());
-            pstm.setString(6, student.getDiaChi());
-            return (pstm.executeUpdate() > 0 ? true : false);
+            Connection con = ConnectDatabase.openConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+        ){
+            ResultSet rs = pstmt.executeQuery();
+            while(rs.next()){
+                ModelNhanKhau newMTT = new ModelNhanKhau(rs.getString(2), rs.getString(4), rs.getInt(5), rs.getString(17),rs.getString(6), rs.getString(14), rs.getString(13));
+                resultList.add(newMTT);
+            }
+            return resultList;
         }
     }
-    */
 }

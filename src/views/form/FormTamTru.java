@@ -260,7 +260,7 @@ public class FormTamTru extends javax.swing.JPanel {
             ModelTamTru x = new ModelTamTru();
             x.setCMND(CMCDtextField.getText());
             x.setDiaChiThuongTru(DiaChiThuongTrutextField.getText());
-            x.setDiaChuTamTru(diaChiTamTrutextField.getText());
+            x.setDiaChiTamTru(diaChiTamTrutextField.getText());
             x.setHoVaTen(HoVaTentextField.getText());
             x.setLyDo(LyDotextField.getText());
             x.setNgayCap(NgayCaptextField.getText());
