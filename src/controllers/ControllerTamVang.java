@@ -47,8 +47,8 @@ public class ControllerTamVang {
         ){
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
-                ModelTamVang newMTV = new ModelTamVang(rs.getString(1), rs.getString(2), rs.getString(5));
-                newMTV.setHoVaTen(newMTV.getHoVaTen_fromCMND(rs.getString(1)));
+                ModelTamVang newMTV = new ModelTamVang(rs.getString("CMND"), rs.getString("noiTamTru"), rs.getString("lyDo"));
+                newMTV.setHoVaTen(newMTV.getHoVaTen_fromCMND(rs.getString("CMND")));
                 resultList.add(newMTV);
             }
         }

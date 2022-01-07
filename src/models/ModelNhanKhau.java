@@ -68,8 +68,14 @@ public class ModelNhanKhau {
     }
 
     public Object[] toRowTableNhanKhau() {
-        return new Object[]{hoVaTen, ngaySinh,gioiTinh,ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
+        if (gioiTinh==1) return new Object[]{hoVaTen, ngaySinh,"Nam",ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
+        else return new Object[]{hoVaTen, ngaySinh,"Nữ",ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
     } 
+
+    public Object[] toRowTableTraCuuHoKhau(){
+       if(gioiTinh == 1) return new Object[]{hoVaTen, ngaySinh,"Nam",quanHeChuHo, noiOHienTai};
+       else return new Object[]{hoVaTen, ngaySinh,"Nữ",quanHeChuHo, noiOHienTai};
+    }
 
     public Object[] toRowTableFormXoaNhanKhau(EventActionFormXoa event) {
         return new Object[]{CMND, hoVaTen, ngaySinh, gioiTinh, quanHeChuHo, new ModelAction(this, event)};

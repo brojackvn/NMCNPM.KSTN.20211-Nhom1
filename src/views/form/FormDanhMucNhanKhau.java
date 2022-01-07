@@ -69,7 +69,7 @@ public class FormDanhMucNhanKhau extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel2.setText("Danh Mục Nhân Khẩu");
+        jLabel2.setText("DANH MỤC NHÂN KHẨU");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

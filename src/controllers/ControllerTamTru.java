@@ -50,7 +50,7 @@ public class ControllerTamTru {
         ){
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
-                ModelTamTru newMTT = new ModelTamTru(rs.getString(2), rs.getString(11), rs.getString(9));
+                ModelTamTru newMTT = new ModelTamTru(rs.getString("hoVaTen"), rs.getString("DiaChiTamTru"), rs.getString("lyDo"));
                 resultList.add(newMTT);
             }
             

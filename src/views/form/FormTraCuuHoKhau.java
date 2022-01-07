@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import models.ModelNhanKhau;
 import models.ModelSoHoKhau;
 import views.swing.scrollbar.ScrollBarCustom;
+import controllers.ControllerSoHoKhau;
+import java.util.ArrayList;
 
 public class FormTraCuuHoKhau extends javax.swing.JPanel { 
  
@@ -22,8 +24,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     }
     
     public void initTableData() {
-        // Các data thì mình sẽ lấy từ database
-        table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1 ,"Con" ,"Quảng Bình").toRowTable());
+   
     }
     
     public void initThongTinSHK() {
@@ -43,8 +44,8 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         searchButton1 = new views.swing.Button();
-        textFieldhoVaTenChuHo1 = new views.swing.textfield.TextField();
-        textFieldhoVaTenChuHo2 = new views.swing.textfield.TextField();
+        textFielddiaChi = new views.swing.textfield.TextField();
+        textFieldngayDangKi = new views.swing.textfield.TextField();
 
         setOpaque(false);
 
@@ -126,27 +127,27 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
             }
         });
 
-        textFieldhoVaTenChuHo1.setEditable(false);
-        textFieldhoVaTenChuHo1.setBackground(new java.awt.Color(245, 245, 245));
-        textFieldhoVaTenChuHo1.setText(" ");
-        textFieldhoVaTenChuHo1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textFieldhoVaTenChuHo1.setLabelText("ĐỊA CHỈ");
-        textFieldhoVaTenChuHo1.setOpaque(false);
-        textFieldhoVaTenChuHo1.addActionListener(new java.awt.event.ActionListener() {
+        textFielddiaChi.setEditable(false);
+        textFielddiaChi.setBackground(new java.awt.Color(245, 245, 245));
+        textFielddiaChi.setText(" ");
+        textFielddiaChi.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textFielddiaChi.setLabelText("ĐỊA CHỈ");
+        textFielddiaChi.setOpaque(false);
+        textFielddiaChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldhoVaTenChuHo1ActionPerformed(evt);
+                textFielddiaChiActionPerformed(evt);
             }
         });
 
-        textFieldhoVaTenChuHo2.setEditable(false);
-        textFieldhoVaTenChuHo2.setBackground(new java.awt.Color(245, 245, 245));
-        textFieldhoVaTenChuHo2.setText(" ");
-        textFieldhoVaTenChuHo2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textFieldhoVaTenChuHo2.setLabelText("NGÀY ĐĂNG KÍ");
-        textFieldhoVaTenChuHo2.setOpaque(false);
-        textFieldhoVaTenChuHo2.addActionListener(new java.awt.event.ActionListener() {
+        textFieldngayDangKi.setEditable(false);
+        textFieldngayDangKi.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldngayDangKi.setText(" ");
+        textFieldngayDangKi.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textFieldngayDangKi.setLabelText("NGÀY ĐĂNG KÍ");
+        textFieldngayDangKi.setOpaque(false);
+        textFieldngayDangKi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldhoVaTenChuHo2ActionPerformed(evt);
+                textFieldngayDangKiActionPerformed(evt);
             }
         });
 
@@ -187,8 +188,8 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldhoVaTenChuHo2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textFieldhoVaTenChuHo1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldngayDangKi, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFielddiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textFieldhoVaTenChuHo, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -208,9 +209,9 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textFieldhoVaTenChuHo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textFieldhoVaTenChuHo1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFielddiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textFieldhoVaTenChuHo2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldngayDangKi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -227,7 +228,29 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         System.out.println("Helloew wwww");
-        System.out.println(textFieldNhapSoHoKhau.getText());
+        String MaSHK = textFieldNhapSoHoKhau.getText();
+    
+        try{
+           ControllerSoHoKhau CTLSoHoKhau = new ControllerSoHoKhau();
+
+           //So Ho Khau
+           ModelSoHoKhau SHK = CTLSoHoKhau.TraCuuSHK(MaSHK);
+           //List Nhan Khau Trong Ho
+           ArrayList<ModelNhanKhau> listNhanKhau = CTLSoHoKhau.getListNhanKhau_fromSoSHK(MaSHK);
+
+           //hiển thị thông tin về Hộ Khẩu
+           textFieldhoVaTenChuHo.setText(SHK.getHoVaTenChuHo());
+           textFielddiaChi.setText(SHK.getDiaChi());
+           textFieldngayDangKi.setText(SHK.getNgayDangKi());
+
+           //hiển thị thông tin về nhân khẩu trong hộ
+           for(int i=0; i<listNhanKhau.size(); i++){
+                table1.addRow(listNhanKhau.get(i).toRowTableTraCuuHoKhau());
+           }
+        }catch(Exception e){};
+        
+        
+
         textFieldNhapSoHoKhau.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
@@ -239,13 +262,13 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchButton1ActionPerformed
 
-    private void textFieldhoVaTenChuHo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHo1ActionPerformed
+    private void textFielddiaChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFielddiaChiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldhoVaTenChuHo1ActionPerformed
+    }//GEN-LAST:event_textFielddiaChiActionPerformed
 
-    private void textFieldhoVaTenChuHo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHo2ActionPerformed
+    private void textFieldngayDangKiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldngayDangKiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldhoVaTenChuHo2ActionPerformed
+    }//GEN-LAST:event_textFieldngayDangKiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -258,8 +281,8 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     private views.swing.Button searchButton1;
     private views.swing.table.Table table1;
     private views.swing.textfield.TextField textFieldNhapSoHoKhau;
+    private views.swing.textfield.TextField textFielddiaChi;
     private views.swing.textfield.TextField textFieldhoVaTenChuHo;
-    private views.swing.textfield.TextField textFieldhoVaTenChuHo1;
-    private views.swing.textfield.TextField textFieldhoVaTenChuHo2;
+    private views.swing.textfield.TextField textFieldngayDangKi;
     // End of variables declaration//GEN-END:variables
 }
