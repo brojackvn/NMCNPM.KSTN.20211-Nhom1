@@ -1,5 +1,7 @@
 package models;
 
+import views.swing.table.EventAction;
+
 public class ModelTamTru {
     private String hoVaTen;
     private String ngaySinh;
@@ -10,9 +12,27 @@ public class ModelTamTru {
     private String nguoiTao;
     private String lyDo;
     private String thoiHan;
+    private String DiaChiTamTru;
     
     public ModelTamTru() {
     }
+
+    public ModelTamTru(String hoVaTen, String diaChiTamTru, String lyDo){
+        this.hoVaTen = hoVaTen;
+        this.DiaChiTamTru = diaChiTamTru;
+        this.lyDo = lyDo;
+    }
+
+    //object to row table value
+    public Object[] toRowTableTamTru() {
+//        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
+        return new Object[]{hoVaTen, DiaChiTamTru, lyDo};
+    } 
+
+    public Object[] toRowTable() {
+//        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
+        return new Object[]{hoVaTen, DiaChiTamTru, lyDo};
+    } 
 
     public String getHoVaTen() {
         return hoVaTen;
@@ -84,5 +104,13 @@ public class ModelTamTru {
 
     public void setThoiHan(String thoiHan) {
         this.thoiHan = thoiHan;
+    }  
+
+    public String getDiaChiTamTru() {
+        return DiaChiTamTru;
+    }
+
+    public void setDiaChiTamTru(String DiaChiTamTru) {
+        this.DiaChiTamTru = DiaChiTamTru;
     }  
 }

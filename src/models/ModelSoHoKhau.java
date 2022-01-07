@@ -16,6 +16,12 @@ public class ModelSoHoKhau {
     public ModelSoHoKhau() {
     }
 
+    public ModelSoHoKhau(String hoVaTenChuHo, String diaChi, String ngayDangKi) {
+        this.hoVaTenChuHo = hoVaTenChuHo;
+        this.diaChi = diaChi;
+        this.ngayDangKi = ngayDangKi;
+    }
+
     public ModelSoHoKhau(String hoVaTenChuHo, String diaChi, String ngayDen, String nguoiTao) {
         this.hoVaTenChuHo = hoVaTenChuHo;
         this.diaChi = diaChi;
@@ -26,6 +32,11 @@ public class ModelSoHoKhau {
     public Object[] toRowTable(EventAction event) {
 //        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
         return new Object[]{hoVaTenChuHo, diaChi, ngayDangKi, nguoiTao};
+    } 
+
+    public Object[] toRowTableSoHoKhau() {
+//        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
+        return new Object[]{hoVaTenChuHo, ngayDangKi, diaChi};
     } 
 
     public String getHoVaTenChuHo() {

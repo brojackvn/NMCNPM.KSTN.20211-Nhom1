@@ -22,7 +22,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     
     public void initTableData() {
         // Các data thì mình sẽ lấy từ database
-        table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1, "Kinh", "Không", "Quảng Bình").toRowTable());
+        //table1.addRow(new ModelNhanKhau("Hồ Anh", "04/9/2001", 1, "Kinh", "Không", "Quảng Bình").toRowTable());
         
     }
     

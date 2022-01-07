@@ -38,8 +38,18 @@ public class ModelNhanKhau {
         this.noiOHienTai = noiOHienTai;
     }
 
-    public Object[] toRowTable() {
-        return new Object[]{hoVaTen, ngaySinh,gioiTinh, danToc, tonGiao, noiOHienTai};
+    public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String ngheNghiepHienTai, String danToc, String noiOHienTai, String noiThuongTru){
+        this.hoVaTen = hoVaTen;
+        this.ngaySinh = ngaySinh;
+        this.gioiTinh = gioiTinh;
+        this.ngheNghiepHienTai = ngheNghiepHienTai;
+        this.danToc = danToc;
+        this.noiOHienTai = noiOHienTai;
+        this.noiThuongTru = noiThuongTru;
+    }
+
+    public Object[] toRowTableNhanKhau() {
+        return new Object[]{hoVaTen, ngaySinh,gioiTinh,ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
     } 
 
     public String getSoHoKhau() {
