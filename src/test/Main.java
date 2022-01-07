@@ -48,20 +48,18 @@ public class Main extends javax.swing.JFrame {
     private Header header;
     private MainForm main;
     private Animator animator;
+    private String userName;
+    private String chucVu;
     
-    public Main() {
-//        try(
-//            Connection connection = ConnectDatabase.openConnection();
-//        )  {
-//            System.err.println("Thanh Cong");
-//        }catch (Exception e){
-//            System.err.println("That bai");
-//        }
+    public Main(String userName, String chucVu) {
+
         initComponents();
         init();
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.userName = userName;
+        this.chucVu = chucVu;
     }
     
     private void init() {
@@ -255,11 +253,7 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
