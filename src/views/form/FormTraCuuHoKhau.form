@@ -60,8 +60,8 @@
           <Group type="102" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textFieldhoVaTenChuHo2" min="-2" pref="430" max="-2" attributes="0"/>
-                  <Component id="textFieldhoVaTenChuHo1" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Component id="textFieldngayDangKi" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Component id="textFielddiaChi" min="-2" pref="430" max="-2" attributes="0"/>
                   <Component id="textFieldhoVaTenChuHo" min="-2" pref="430" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -85,9 +85,9 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="textFieldhoVaTenChuHo" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="textFieldhoVaTenChuHo1" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="textFielddiaChi" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="textFieldhoVaTenChuHo2" min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="textFieldngayDangKi" min="-2" pref="44" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="370" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -253,7 +253,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textFieldhoVaTenChuHo1">
+    <Component class="views.swing.textfield.TextField" name="textFielddiaChi">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -267,10 +267,10 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldhoVaTenChuHo1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFielddiaChiActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textFieldhoVaTenChuHo2">
+    <Component class="views.swing.textfield.TextField" name="textFieldngayDangKi">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -284,7 +284,7 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldhoVaTenChuHo2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldngayDangKiActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
