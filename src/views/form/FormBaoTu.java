@@ -196,7 +196,16 @@ public class FormBaoTu extends javax.swing.JPanel {
     }//GEN-LAST:event_lyDotextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-           try{
+        if (CMNDCCCDBaoTutextField.getText().equals("") || NgayKhaitextField.getText().equals("") || NgayMattextField.getText().equals("")
+            || NhapSoHoKhautextField.getText().equals("") || NguoiKhaitextField.getText().equals("") || lyDotextField.getText().equals("")
+            )
+        {
+            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
+        }
+        else{
+        
+        
+        try{
                ControllerKhaiTu khaiTuController = new ControllerKhaiTu();
                ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), NguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), NgayMattextField.getText(), lyDotextField.getText(), "user1", NgayKhaitextField.getText());
        
@@ -217,7 +226,7 @@ public class FormBaoTu extends javax.swing.JPanel {
         catch(Exception ex){
         JOptionPane.showMessageDialog(null, "Nhap sai");
         
-    }
+    }}
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed

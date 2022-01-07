@@ -2,9 +2,6 @@ package models;
 
 import java.text.DecimalFormat;
 import java.util.Date;
-import views.swing.table.EventAction;
-import views.swing.table.ModelAction;
-import views.swing.table.ModelProfile;
 
 public class ModelSoHoKhau {
     private String hoVaTenChuHo;
@@ -23,7 +20,7 @@ public class ModelSoHoKhau {
         this.nguoiTao = nguoiTao;
     }
     
-    public Object[] toRowTable(EventAction event) {
+    public Object[] toRowTable() {
 //        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
         return new Object[]{hoVaTenChuHo, diaChi, ngayDangKi, nguoiTao};
     } 

@@ -5,6 +5,7 @@ import java.awt.Component;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
+import models.ModelAction;
 
 public class TableCellAction extends DefaultCellEditor{
     private ModelAction data;
@@ -16,7 +17,7 @@ public class TableCellAction extends DefaultCellEditor{
     @Override
     public Component getTableCellEditorComponent(JTable jtable, Object o, boolean bln, int i, int i1) {
         data = (ModelAction) o;
-        Action cell = new Action(data);
+        Delete cell = new Delete(data);
         cell.setBackground(new Color(239, 244, 255));
         return cell;
     }

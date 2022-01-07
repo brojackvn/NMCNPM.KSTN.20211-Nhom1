@@ -2,6 +2,7 @@ package views.swing.table;
 
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -11,7 +12,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import views.swing.scrollbar.ScrollBarCustom;
-
+import models.ModelAction;
+        
 public class Table extends JTable {
     public Table() {
         setShowHorizontalLines(true);
@@ -22,28 +24,15 @@ public class Table extends JTable {
             @Override
             public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
                 TableHeader header = new TableHeader(o + "");
-//                if (i1 == 4) {
-//                    header.setHorizontalAlignment(JLabel.CENTER);
-//                }
-//                header.setHorizontalAlignment(JLabel.CENTER);
                 return header;
             }     
         });
         setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
-            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean selected, boolean focus, int i, int i1) {
-                if (o instanceof ModelProfile) {
-                    ModelProfile data = (ModelProfile) o;
-                    Profile cell = new Profile(data);
-                    if (selected) {
-                        cell.setBackground(new Color(239,244,255));
-                    } else {
-                        cell.setBackground(Color.WHITE);
-                    }
-                    return cell;
-                } else if (o instanceof ModelAction) {
+            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean selected, boolean focus, int i, int i1) { 
+                if (o instanceof ModelAction) {
                     ModelAction data = (ModelAction) o;
-                    Action cell = new Action(data);
+                    Delete cell = new Delete(data);
                     if (selected) {
                         cell.setBackground(new Color(239,244,255));
                     } else {
@@ -52,7 +41,8 @@ public class Table extends JTable {
                     return cell;
                 } else {
                     Component com = super.getTableCellRendererComponent(jtable, o, selected, focus, i, i1);
-                    setBorder(noFocusBorder);
+                    setBorder(new EmptyBorder(10, 5, 10, 5));
+//                    setBorder(noFocusBorder);
                     com.setForeground(new Color(102,102,102));
                     if (selected) {
                         com.setBackground(new Color(239,244,255));
@@ -62,7 +52,6 @@ public class Table extends JTable {
                     return com;
                 }
             }
-            
         });
     }
 
@@ -79,11 +68,16 @@ public class Table extends JTable {
         DefaultTableModel mod = (DefaultTableModel) getModel();
         mod.addRow(row);
     }
-    
+
     public void removeRow(int row) {
         DefaultTableModel mod = (DefaultTableModel) getModel();
         mod.removeRow(row);
         mod.fireTableStructureChanged();
+    }
+    
+    public void clearRow() {
+        DefaultTableModel mod = (DefaultTableModel) getModel();
+        mod.removeRow(0);
     }
     
     public void fixTable(JScrollPane scroll) {
@@ -92,11 +86,5 @@ public class Table extends JTable {
         JPanel p = new JPanel();
         scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
         scroll.setBorder(new EmptyBorder(5,10,5,10));
-        
-//        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-//        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
-//        for (int x = 0; x < getColumnCount(); x++){
-//            getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
-//        }
     }
 }

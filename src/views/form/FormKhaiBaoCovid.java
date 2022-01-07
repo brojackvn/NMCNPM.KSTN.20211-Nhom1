@@ -253,6 +253,14 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        if (CMCDCovidtextField.getText().equals("") || DiaDiemDiChuyentextField.getText().equals("") || LanTestGanNhattextField.getText().equals("")
+            || ketQuaLanTestGanNhattextField.getText().equals("") || (!HoCamSotRadioButton.isSelected() && !KhongRadioButton.isSelected()) || (!MotMuiTiemRadioButton.isSelected()
+                && !HaiMuiTiemRadioButton.isSelected() && !KhongMuiTiemRadioButton.isSelected()))
+        {
+            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
+        }
+        else{
+           
         try{
         ControllerKhaiBaoCovid khaiBaoCovidController = new ControllerKhaiBaoCovid();
         ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(), Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)), getSelectedButtonText(TinhTrangSucKhoeButtonGroup), LanTestGanNhattextField.getText(), ketQuaLanTestGanNhattextField.getText(), DiaDiemDiChuyentextField.getText(), "user1");
@@ -276,7 +284,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         }
         catch(Exception ex){
         JOptionPane.showMessageDialog(null, "Nhap sai");
-        
+        }
     }
     }//GEN-LAST:event_SaveButtonActionPerformed
 

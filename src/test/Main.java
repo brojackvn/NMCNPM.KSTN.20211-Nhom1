@@ -13,6 +13,7 @@ import views.component.Menu;
 import views.event.EventMenuSelected;
 import views.event.EventShowPopupMenu;
 import views.form.FormBaoTu;
+import views.form.FormCachLy;
 import views.form.FormDangKiHoKhau;
 import views.form.FormDanhMucHoKhau;
 import views.form.FormDanhMucNhanKhau;
@@ -20,7 +21,6 @@ import views.form.FormDanhMucTamTru;
 import views.form.FormDanhMucTamVang;
 import views.form.FormHeThong;
 import views.form.FormHome;
-import views.form.FormKhaiBaoCachLy;
 import views.form.FormKhaiBaoCovid;
 import views.form.FormLichSu;
 import views.form.FormSuaNhanKhau;
@@ -108,7 +108,7 @@ public class Main extends javax.swing.JFrame {
                     if (subMenuIndex == 0) { // Khai báo covid
                         main.showForm(new FormKhaiBaoCovid());
                     } else if (subMenuIndex == 1) { // Khai bao cach ly
-                        main.showForm(new FormKhaiBaoCachLy());
+                        main.showForm(new FormCachLy());
                     } else if (subMenuIndex == 2) { // Truy vết tiep xuc
                         main.showForm(new FormTruyVetTiepXuc());
                     } else if (subMenuIndex == 3) { // Truy vet dia diem

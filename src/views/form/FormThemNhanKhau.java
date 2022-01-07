@@ -30,9 +30,13 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         textFieldNhapSoHoKhau = new views.swing.textfield.TextField();
         searchButton = new views.swing.Button();
         jLabel2 = new javax.swing.JLabel();
-        textField1 = new views.swing.textfield.TextField();
-        textField3 = new views.swing.textfield.TextField();
+        textField13 = new views.swing.textfield.TextField();
+        textField14 = new views.swing.textfield.TextField();
+        textField16 = new views.swing.textfield.TextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        searchButton1 = new views.swing.Button();
         textField4 = new views.swing.textfield.TextField();
+        textField3 = new views.swing.textfield.TextField();
         textField5 = new views.swing.textfield.TextField();
         textField6 = new views.swing.textfield.TextField();
         textField7 = new views.swing.textfield.TextField();
@@ -41,11 +45,9 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         textField10 = new views.swing.textfield.TextField();
         textField11 = new views.swing.textfield.TextField();
         textField12 = new views.swing.textfield.TextField();
-        textField13 = new views.swing.textfield.TextField();
-        textField14 = new views.swing.textfield.TextField();
-        textField16 = new views.swing.textfield.TextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        searchButton1 = new views.swing.Button();
+        textField15 = new views.swing.textfield.TextField();
+        textField17 = new views.swing.textfield.TextField();
+        textField18 = new views.swing.textfield.TextField();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -77,93 +79,20 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel2.setText("THÔNG TIN NHÂN KHẨU");
+        jLabel2.setText("THÊM THÔNG TIN NHÂN KHẨU");
 
-        textField1.setEditable(false);
-        textField1.setBackground(new java.awt.Color(245, 245, 245));
-        textField1.setText(" ");
-        textField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField1.setLabelText("QUAN HỆ VỚI CHỦ HỘ");
-
-        textField3.setEditable(false);
-        textField3.setBackground(new java.awt.Color(245, 245, 245));
-        textField3.setText(" ");
-        textField3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField3.setLabelText("TÊN GỌI KHÁC");
-
-        textField4.setEditable(false);
-        textField4.setBackground(new java.awt.Color(245, 245, 245));
-        textField4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField4.setLabelText("HỌ VÀ TÊN");
-        textField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField4ActionPerformed(evt);
-            }
-        });
-
-        textField5.setEditable(false);
-        textField5.setBackground(new java.awt.Color(245, 245, 245));
-        textField5.setText(" ");
-        textField5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField5.setLabelText("NGÀY SINH");
-
-        textField6.setEditable(false);
-        textField6.setBackground(new java.awt.Color(245, 245, 245));
-        textField6.setText(" ");
-        textField6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField6.setLabelText("GIỚI TÍNH");
-
-        textField7.setEditable(false);
-        textField7.setBackground(new java.awt.Color(245, 245, 245));
-        textField7.setText(" ");
-        textField7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField7.setLabelText("DÂN TỘC");
-
-        textField8.setEditable(false);
-        textField8.setBackground(new java.awt.Color(245, 245, 245));
-        textField8.setText(" ");
-        textField8.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField8.setLabelText("TÔN GIÁO");
-
-        textField9.setEditable(false);
-        textField9.setBackground(new java.awt.Color(245, 245, 245));
-        textField9.setText(" ");
-        textField9.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField9.setLabelText("QUỐC TỊCH");
-
-        textField10.setEditable(false);
-        textField10.setBackground(new java.awt.Color(245, 245, 245));
-        textField10.setText(" ");
-        textField10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField10.setLabelText("TRÌNH ĐỘ HỌC VẤN");
-
-        textField11.setEditable(false);
-        textField11.setBackground(new java.awt.Color(245, 245, 245));
-        textField11.setText(" ");
-        textField11.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField11.setLabelText("TRÌNH ĐỘ CHUYÊN MÔN");
-
-        textField12.setEditable(false);
-        textField12.setBackground(new java.awt.Color(245, 245, 245));
-        textField12.setText(" ");
-        textField12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textField12.setLabelText("NGHỀ NGHIỆP HIỆN TẠI");
-
-        textField13.setEditable(false);
         textField13.setBackground(new java.awt.Color(245, 245, 245));
-        textField13.setText(" ");
+        textField13.setToolTipText("");
         textField13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         textField13.setLabelText("NƠI SINH");
 
-        textField14.setEditable(false);
         textField14.setBackground(new java.awt.Color(245, 245, 245));
-        textField14.setText(" ");
+        textField14.setToolTipText("");
         textField14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         textField14.setLabelText("QUÊ QUÁN");
 
-        textField16.setEditable(false);
         textField16.setBackground(new java.awt.Color(245, 245, 245));
-        textField16.setText(" ");
+        textField16.setToolTipText("");
         textField16.setAutoscrolls(false);
         textField16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         textField16.setLabelText("CHỖ Ở HIỆN TẠI");
@@ -180,6 +109,100 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
             }
         });
 
+        textField4.setBackground(new java.awt.Color(245, 245, 245));
+        textField4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField4.setLabelText("QUAN HỆ VỚI CHỦ HỘ");
+
+        textField3.setBackground(new java.awt.Color(245, 245, 245));
+        textField3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField3.setLabelText("HỌ VÀ TÊN");
+        textField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField3ActionPerformed(evt);
+            }
+        });
+
+        textField5.setBackground(new java.awt.Color(245, 245, 245));
+        textField5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField5.setLabelText("TÊN GỌI KHÁC");
+        textField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField5ActionPerformed(evt);
+            }
+        });
+
+        textField6.setBackground(new java.awt.Color(245, 245, 245));
+        textField6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField6.setLabelText("CMND/CCCD");
+
+        textField7.setBackground(new java.awt.Color(245, 245, 245));
+        textField7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField7.setLabelText("NGÀY SINH");
+        textField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField7ActionPerformed(evt);
+            }
+        });
+
+        textField8.setBackground(new java.awt.Color(245, 245, 245));
+        textField8.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField8.setLabelText("GIỚI TÍNH");
+        textField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField8ActionPerformed(evt);
+            }
+        });
+
+        textField9.setBackground(new java.awt.Color(245, 245, 245));
+        textField9.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField9.setLabelText("QUỐC TỊCH");
+
+        textField10.setBackground(new java.awt.Color(245, 245, 245));
+        textField10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField10.setLabelText("TÔN GIÁO");
+        textField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField10ActionPerformed(evt);
+            }
+        });
+
+        textField11.setBackground(new java.awt.Color(245, 245, 245));
+        textField11.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField11.setLabelText("DÂN TỘC");
+        textField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField11ActionPerformed(evt);
+            }
+        });
+
+        textField12.setBackground(new java.awt.Color(245, 245, 245));
+        textField12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField12.setLabelText("TRÌNH ĐỘ HỌC VẤN");
+
+        textField15.setBackground(new java.awt.Color(245, 245, 245));
+        textField15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField15.setLabelText("NGHỀ NGHIỆP HIỆN TẠI");
+        textField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField15ActionPerformed(evt);
+            }
+        });
+
+        textField17.setBackground(new java.awt.Color(245, 245, 245));
+        textField17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField17.setLabelText("TRÌNH ĐỘ CHUYÊN MÔN");
+        textField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField17ActionPerformed(evt);
+            }
+        });
+
+        textField18.setBackground(new java.awt.Color(245, 245, 245));
+        textField18.setToolTipText("");
+        textField18.setAutoscrolls(false);
+        textField18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField18.setLabelText("GHI CHÚ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -190,48 +213,48 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator2)
+                    .addComponent(textField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 161, Short.MAX_VALUE)
                         .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSeparator2)
-                    .addComponent(textField16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(textField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(53, 53, 53)
-                        .addComponent(textField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(54, 54, 54)
-                        .addComponent(textField12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 161, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(textField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(28, 28, 28)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textField9, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(textField18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -239,40 +262,45 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -290,9 +318,37 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_searchButton1ActionPerformed
 
-    private void textField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField4ActionPerformed
+    private void textField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField4ActionPerformed
+    }//GEN-LAST:event_textField5ActionPerformed
+
+    private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField3ActionPerformed
+
+    private void textField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField7ActionPerformed
+
+    private void textField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField8ActionPerformed
+
+    private void textField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField10ActionPerformed
+
+    private void textField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField11ActionPerformed
+
+    private void textField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField15ActionPerformed
+
+    private void textField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField17ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -301,13 +357,15 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private views.swing.Button searchButton;
     private views.swing.Button searchButton1;
-    private views.swing.textfield.TextField textField1;
     private views.swing.textfield.TextField textField10;
     private views.swing.textfield.TextField textField11;
     private views.swing.textfield.TextField textField12;
     private views.swing.textfield.TextField textField13;
     private views.swing.textfield.TextField textField14;
+    private views.swing.textfield.TextField textField15;
     private views.swing.textfield.TextField textField16;
+    private views.swing.textfield.TextField textField17;
+    private views.swing.textfield.TextField textField18;
     private views.swing.textfield.TextField textField3;
     private views.swing.textfield.TextField textField4;
     private views.swing.textfield.TextField textField5;

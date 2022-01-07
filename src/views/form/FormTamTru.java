@@ -247,7 +247,14 @@ public class FormTamTru extends javax.swing.JPanel {
     }//GEN-LAST:event_ThoiHantextFieldActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-      
+        if (CMCDtextField.getText().equals("") || DiaChiThuongTrutextField.getText().equals("") || HoVaTentextField.getText().equals("") || NgaySinhtextField.getText().equals("")
+            || LyDotextField.getText().equals("") || NgayCaptextField.equals("") || ThoiHantextField.equals("") || diaChiTamTrutextField.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "BẠN CHƯA NHẬP ĐỦ NHỮNG TRƯỜNG CẦN THIẾT");
+        }    
+        else{        
+                
+        
         try {
             ControllerTamTru tamTruController = new ControllerTamTru();
             ModelTamTru x = new ModelTamTru();
@@ -276,7 +283,7 @@ public class FormTamTru extends javax.swing.JPanel {
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Nhập sai");
         }
-    
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
