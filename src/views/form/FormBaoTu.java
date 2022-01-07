@@ -13,12 +13,12 @@ import models.ModelKhaiTu;
 
 /**
  *
- * @author HO ANH
+ * @author huutu
  */
 public class FormBaoTu extends javax.swing.JPanel {
 
     /**
-     * Creates new form FormBaoTu
+     * Creates new form FormBaoTu1
      */
     public FormBaoTu() {
         initComponents();
@@ -33,17 +33,41 @@ public class FormBaoTu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NhapSoHoKhautextField = new views.swing.textfield.TextField();
-        NgayMattextField = new views.swing.textfield.TextField();
-        NgayKhaitextField = new views.swing.textfield.TextField();
-        lyDotextField = new views.swing.textfield.TextField();
-        SaveButton = new views.swing.Button();
-        InButton = new views.swing.Button();
-        CMNDCCCDBaoTutextField = new views.swing.textfield.TextField();
-        NguoiKhaitextField = new views.swing.textfield.TextField();
         jLabel1 = new javax.swing.JLabel();
+        CMNDCCCDBaoTutextField = new views.swing.textfield.TextField();
+        ngayKhaitextField = new views.swing.textfield.TextField();
+        NhapSoHoKhautextField = new views.swing.textfield.TextField();
+        ngayMattextField = new views.swing.textfield.TextField();
+        lyDotextField = new views.swing.textfield.TextField();
+        nguoiKhaitextField = new views.swing.textfield.TextField();
+        inButton = new views.swing.Button();
+        saveButton = new views.swing.Button();
 
         setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setText("BÁO TỬ");
+
+        CMNDCCCDBaoTutextField.setBackground(new java.awt.Color(245, 245, 245));
+        CMNDCCCDBaoTutextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        CMNDCCCDBaoTutextField.setLabelText("NHẬP SỐ CMND/CCCD");
+        CMNDCCCDBaoTutextField.setOpaque(false);
+        CMNDCCCDBaoTutextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CMNDCCCDBaoTutextFieldActionPerformed(evt);
+            }
+        });
+
+        ngayKhaitextField.setBackground(new java.awt.Color(245, 245, 245));
+        ngayKhaitextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        ngayKhaitextField.setLabelText("NGÀY KHAI");
+        ngayKhaitextField.setOpaque(false);
+        ngayKhaitextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ngayKhaitextFieldActionPerformed(evt);
+            }
+        });
 
         NhapSoHoKhautextField.setBackground(new java.awt.Color(245, 245, 245));
         NhapSoHoKhautextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -55,23 +79,13 @@ public class FormBaoTu extends javax.swing.JPanel {
             }
         });
 
-        NgayMattextField.setBackground(new java.awt.Color(245, 245, 245));
-        NgayMattextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        NgayMattextField.setLabelText("NGÀY MẤT");
-        NgayMattextField.setOpaque(false);
-        NgayMattextField.addActionListener(new java.awt.event.ActionListener() {
+        ngayMattextField.setBackground(new java.awt.Color(245, 245, 245));
+        ngayMattextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        ngayMattextField.setLabelText("NGÀY MẤT");
+        ngayMattextField.setOpaque(false);
+        ngayMattextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NgayMattextFieldActionPerformed(evt);
-            }
-        });
-
-        NgayKhaitextField.setBackground(new java.awt.Color(245, 245, 245));
-        NgayKhaitextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        NgayKhaitextField.setLabelText("NGÀY KHAI");
-        NgayKhaitextField.setOpaque(false);
-        NgayKhaitextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NgayKhaitextFieldActionPerformed(evt);
+                ngayMattextFieldActionPerformed(evt);
             }
         });
 
@@ -85,182 +99,168 @@ public class FormBaoTu extends javax.swing.JPanel {
             }
         });
 
-        SaveButton.setBackground(new java.awt.Color(89, 89, 255));
-        SaveButton.setForeground(new java.awt.Color(255, 255, 255));
-        SaveButton.setToolTipText("");
-        SaveButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        SaveButton.setLabel("LƯU");
-        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+        nguoiKhaitextField.setBackground(new java.awt.Color(245, 245, 245));
+        nguoiKhaitextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        nguoiKhaitextField.setLabelText("NGƯỜI KHAI");
+        nguoiKhaitextField.setOpaque(false);
+        nguoiKhaitextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveButtonActionPerformed(evt);
+                nguoiKhaitextFieldActionPerformed(evt);
             }
         });
 
-        InButton.setBackground(new java.awt.Color(89, 89, 255));
-        InButton.setForeground(new java.awt.Color(255, 255, 255));
-        InButton.setToolTipText("");
-        InButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        InButton.setLabel("IN");
-        InButton.addActionListener(new java.awt.event.ActionListener() {
+        inButton.setBackground(new java.awt.Color(89, 89, 255));
+        inButton.setForeground(new java.awt.Color(255, 255, 255));
+        inButton.setToolTipText("");
+        inButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        inButton.setLabel("LƯU");
+        inButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InButtonActionPerformed(evt);
+                inButtonActionPerformed(evt);
             }
         });
 
-        CMNDCCCDBaoTutextField.setBackground(new java.awt.Color(245, 245, 245));
-        CMNDCCCDBaoTutextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        CMNDCCCDBaoTutextField.setLabelText("NHẬP SỐ CMND/CCCD");
-        CMNDCCCDBaoTutextField.setOpaque(false);
-        CMNDCCCDBaoTutextField.addActionListener(new java.awt.event.ActionListener() {
+        saveButton.setBackground(new java.awt.Color(89, 89, 255));
+        saveButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveButton.setToolTipText("");
+        saveButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        saveButton.setLabel("LƯU");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CMNDCCCDBaoTutextFieldActionPerformed(evt);
+                saveButtonActionPerformed(evt);
             }
         });
-
-        NguoiKhaitextField.setBackground(new java.awt.Color(245, 245, 245));
-        NguoiKhaitextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        NguoiKhaitextField.setLabelText("NGƯỜI KHAI");
-        NguoiKhaitextField.setOpaque(false);
-        NguoiKhaitextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NguoiKhaitextFieldActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("BÁO TỬ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(NguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(522, 522, 522)
-                                .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(94, 94, 94)
-                                .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(NhapSoHoKhautextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(104, 104, 104))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(NgayKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(CMNDCCCDBaoTutextField, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
-                                    .addComponent(NgayMattextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(nguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(ngayKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ngayMattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(NhapSoHoKhautextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(93, 93, 93)
+                                    .addComponent(CMNDCCCDBaoTutextField, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 870, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(148, 148, 148)
+                .addComponent(inButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CMNDCCCDBaoTutextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NhapSoHoKhautextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CMNDCCCDBaoTutextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NhapSoHoKhautextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NgayKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NgayMattextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ngayKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ngayMattextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82)
+                    .addComponent(nguoiKhaitextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lyDotextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                    .addComponent(inButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NhapSoHoKhautextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhapSoHoKhautextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NhapSoHoKhautextFieldActionPerformed
-
-    private void NgayMattextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NgayMattextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NgayMattextFieldActionPerformed
-
-    private void NgayKhaitextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NgayKhaitextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NgayKhaitextFieldActionPerformed
-
-    private void lyDotextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lyDotextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lyDotextFieldActionPerformed
-
-    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        if (CMNDCCCDBaoTutextField.getText().equals("") || NgayKhaitextField.getText().equals("") || NgayMattextField.getText().equals("")
-            || NhapSoHoKhautextField.getText().equals("") || NguoiKhaitextField.getText().equals("") || lyDotextField.getText().equals("")
-            )
-        {
-            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
-        }
-        else{
-        
-        
-        try{
-               ControllerKhaiTu khaiTuController = new ControllerKhaiTu();
-               ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), NguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), NgayMattextField.getText(), lyDotextField.getText(), "user1", NgayKhaitextField.getText());
-       
-        try {
-            khaiTuController.insertKhaiTu(x);
-        } catch (SQLException ex) {
-            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        CMNDCCCDBaoTutextField.setText("");
-        NguoiKhaitextField.setText("");
-        NhapSoHoKhautextField.setText("");
-        NgayMattextField.setText("");
-        lyDotextField.setText("");
-        NgayKhaitextField.setText("");
-        }
-        catch(Exception ex){
-        JOptionPane.showMessageDialog(null, "Nhap sai");
-        
-    }}
-    }//GEN-LAST:event_SaveButtonActionPerformed
-
-    private void InButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InButtonActionPerformed
 
     private void CMNDCCCDBaoTutextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CMNDCCCDBaoTutextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CMNDCCCDBaoTutextFieldActionPerformed
 
-    private void NguoiKhaitextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NguoiKhaitextFieldActionPerformed
+    private void ngayKhaitextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ngayKhaitextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NguoiKhaitextFieldActionPerformed
+    }//GEN-LAST:event_ngayKhaitextFieldActionPerformed
+
+    private void NhapSoHoKhautextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhapSoHoKhautextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NhapSoHoKhautextFieldActionPerformed
+
+    private void ngayMattextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ngayMattextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ngayMattextFieldActionPerformed
+
+    private void lyDotextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lyDotextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lyDotextFieldActionPerformed
+
+    private void nguoiKhaitextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nguoiKhaitextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nguoiKhaitextFieldActionPerformed
+
+    private void inButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inButtonActionPerformed
+        
+    }//GEN-LAST:event_inButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // TODO add your handling code here:
+        if (CMNDCCCDBaoTutextField.getText().equals("") || ngayKhaitextField.getText().equals("") || ngayMattextField.getText().equals("")
+            || NhapSoHoKhautextField.getText().equals("") || nguoiKhaitextField.getText().equals("") || lyDotextField.getText().equals("")
+        )
+        {
+            JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
+        }
+        else{
+
+            try{
+                ControllerKhaiTu khaiTuController = new ControllerKhaiTu();
+                ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), nguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), ngayMattextField.getText(), lyDotextField.getText(), "user1", ngayKhaitextField.getText());
+
+                try {
+                    khaiTuController.insertKhaiTu(x);
+                } catch (SQLException ex) {
+                    Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(FormKhaiBaoCovid.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                CMNDCCCDBaoTutextField.setText("");
+                nguoiKhaitextField.setText("");
+                NhapSoHoKhautextField.setText("");
+                ngayMattextField.setText("");
+                lyDotextField.setText("");
+                ngayKhaitextField.setText("");
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Nhap sai");
+
+            }}
+    }//GEN-LAST:event_saveButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.swing.textfield.TextField CMNDCCCDBaoTutextField;
-    private views.swing.Button InButton;
-    private views.swing.textfield.TextField NgayKhaitextField;
-    private views.swing.textfield.TextField NgayMattextField;
-    private views.swing.textfield.TextField NguoiKhaitextField;
     private views.swing.textfield.TextField NhapSoHoKhautextField;
-    private views.swing.Button SaveButton;
+    private views.swing.Button inButton;
     private javax.swing.JLabel jLabel1;
     private views.swing.textfield.TextField lyDotextField;
+    private views.swing.textfield.TextField ngayKhaitextField;
+    private views.swing.textfield.TextField ngayMattextField;
+    private views.swing.textfield.TextField nguoiKhaitextField;
+    private views.swing.Button saveButton;
     // End of variables declaration//GEN-END:variables
 }
