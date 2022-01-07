@@ -67,6 +67,7 @@ public class FormCachLy extends javax.swing.JPanel {
         HaiLanTest = new javax.swing.JRadioButton();
         BaLanTest = new javax.swing.JRadioButton();
         KhongLanTest = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -217,6 +218,10 @@ public class FormCachLy extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setText("KHAI BÁO THÔNG TIN CÁCH LY");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,48 +249,48 @@ public class FormCachLy extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Kieu1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(32, 32, 32)
+                                        .addComponent(F0RadioButton)
+                                        .addGap(39, 39, 39)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(171, 171, 171)
-                                                .addComponent(F2RadioButton))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(F0RadioButton)
-                                                .addGap(39, 39, 39)
-                                                .addComponent(F1RadioButton))))
+                                            .addComponent(MotLanTest)
+                                            .addComponent(F1RadioButton))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(HaiLanTest)
+                                            .addComponent(F2RadioButton)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Kieu, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(32, 32, 32)
                                         .addComponent(KhongLanTest)
-                                        .addGap(42, 42, 42)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(171, 171, 171)
-                                                .addComponent(BaLanTest))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(MotLanTest)
-                                                .addGap(39, 39, 39)
-                                                .addComponent(HaiLanTest)))))
+                                        .addGap(213, 213, 213)
+                                        .addComponent(BaLanTest)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(DiaDiemDiChuyentextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
                 .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(noiCachLytextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(thoiGianBatDautextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Kieu1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(F0RadioButton)
                         .addComponent(F1RadioButton)
                         .addComponent(F2RadioButton)))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Kieu)
                     .addComponent(MotLanTest)
@@ -298,7 +303,7 @@ public class FormCachLy extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -394,6 +399,7 @@ public class FormCachLy extends javax.swing.JPanel {
     private javax.swing.JLabel Kieu1;
     private javax.swing.JRadioButton MotLanTest;
     private views.swing.Button SaveButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.ButtonGroup mucDoCachLyButtonGroup;
     private views.swing.textfield.TextField noiCachLytextField;
     private javax.swing.ButtonGroup soLanTestButtonGroup;

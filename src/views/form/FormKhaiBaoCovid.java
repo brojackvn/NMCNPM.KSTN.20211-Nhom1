@@ -66,6 +66,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         CMCDCovidtextField = new views.swing.textfield.TextField();
         LanTestGanNhattextField = new views.swing.textfield.TextField();
         ketQuaLanTestGanNhattextField = new views.swing.textfield.TextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -181,6 +182,10 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setText("KHAI BÁO Y TẾ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,17 +208,17 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(HoCamSotRadioButton)
                                         .addGap(27, 27, 27)
-                                        .addComponent(KhongRadioButton)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(KhongMuiTiemRadioButton)
-                                .addGap(50, 50, 50)
-                                .addComponent(MotMuiTiemRadioButton)
-                                .addGap(50, 50, 50)
-                                .addComponent(HaiMuiTiemRadioButton))
-                            .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(KhongRadioButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(SoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(KhongMuiTiemRadioButton)
+                                        .addGap(50, 50, 50)
+                                        .addComponent(MotMuiTiemRadioButton)
+                                        .addGap(50, 50, 50)
+                                        .addComponent(HaiMuiTiemRadioButton))
+                                    .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -221,18 +226,24 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(InButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(CMCDCovidtextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TinhTrangSucKhoe)
                     .addComponent(HoCamSotRadioButton)
                     .addComponent(KhongRadioButton))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SoMuiTiem)
                     .addComponent(KhongMuiTiemRadioButton)
@@ -240,7 +251,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
                     .addComponent(HaiMuiTiemRadioButton))
                 .addGap(18, 18, 18)
                 .addComponent(LanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(ketQuaLanTestGanNhattextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DiaDiemDiChuyentextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,6 +344,7 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
     private javax.swing.ButtonGroup SoMuiTiemButton;
     private javax.swing.JLabel TinhTrangSucKhoe;
     private javax.swing.ButtonGroup TinhTrangSucKhoeButtonGroup;
+    private javax.swing.JLabel jLabel1;
     private views.swing.textfield.TextField ketQuaLanTestGanNhattextField;
     // End of variables declaration//GEN-END:variables
 }
