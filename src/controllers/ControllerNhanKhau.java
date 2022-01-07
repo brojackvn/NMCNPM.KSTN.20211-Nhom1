@@ -1,26 +1,31 @@
 package controllers;
 
+import connection.ConnectDatabase;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ControllerNhanKhau {
-    //Ví dụ:
-    /*
-    // Tham số truyền vào: Student (đầy đủ các thuộc tính của student)
-    // Trả về: true nếu update thành công và ngược lại
-    // Dùng để chèn một student vào database
-    // Người tạo: Hồ Anh
-    public boolean insert(Student student) throws SQLException, ClassNotFoundException{
-        String sql = "INSERT INTO `sinhvien`(`MaSV`, `HoTen`, `Email`, `SoDT`, `GioiTinh`, `DiaChi`) VALUES (?,?,?,?,?,?)";
+       public boolean checkCMNDIsExist(String CMND) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM nhan_khau";
         try (
-                Connection connection = DatabaseHelper.openConnection();
-                PreparedStatement pstm = connection.prepareStatement(sql);
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt = con.prepareStatement(sql);
         ) {
-            pstm.setString(1,student.getMaSV());
-            pstm.setString(2, student.getHoTen());
-            pstm.setString(3, student.getEmail());
-            pstm.setString(4, student.getSoDT());
-            pstm.setInt(5, student.getGioiTinh());
-            pstm.setString(6, student.getDiaChi());
-            return (pstm.executeUpdate() > 0 ? true : false);
+           
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+      
+                
+                if(rs.getString("CMND").equals(CMND)){
+             
+                return true;
+                }
+              
+                
+            }
+            return false;
         }
     }
-    */
 }

@@ -4,6 +4,7 @@
  */
 package views.form;
 
+import controllers.ControllerNhanKhau;
 import controllers.ControllerTruyVetDiaDiem;
 import controllers.ControllerTruyVetTiepXuc;
 import java.sql.SQLException;
@@ -150,7 +151,9 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
             
         System.out.print(table1.getRowCount()+ "rowcount");
         try {
-           
+            ControllerNhanKhau checkCMND = new ControllerNhanKhau();
+            if (checkCMND.checkCMNDIsExist(CMNDtextField.getText()))
+            {
             ModelTruyVetTiepXuc x = new ModelTruyVetTiepXuc();
             x.setCMND(CMNDtextField.getText());
             ControllerTruyVetTiepXuc truyVetTiepXuc = new ControllerTruyVetTiepXuc();
@@ -177,6 +180,10 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
 //            truyVetTiepXuc.findNguoiByDiaDiem(mangDiaDiemTiepXuc[0]);
             
             CMNDtextField.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "CHỨNG MINH NHÂN DÂN KHÔNG TỒN TẠI");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(FormTruyVetTiepXuc.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
