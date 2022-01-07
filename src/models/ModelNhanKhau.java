@@ -1,6 +1,6 @@
 package models;
 
-import views.swing.table.EventAction;
+import views.event.EventActionFormXoa;
 
 public class ModelNhanKhau {
     private String soHoKhau;
@@ -28,6 +28,22 @@ public class ModelNhanKhau {
     
     public ModelNhanKhau() {
     }
+
+    /**
+     *
+     * @param hoVaTen
+     * @param ngaySinh
+     * @param gioiTinh
+     * @param quanHeChuHo
+     * @param CMND
+     */
+    public ModelNhanKhau(String CMND, String hoVaTen, String ngaySinh, int gioiTinh, String quanHeChuHo) {
+        this.CMND = CMND;
+        this.hoVaTen = hoVaTen;
+        this.ngaySinh = ngaySinh;
+        this.gioiTinh = gioiTinh;
+        this.quanHeChuHo = quanHeChuHo;
+    }
     
     public ModelNhanKhau(String hoVaTen, String ngaySinh, int gioiTinh, String quanHeChuHo , String noiOHienTai) {
         this.hoVaTen = hoVaTen;
@@ -41,6 +57,10 @@ public class ModelNhanKhau {
         return new Object[]{hoVaTen, ngaySinh, gioiTinh, quanHeChuHo, noiOHienTai};
     } 
 
+    public Object[] toRowTableFormXoaNhanKhau(EventActionFormXoa event) {
+        return new Object[]{CMND, hoVaTen, ngaySinh, gioiTinh, quanHeChuHo, new ModelAction(this, event)};
+    } 
+    
     public String getSoHoKhau() {
         return soHoKhau;
     }

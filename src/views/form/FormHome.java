@@ -8,16 +8,13 @@ import javax.swing.border.EmptyBorder;
 import test.Main;
 import views.dialog.Message;
 import views.model.ModelCard;
-import views.model.ModelStudent;
 import views.swing.icon.GoogleMaterialDesignIcons;
 import views.swing.icon.IconFontSwing;
 import views.swing.noticeboard.ModelNoticeBoard;
-import views.swing.table.EventAction;
 
 public class FormHome extends javax.swing.JPanel {
     public FormHome() {
         initComponents();
-        table1.fixTable(jScrollPane1);
         setOpaque(false);
         initData();
     }
@@ -25,41 +22,8 @@ public class FormHome extends javax.swing.JPanel {
     private void initData() {
         initCardData();
         initNoticeBoard();
-        initTableData();
     }
-    
-    
-    // Cách để khởi tạo 1 bảng
-    private void initTableData() {
-        EventAction eventAction = new EventAction() {
-            @Override
-            public void delete(ModelStudent student) {
-                showMessage("Delete Student: " + student.getName());
-                System.out.println(table1.getSelectedRow());
-                table1.removeRow(table1.getSelectedRow());
-            }
-
-            @Override
-            public void update(ModelStudent student) {
-                System.out.println(table1.getSelectedRow());
-                showMessage("Update Student: " + student.getName());
-            }
-        };
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile.jpg")), "Jonh", "Male", "Java", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile1.jpg")), "Dara", "Male", "C++", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "kkkk", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "llll", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "mmmm", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "nnnn", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "tttt", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "uuuu", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-        table1.addRow(new ModelStudent(new ImageIcon(getClass().getResource("/resources/profile2.jpg")), "Bora", "Male", "C#", 300).toRowTable(eventAction));
-    }
-    
+  
     private void initCardData() {
         Icon icon = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255,255,255,100), new Color(255,255,255,15));
         card1.setData(new ModelCard("Hộ gia đình", 100, 20, icon));
@@ -69,7 +33,7 @@ public class FormHome extends javax.swing.JPanel {
         card5.setData(new ModelCard("Nhân Khẩu", 500, 100, null));
     }
     
-       private void initNoticeBoard() {
+    private void initNoticeBoard() {
         noticeBoard.addDate("04/10/2021");
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Hidemode", "Now", "Sets the hide mode for the component. If the hide mode has been specified in the This hide mode can be overridden by the component constraint."));
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(218, 49, 238), "Tag", "2h ago", "Tags the component with metadata name that can be used by the layout engine. The tag can be used to explain for the layout manager what the components is showing, such as an OK or Cancel button."));
@@ -99,9 +63,6 @@ public class FormHome extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        table1 = new views.swing.table.Table();
 
         setOpaque(false);
 
@@ -159,50 +120,15 @@ public class FormHome extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(76, 76, 76));
-        jLabel4.setText("Danh sách hộ khẩu");
-        jLabel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
-
-        table1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Tên", "Giới tính", "Khóa học", "Phí", "Action"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table1.setRowMargin(0);
-        jScrollPane1.setViewportView(table1);
-        if (table1.getColumnModel().getColumnCount() > 0) {
-            table1.getColumnModel().getColumn(0).setPreferredWidth(150);
-        }
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1))
+            .addGap(0, 482, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -240,7 +166,6 @@ public class FormHome extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private views.component.Card card1;
     private views.component.Card card4;
@@ -248,11 +173,8 @@ public class FormHome extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private views.swing.noticeboard.NoticeBoard noticeBoard;
-    private views.swing.table.Table table1;
     // End of variables declaration//GEN-END:variables
 }

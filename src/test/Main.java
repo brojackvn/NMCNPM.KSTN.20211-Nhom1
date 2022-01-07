@@ -21,7 +21,6 @@ import views.form.FormDanhMucTamTru;
 import views.form.FormDanhMucTamVang;
 import views.form.FormHeThong;
 import views.form.FormHome;
-import views.form.FormKhaiBaoCachLy;
 import views.form.FormKhaiBaoCovid;
 import views.form.FormLichSu;
 import views.form.FormSuaNhanKhau;

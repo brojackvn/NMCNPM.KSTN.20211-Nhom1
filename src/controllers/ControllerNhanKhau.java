@@ -22,5 +22,5 @@ public class ControllerNhanKhau {
             return (pstm.executeUpdate() > 0 ? true : false);
         }
     }
-    */  
+    */
 }

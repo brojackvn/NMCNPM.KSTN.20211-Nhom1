@@ -38,13 +38,13 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         searchButton = new views.swing.Button();
         textFieldhoVaTenChuHo = new views.swing.textfield.TextField();
-        textFieldDiaChi = new views.swing.textfield.TextField();
-        textFieldNgayDen = new views.swing.textfield.TextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new views.swing.table.Table();
         jLabel2 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         searchButton1 = new views.swing.Button();
+        textFieldhoVaTenChuHo1 = new views.swing.textfield.TextField();
+        textFieldhoVaTenChuHo2 = new views.swing.textfield.TextField();
 
         setOpaque(false);
 
@@ -87,30 +87,6 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
             }
         });
 
-        textFieldDiaChi.setEditable(false);
-        textFieldDiaChi.setBackground(new java.awt.Color(245, 245, 245));
-        textFieldDiaChi.setText(" ");
-        textFieldDiaChi.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textFieldDiaChi.setLabelText("NGÀY ĐẾN");
-        textFieldDiaChi.setOpaque(false);
-        textFieldDiaChi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldDiaChiActionPerformed(evt);
-            }
-        });
-
-        textFieldNgayDen.setEditable(false);
-        textFieldNgayDen.setBackground(new java.awt.Color(245, 245, 245));
-        textFieldNgayDen.setText(" ");
-        textFieldNgayDen.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textFieldNgayDen.setLabelText("ĐỊA CHỈ");
-        textFieldNgayDen.setOpaque(false);
-        textFieldNgayDen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldNgayDenActionPerformed(evt);
-            }
-        });
-
         table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -150,6 +126,30 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
             }
         });
 
+        textFieldhoVaTenChuHo1.setEditable(false);
+        textFieldhoVaTenChuHo1.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldhoVaTenChuHo1.setText(" ");
+        textFieldhoVaTenChuHo1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textFieldhoVaTenChuHo1.setLabelText("ĐỊA CHỈ");
+        textFieldhoVaTenChuHo1.setOpaque(false);
+        textFieldhoVaTenChuHo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldhoVaTenChuHo1ActionPerformed(evt);
+            }
+        });
+
+        textFieldhoVaTenChuHo2.setEditable(false);
+        textFieldhoVaTenChuHo2.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldhoVaTenChuHo2.setText(" ");
+        textFieldhoVaTenChuHo2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textFieldhoVaTenChuHo2.setLabelText("NGÀY ĐĂNG KÍ");
+        textFieldhoVaTenChuHo2.setOpaque(false);
+        textFieldhoVaTenChuHo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldhoVaTenChuHo2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -162,17 +162,10 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textFieldNgayDen, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textFieldDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textFieldhoVaTenChuHo, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 154, Short.MAX_VALUE)
                         .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)
@@ -191,6 +184,13 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textFieldhoVaTenChuHo2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldhoVaTenChuHo1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldhoVaTenChuHo, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,19 +205,19 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(textFieldhoVaTenChuHo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textFieldNgayDen, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldhoVaTenChuHo1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textFieldDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                .addComponent(textFieldhoVaTenChuHo2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -235,17 +235,17 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldhoVaTenChuHoActionPerformed
 
-    private void textFieldDiaChiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldDiaChiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldDiaChiActionPerformed
-
-    private void textFieldNgayDenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNgayDenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldNgayDenActionPerformed
-
     private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_searchButton1ActionPerformed
+
+    private void textFieldhoVaTenChuHo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldhoVaTenChuHo1ActionPerformed
+
+    private void textFieldhoVaTenChuHo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldhoVaTenChuHo2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,9 +257,9 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     private views.swing.Button searchButton;
     private views.swing.Button searchButton1;
     private views.swing.table.Table table1;
-    private views.swing.textfield.TextField textFieldDiaChi;
-    private views.swing.textfield.TextField textFieldNgayDen;
     private views.swing.textfield.TextField textFieldNhapSoHoKhau;
     private views.swing.textfield.TextField textFieldhoVaTenChuHo;
+    private views.swing.textfield.TextField textFieldhoVaTenChuHo1;
+    private views.swing.textfield.TextField textFieldhoVaTenChuHo2;
     // End of variables declaration//GEN-END:variables
 }

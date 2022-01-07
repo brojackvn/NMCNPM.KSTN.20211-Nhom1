@@ -26,19 +26,371 @@ public class FormSuaNhanKhau extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        textFieldNhapSoHoKhau = new views.swing.textfield.TextField();
+        searchButton = new views.swing.Button();
+        jLabel2 = new javax.swing.JLabel();
+        textField13 = new views.swing.textfield.TextField();
+        textField14 = new views.swing.textfield.TextField();
+        textField16 = new views.swing.textfield.TextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        searchButton1 = new views.swing.Button();
+        textField4 = new views.swing.textfield.TextField();
+        textField3 = new views.swing.textfield.TextField();
+        textField5 = new views.swing.textfield.TextField();
+        textField6 = new views.swing.textfield.TextField();
+        textField7 = new views.swing.textfield.TextField();
+        textField8 = new views.swing.textfield.TextField();
+        textField9 = new views.swing.textfield.TextField();
+        textField10 = new views.swing.textfield.TextField();
+        textField11 = new views.swing.textfield.TextField();
+        textField12 = new views.swing.textfield.TextField();
+        textField15 = new views.swing.textfield.TextField();
+        textField17 = new views.swing.textfield.TextField();
+        textField18 = new views.swing.textfield.TextField();
+        textFieldNhapSoHoKhau1 = new views.swing.textfield.TextField();
+
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setText("TÌM KIẾM THÔNG TIN NHÂN KHẨU CHỈNH SỬA");
+
+        textFieldNhapSoHoKhau.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldNhapSoHoKhau.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        textFieldNhapSoHoKhau.setLabelText("NHẬP MÃ SỐ SỔ HỘ KHẨU");
+        textFieldNhapSoHoKhau.setOpaque(false);
+        textFieldNhapSoHoKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNhapSoHoKhauActionPerformed(evt);
+            }
+        });
+
+        searchButton.setBackground(new java.awt.Color(89, 89, 255));
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setText("TÌM KIẾM");
+        searchButton.setToolTipText("");
+        searchButton.setActionCommand("KIỂM TRA");
+        searchButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("SỬA THÔNG TIN NHÂN KHẨU");
+
+        textField13.setBackground(new java.awt.Color(245, 245, 245));
+        textField13.setToolTipText("");
+        textField13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField13.setLabelText("NƠI SINH");
+
+        textField14.setBackground(new java.awt.Color(245, 245, 245));
+        textField14.setToolTipText("");
+        textField14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField14.setLabelText("QUÊ QUÁN");
+
+        textField16.setBackground(new java.awt.Color(245, 245, 245));
+        textField16.setToolTipText("");
+        textField16.setAutoscrolls(false);
+        textField16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField16.setLabelText("CHỖ Ở HIỆN TẠI");
+
+        searchButton1.setBackground(new java.awt.Color(89, 89, 255));
+        searchButton1.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton1.setText("LƯU");
+        searchButton1.setToolTipText("");
+        searchButton1.setActionCommand("KIỂM TRA");
+        searchButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        searchButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButton1ActionPerformed(evt);
+            }
+        });
+
+        textField4.setBackground(new java.awt.Color(245, 245, 245));
+        textField4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField4.setLabelText("QUAN HỆ VỚI CHỦ HỘ");
+
+        textField3.setBackground(new java.awt.Color(245, 245, 245));
+        textField3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField3.setLabelText("HỌ VÀ TÊN");
+        textField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField3ActionPerformed(evt);
+            }
+        });
+
+        textField5.setBackground(new java.awt.Color(245, 245, 245));
+        textField5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField5.setLabelText("TÊN GỌI KHÁC");
+        textField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField5ActionPerformed(evt);
+            }
+        });
+
+        textField6.setBackground(new java.awt.Color(245, 245, 245));
+        textField6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField6.setLabelText("CMND/CCCD");
+
+        textField7.setBackground(new java.awt.Color(245, 245, 245));
+        textField7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField7.setLabelText("NGÀY SINH");
+        textField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField7ActionPerformed(evt);
+            }
+        });
+
+        textField8.setBackground(new java.awt.Color(245, 245, 245));
+        textField8.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField8.setLabelText("GIỚI TÍNH");
+        textField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField8ActionPerformed(evt);
+            }
+        });
+
+        textField9.setBackground(new java.awt.Color(245, 245, 245));
+        textField9.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField9.setLabelText("QUỐC TỊCH");
+
+        textField10.setBackground(new java.awt.Color(245, 245, 245));
+        textField10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField10.setLabelText("TÔN GIÁO");
+        textField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField10ActionPerformed(evt);
+            }
+        });
+
+        textField11.setBackground(new java.awt.Color(245, 245, 245));
+        textField11.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField11.setLabelText("DÂN TỘC");
+        textField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField11ActionPerformed(evt);
+            }
+        });
+
+        textField12.setBackground(new java.awt.Color(245, 245, 245));
+        textField12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField12.setLabelText("TRÌNH ĐỘ HỌC VẤN");
+
+        textField15.setBackground(new java.awt.Color(245, 245, 245));
+        textField15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField15.setLabelText("NGHỀ NGHIỆP HIỆN TẠI");
+        textField15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField15ActionPerformed(evt);
+            }
+        });
+
+        textField17.setBackground(new java.awt.Color(245, 245, 245));
+        textField17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField17.setLabelText("TRÌNH ĐỘ CHUYÊN MÔN");
+        textField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField17ActionPerformed(evt);
+            }
+        });
+
+        textField18.setBackground(new java.awt.Color(245, 245, 245));
+        textField18.setToolTipText("");
+        textField18.setAutoscrolls(false);
+        textField18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textField18.setLabelText("GHI CHÚ (Chỉ có thêm thông tin ghi chú)");
+
+        textFieldNhapSoHoKhau1.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldNhapSoHoKhau1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        textFieldNhapSoHoKhau1.setLabelText("NHẬP MÃ SỐ CMND/CCCD");
+        textFieldNhapSoHoKhau1.setOpaque(false);
+        textFieldNhapSoHoKhau1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNhapSoHoKhau1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 694, Short.MAX_VALUE))
+                    .addComponent(jSeparator2)
+                    .addComponent(textField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textFieldNhapSoHoKhau1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textField12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)
+                        .addComponent(textField15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(textField18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldNhapSoHoKhau1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void textFieldNhapSoHoKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNhapSoHoKhauActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        System.out.println("Helloew wwww");
+        System.out.println(textFieldNhapSoHoKhau.getText());
+        textFieldNhapSoHoKhau.setText("");
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButton1ActionPerformed
+
+    private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField3ActionPerformed
+
+    private void textField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField5ActionPerformed
+
+    private void textField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField7ActionPerformed
+
+    private void textField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField8ActionPerformed
+
+    private void textField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField10ActionPerformed
+
+    private void textField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField11ActionPerformed
+
+    private void textField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField15ActionPerformed
+
+    private void textField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField17ActionPerformed
+
+    private void textFieldNhapSoHoKhau1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhau1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNhapSoHoKhau1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator2;
+    private views.swing.Button searchButton;
+    private views.swing.Button searchButton1;
+    private views.swing.textfield.TextField textField10;
+    private views.swing.textfield.TextField textField11;
+    private views.swing.textfield.TextField textField12;
+    private views.swing.textfield.TextField textField13;
+    private views.swing.textfield.TextField textField14;
+    private views.swing.textfield.TextField textField15;
+    private views.swing.textfield.TextField textField16;
+    private views.swing.textfield.TextField textField17;
+    private views.swing.textfield.TextField textField18;
+    private views.swing.textfield.TextField textField3;
+    private views.swing.textfield.TextField textField4;
+    private views.swing.textfield.TextField textField5;
+    private views.swing.textfield.TextField textField6;
+    private views.swing.textfield.TextField textField7;
+    private views.swing.textfield.TextField textField8;
+    private views.swing.textfield.TextField textField9;
+    private views.swing.textfield.TextField textFieldNhapSoHoKhau;
+    private views.swing.textfield.TextField textFieldNhapSoHoKhau1;
     // End of variables declaration//GEN-END:variables
 }
