@@ -5,6 +5,9 @@
 package test;
 
 import controllers.ControllerDangNhap;
+import controllers.ControllerUser;
+import javax.swing.JOptionPane;
+import models.ModelUser;
 
 /**
  *
@@ -147,18 +150,33 @@ public class LogIn extends javax.swing.JFrame {
 
     private void dangNhapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangNhapButtonActionPerformed
         // TODO add your handling code here:
+        System.out.println(java.time.LocalDate.now().toString().getClass());  
         try {
             ControllerDangNhap dangNhapController = new ControllerDangNhap();
         if(dangNhapController.checkUserName(tendangNhapTextField.getText()))
             
             {
               
-                if(dangNhapController.getPassWordFromUserName(tendangNhapTextField.getText()).equals(String.valueOf(matKhauTextField.getPassword()).toString()))
+                if(dangNhapController.getPassWordFromUserName(tendangNhapTextField.getText()).equals(String.valueOf(matKhauTextField.getPassword())))
                         {
+                            ControllerUser userController = new ControllerUser();
+                            ModelUser userModel = new ModelUser();
+                            userModel =  userController.findAllByusername(tendangNhapTextField.getText());
+                            //String userName, String chucVu, String hoVaTen, String passWord
                             System.out.println("Đã đăng nhập");
-                       
+                            new Main(userModel.getUsername(), userModel.getChucVu(), userModel.getHoVaTen(), userModel.getPassword()).setVisible(true);
+                            this.setVisible(false);
+                            
+                            
                         }
+                else{
+                    JOptionPane.showMessageDialog(null, "Mật khẩu không chính xác");
+                    }
             }
+        else{
+            JOptionPane.showMessageDialog(null, "Tài khoản không tồn tại");
+        }
+        
             ;
         } catch (Exception e) {
         }

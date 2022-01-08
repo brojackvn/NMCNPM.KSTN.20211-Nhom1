@@ -50,8 +50,42 @@ public class Main extends javax.swing.JFrame {
     private Animator animator;
     private String userName;
     private String chucVu;
+    private String hoVaTen;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public String getHoVaTen() {
+        return hoVaTen;
+    }
+
+    public void setHoVaTen(String hoVaTen) {
+        this.hoVaTen = hoVaTen;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+    private String passWord;
     
-    public Main(String userName, String chucVu) {
+    public Main(String userName, String chucVu, String hoVaTen, String passWord) {
 
         initComponents();
         init();
@@ -60,6 +94,8 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.userName = userName;
         this.chucVu = chucVu;
+        this.hoVaTen = hoVaTen;
+        this.passWord = passWord;
     }
     
     private void init() {
