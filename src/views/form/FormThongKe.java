@@ -31,96 +31,91 @@ public class FormThongKe extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        button1 = new views.swing.Button();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        ButtonDoTuoi = new views.swing.Button();
+        ButtonGioiTinh = new views.swing.Button();
+        ButtonCachLy = new views.swing.Button();
+        ButtonSoMuiTiem = new views.swing.Button();
 
-        button1.setText("button1");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        setBackground(new java.awt.Color(245, 245, 245));
+
+        ButtonDoTuoi.setBackground(new java.awt.Color(89, 89, 255));
+        ButtonDoTuoi.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonDoTuoi.setText("THỐNG KÊ ĐỘ TUỔI");
+        ButtonDoTuoi.setToolTipText("");
+        ButtonDoTuoi.setActionCommand("KIỂM TRA");
+        ButtonDoTuoi.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ButtonDoTuoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                ButtonDoTuoiActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        ButtonGioiTinh.setBackground(new java.awt.Color(89, 89, 255));
+        ButtonGioiTinh.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonGioiTinh.setText("THỐNG KÊ GIỚI TÍNH");
+        ButtonGioiTinh.setToolTipText("");
+        ButtonGioiTinh.setActionCommand("KIỂM TRA");
+        ButtonGioiTinh.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ButtonGioiTinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonGioiTinhActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 186, Short.MAX_VALUE)
-        );
+        ButtonCachLy.setBackground(new java.awt.Color(89, 89, 255));
+        ButtonCachLy.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCachLy.setText("THỐNG KÊ CÁCH LY");
+        ButtonCachLy.setToolTipText("");
+        ButtonCachLy.setActionCommand("KIỂM TRA");
+        ButtonCachLy.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ButtonCachLy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCachLyActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 187, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 276, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 187, Short.MAX_VALUE)
-        );
+        ButtonSoMuiTiem.setBackground(new java.awt.Color(89, 89, 255));
+        ButtonSoMuiTiem.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonSoMuiTiem.setText("THỐNG KÊ SỐ MŨI TIÊM");
+        ButtonSoMuiTiem.setToolTipText("");
+        ButtonSoMuiTiem.setActionCommand("KIỂM TRA");
+        ButtonSoMuiTiem.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ButtonSoMuiTiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSoMuiTiemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 337, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(ButtonGioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                        .addComponent(ButtonDoTuoi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonCachLy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ButtonSoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 338, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonDoTuoi, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(ButtonGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(ButtonCachLy, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(ButtonSoMuiTiem, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
+    private void ButtonDoTuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDoTuoiActionPerformed
         DefaultPieDataset pieDataset = new DefaultPieDataset();
         pieDataset.setValue("One", 10);
         pieDataset.setValue("Two", 20);
@@ -130,14 +125,49 @@ public class FormThongKe extends javax.swing.JPanel {
         ChartFrame frame = new ChartFrame("Pie Chart", chart);
         frame.setVisible(true);
         frame.setSize(450, 500);
-    }//GEN-LAST:event_button1ActionPerformed
+    }//GEN-LAST:event_ButtonDoTuoiActionPerformed
+
+    private void ButtonGioiTinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGioiTinhActionPerformed
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("One", 10);
+        pieDataset.setValue("Two", 20);
+        pieDataset.setValue("Three", 30);
+        pieDataset.setValue("Four", 40);
+        JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        ChartFrame frame = new ChartFrame("Pie Chart", chart);
+        frame.setVisible(true);
+        frame.setSize(450, 500);
+    }//GEN-LAST:event_ButtonGioiTinhActionPerformed
+
+    private void ButtonCachLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCachLyActionPerformed
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("One", 10);
+        pieDataset.setValue("Two", 20);
+        pieDataset.setValue("Three", 30);
+        pieDataset.setValue("Four", 40);
+        JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        ChartFrame frame = new ChartFrame("Pie Chart", chart);
+        frame.setVisible(true);
+        frame.setSize(450, 500);
+    }//GEN-LAST:event_ButtonCachLyActionPerformed
+
+    private void ButtonSoMuiTiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSoMuiTiemActionPerformed
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("One", 10);
+        pieDataset.setValue("Two", 20);
+        pieDataset.setValue("Three", 30);
+        pieDataset.setValue("Four", 40);
+        JFreeChart chart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        ChartFrame frame = new ChartFrame("Pie Chart", chart);
+        frame.setVisible(true);
+        frame.setSize(450, 500);
+    }//GEN-LAST:event_ButtonSoMuiTiemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private views.swing.Button button1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private views.swing.Button ButtonCachLy;
+    private views.swing.Button ButtonDoTuoi;
+    private views.swing.Button ButtonGioiTinh;
+    private views.swing.Button ButtonSoMuiTiem;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,12 +11,13 @@ import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
 
 public class FormThemNhanKhau extends javax.swing.JPanel {
+
     private boolean flag = false;
-    
+
     public FormThemNhanKhau() {
         initComponents();
     }
-    
+
     private void showMessage(String message, int func) {
         MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
         obj.showMessage(message);
@@ -44,6 +45,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
 //        textFieldQueQuan;
 //        textFieldNoiOHienTai;
 //        textFieldGhiChu;
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -206,7 +208,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -216,11 +218,11 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
                     .addComponent(textFieldNoiSinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textFieldNoiOHienTai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 161, Short.MAX_VALUE)
+                        .addGap(0, 171, Short.MAX_VALUE)
                         .addComponent(textFieldNhapSoHoKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(ButtonTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 161, Short.MAX_VALUE))
+                        .addGap(0, 171, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -253,7 +255,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
                         .addComponent(ButtonLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(textFieldGhiChu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +332,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
                     textFieldQueQuan.setEditable(true);
                     textFieldNoiOHienTai.setEditable(true);
                     textFieldGhiChu.setEditable(true);
-                }    
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
@@ -343,11 +345,9 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         ModelNhanKhau modelNhanKhau = new ModelNhanKhau();
         if (textFieldNhapSoHoKhau.getText().equals("")) {
             showMessage("Vui lòng nhập đầy đủ các trường", 2);
-        }
-        else if (textFieldQuanHeVoiChuHo.getText().equals("") || textFieldHoVaTen.getText().equals("") || textFieldCMND.getText().equals("")) {
+        } else if (textFieldQuanHeVoiChuHo.getText().equals("") || textFieldHoVaTen.getText().equals("") || textFieldCMND.getText().equals("")) {
             showMessage("Vui lòng nhập đầy đủ các trường", 2);
-        }
-        else {
+        } else {
             modelNhanKhau.setSoHoKhau(textFieldNhapSoHoKhau.getText());
             modelNhanKhau.setCMND(textFieldCMND.getText());
             modelNhanKhau.setQuanHeChuHo(textFieldQuanHeVoiChuHo.getText());
@@ -370,49 +370,51 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
             modelNhanKhau.setNoiOHienTai(textFieldNoiOHienTai.getText());
             modelNhanKhau.setGhiChu(textFieldGhiChu.getText());
             try {
-                new ControllerNhanKhau().insert(modelNhanKhau);
-                showMessage("Lưu thành công nhân khẩu vào CSDL", 1);
+                boolean ans = showMessageOption("Bạn có thực sự muốn lưu nhân khẩu");
+                if (ans) {
+                    new ControllerNhanKhau().insert(modelNhanKhau);
+                    showMessage("Lưu thành công nhân khẩu vào CSDL", 1);
+                    textFieldCMND.setEditable(false);
+                    textFieldQuanHeVoiChuHo.setEditable(false);
+                    textFieldHoVaTen.setEditable(false);
+                    textFieldTenGoiKhac.setEditable(false);
+                    textFieldNgaySinh.setEditable(false);
+                    textFieldGioiTinh.setEditable(false);
+                    textFieldQuocTich.setEditable(false);
+                    textFieldDanToc.setEditable(false);
+                    textFieldTonGiao.setEditable(false);
+                    textFieldTrinhDoHocVan.setEditable(false);
+                    textFieldTrinhDoChuyenMon.setEditable(false);
+                    textFieldNgheNghiepHienTai.setEditable(false);
+                    textFieldNoiSinh.setEditable(false);
+                    textFieldQueQuan.setEditable(false);
+                    textFieldNoiOHienTai.setEditable(false);
+                    textFieldGhiChu.setEditable(false);
+
+                    textFieldNhapSoHoKhau.setText("");
+                    textFieldCMND.setText("");
+                    textFieldQuanHeVoiChuHo.setText("");
+                    textFieldHoVaTen.setText("");
+                    textFieldTenGoiKhac.setText("");
+                    textFieldNgaySinh.setText("");
+                    textFieldGioiTinh.setText("");
+                    textFieldQuocTich.setText("");
+                    textFieldDanToc.setText("");
+                    textFieldTonGiao.setText("");
+                    textFieldTrinhDoHocVan.setText("");
+                    textFieldTrinhDoChuyenMon.setText("");
+                    textFieldNgheNghiepHienTai.setText("");
+                    textFieldNoiSinh.setText("");
+                    textFieldQueQuan.setText("");
+                    textFieldNoiOHienTai.setText("");
+                    textFieldGhiChu.setText("");
+                    flag = false;
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            textFieldCMND.setEditable(false);
-            textFieldQuanHeVoiChuHo.setEditable(false);
-            textFieldHoVaTen.setEditable(false);
-            textFieldTenGoiKhac.setEditable(false);
-            textFieldNgaySinh.setEditable(false);
-            textFieldGioiTinh.setEditable(false);
-            textFieldQuocTich.setEditable(false);
-            textFieldDanToc.setEditable(false);
-            textFieldTonGiao.setEditable(false);
-            textFieldTrinhDoHocVan.setEditable(false);
-            textFieldTrinhDoChuyenMon.setEditable(false);
-            textFieldNgheNghiepHienTai.setEditable(false);
-            textFieldNoiSinh.setEditable(false);
-            textFieldQueQuan.setEditable(false);
-            textFieldNoiOHienTai.setEditable(false);
-            textFieldGhiChu.setEditable(false);
-
-            textFieldNhapSoHoKhau.setText("");
-            textFieldCMND.setText("");
-            textFieldQuanHeVoiChuHo.setText("");
-            textFieldHoVaTen.setText("");
-            textFieldTenGoiKhac.setText("");
-            textFieldNgaySinh.setText("");
-            textFieldGioiTinh.setText("");
-            textFieldQuocTich.setText("");
-            textFieldDanToc.setText("");
-            textFieldTonGiao.setText("");
-            textFieldTrinhDoHocVan.setText("");
-            textFieldTrinhDoChuyenMon.setText("");
-            textFieldNgheNghiepHienTai.setText("");
-            textFieldNoiSinh.setText("");
-            textFieldQueQuan.setText("");
-            textFieldNoiOHienTai.setText("");
-            textFieldGhiChu.setText("");
-            flag = false;
         }
     }//GEN-LAST:event_ButtonLuuActionPerformed
 
@@ -423,7 +425,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
             if (ans) {
                 textFieldNhapSoHoKhau.setFocusable(true);
                 textFieldNhapSoHoKhau.setText("");
-                
+
                 textFieldCMND.setEditable(false);
                 textFieldQuanHeVoiChuHo.setEditable(false);
                 textFieldHoVaTen.setEditable(false);
