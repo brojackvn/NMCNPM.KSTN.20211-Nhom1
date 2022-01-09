@@ -77,7 +77,7 @@ public class Table extends JTable {
     
     public void clearRow() {
         DefaultTableModel mod = (DefaultTableModel) getModel();
-        mod.removeRow(0);
+        mod.setRowCount(0);
     }
     
     public void fixTable(JScrollPane scroll) {

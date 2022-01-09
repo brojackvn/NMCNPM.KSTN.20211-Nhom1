@@ -33,7 +33,7 @@
                       <EmptySpace min="0" pref="198" max="32767" attributes="0"/>
                       <Component id="textFieldNhapSoHoKhau" min="-2" pref="430" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                      <Component id="searchButton" min="-2" pref="144" max="-2" attributes="0"/>
+                      <Component id="ButtonTimKiem" min="-2" pref="144" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="197" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -41,48 +41,58 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textFieldhoVaTenChuHo2" min="-2" pref="430" max="-2" attributes="0"/>
-                  <Component id="textFieldhoVaTenChuHo1" min="-2" pref="430" max="-2" attributes="0"/>
-                  <Component id="textFieldhoVaTenChuHo" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Component id="textFieldNgayDangKi" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Component id="textFieldDiaChi" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Component id="textFieldHoVaTenChuHo" min="-2" pref="430" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="ButtonHoanTac" min="-2" pref="144" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                      <Component id="ButtonHoanThanh" min="-2" pref="144" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textFieldNhapSoHoKhau" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="searchButton" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="ButtonTimKiem" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-              <Component id="textFieldhoVaTenChuHo" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="textFieldhoVaTenChuHo1" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="textFieldhoVaTenChuHo2" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="textFieldHoVaTenChuHo" min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldDiaChi" min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldNgayDangKi" min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="382" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ButtonHoanThanh" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="ButtonHoanTac" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,7 +121,7 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldNhapSoHoKhauActionPerformed"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldNhapSoHoKhauMousePressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -121,7 +131,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="views.swing.Button" name="searchButton">
+    <Component class="views.swing.Button" name="ButtonTimKiem">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="59" red="59" type="rgb"/>
@@ -136,10 +146,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonTimKiemActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textFieldhoVaTenChuHo">
+    <Component class="views.swing.textfield.TextField" name="textFieldHoVaTenChuHo">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -152,9 +162,6 @@
         <Property name="labelText" type="java.lang.String" value="H&#x1ecc; V&#xc0; T&#xca;N CH&#x1ee6; H&#x1ed8;"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldhoVaTenChuHoActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -167,7 +174,7 @@
         <Property name="text" type="java.lang.String" value="TH&#xd4;NG TIN S&#x1ed4; H&#x1ed8; KH&#x1ea8;U"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textFieldhoVaTenChuHo1">
+    <Component class="views.swing.textfield.TextField" name="textFieldDiaChi">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -180,11 +187,8 @@
         <Property name="labelText" type="java.lang.String" value="&#x110;&#x1eca;A CH&#x1ec8;"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldhoVaTenChuHo1ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textFieldhoVaTenChuHo2">
+    <Component class="views.swing.textfield.TextField" name="textFieldNgayDangKi">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -197,9 +201,6 @@
         <Property name="labelText" type="java.lang.String" value="NG&#xc0;Y &#x110;&#x102;NG K&#xcd;"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldhoVaTenChuHo2ActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -266,5 +267,44 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="views.swing.Button" name="ButtonHoanThanh">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="59" red="59" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="1"/>
+        </Property>
+        <Property name="label" type="java.lang.String" value="HO&#xc0;N TH&#xc0;NH"/>
+      </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="HO&#xc0;N TH&#xc0;NH"/>
+      </AccessibilityProperties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonHoanThanhActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="views.swing.Button" name="ButtonHoanTac">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="59" red="59" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="1"/>
+        </Property>
+        <Property name="label" type="java.lang.String" value="HO&#xc0;N T&#xc1;C"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonHoanTacActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

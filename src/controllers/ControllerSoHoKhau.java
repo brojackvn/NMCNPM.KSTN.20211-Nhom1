@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controllers;
 
 import connection.ConnectDatabase;
@@ -10,13 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import models.ModelSoHoKhau;
 import models.ModelNhanKhau;
+import models.ModelSoHoKhau;
 
-/**
- *
- * @author HO ANH
- */
 public class ControllerSoHoKhau {
     public ArrayList<ModelSoHoKhau> selectDanhMucSoHoKhau () throws SQLException, ClassNotFoundException{
         ArrayList<ModelSoHoKhau> resultList = new ArrayList<ModelSoHoKhau>();
@@ -29,13 +21,13 @@ public class ControllerSoHoKhau {
         ){
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
-                ModelSoHoKhau newMTT = new ModelSoHoKhau(rs.getString("hoVaTenChuHo"), rs.getString("ngayDangKi"), rs.getString("diaChi"));
+                ModelSoHoKhau newMTT = new ModelSoHoKhau(rs.getString(1), rs.getString(3), rs.getString(4));
                 resultList.add(newMTT);
             }
             return resultList;
         }
     }
-
+    
     public ModelSoHoKhau TraCuuSHK(String SoSHK) throws SQLException, ClassNotFoundException{
         String sql = "Select * from ho_khau where soHoKhau = ?";
         ModelSoHoKhau newSHK = new ModelSoHoKhau();
@@ -55,7 +47,23 @@ public class ControllerSoHoKhau {
             return newSHK;
         }
     }
-
+    
+    public boolean checkMaSHKIsExist(String maSHK) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT soHoKhau FROM nhan_khau";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt = con.prepareStatement(sql);
+        ) {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                if(rs.getString("soHoKhau").equals(maSHK)){
+                    return true;
+                } 
+            }
+            return false;
+        }
+    }
+    
     public ArrayList<ModelNhanKhau> getListNhanKhau_fromSoSHK(String SoSHK) throws SQLException, ClassNotFoundException{
         String sql = "Select * from nhan_khau where soHoKhau = ?";
         ArrayList<ModelNhanKhau> resultList = new ArrayList<ModelNhanKhau>();
@@ -72,5 +80,4 @@ public class ControllerSoHoKhau {
             return resultList;
         }
     }
-
 }

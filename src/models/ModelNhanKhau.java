@@ -14,7 +14,6 @@ public class ModelNhanKhau {
     private String tonGiao;
     private String quocTich;
     private String CMND;
-    private String soHoChieu;
     private String noiThuongTru;
     private String noiOHienTai;
     private String trinhDoHocVan;
@@ -78,7 +77,8 @@ public class ModelNhanKhau {
     }
 
     public Object[] toRowTableFormXoaNhanKhau(EventActionFormXoa event) {
-        return new Object[]{CMND, hoVaTen, ngaySinh, gioiTinh, quanHeChuHo, new ModelAction(this, event)};
+        if (gioiTinh == 0) return new Object[]{CMND, hoVaTen, ngaySinh, "Nữ", quanHeChuHo, new ModelAction(this, event)};
+        else return new Object[]{CMND, hoVaTen, ngaySinh, "Nam", quanHeChuHo, new ModelAction(this, event)};
     } 
     
     public String getSoHoKhau() {
@@ -167,14 +167,6 @@ public class ModelNhanKhau {
 
     public void setCMND(String CMND) {
         this.CMND = CMND;
-    }
-
-    public String getSoHoChieu() {
-        return soHoChieu;
-    }
-
-    public void setSoHoChieu(String soHoChieu) {
-        this.soHoChieu = soHoChieu;
     }
 
     public String getNoiThuongTru() {

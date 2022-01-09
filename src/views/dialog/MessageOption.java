@@ -7,23 +7,15 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 
-public class Message extends javax.swing.JDialog {
-    public boolean isOk() {
-        return ok;
-    }
-
-    public void setOk(boolean ok) {
-        this.ok = ok;
-    }
-
+public class MessageOption extends javax.swing.JDialog {
     private boolean ok;
     private final Animator animator;
     private boolean show = true;
 
-    public Message(java.awt.Frame parent, boolean modal) {
+    public MessageOption(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        lbIcon.setIcon(IconFontSwing.buildIcon(GoogleMaterialDesignIcons.REPORT_PROBLEM, 60, new Color(254, 86, 96), new Color(113, 74, 67)));
+        lbIcon.setIcon(IconFontSwing.buildIcon(GoogleMaterialDesignIcons.INFO, 60, new Color(254, 86, 96), new Color(113, 74, 67)));
         setOpacity(0f);
         getContentPane().setBackground(Color.WHITE);
         TimingTarget target = new TimingTargetAdapter() {
@@ -35,6 +27,7 @@ public class Message extends javax.swing.JDialog {
                     setOpacity(1f - fraction);
                 }
             }
+
             @Override
             public void end() {
                 if (show == false) {
@@ -54,6 +47,13 @@ public class Message extends javax.swing.JDialog {
         setVisible(true);
     }
 
+    public boolean isOk() {
+        return ok;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = ok;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -106,7 +106,7 @@ public class Message extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lbMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lbMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(

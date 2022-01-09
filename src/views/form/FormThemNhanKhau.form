@@ -29,14 +29,14 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField14" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField13" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField16" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textFieldQueQuan" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textFieldNoiSinh" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textFieldNoiOHienTai" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="161" max="32767" attributes="0"/>
                       <Component id="textFieldNhapSoHoKhau" min="-2" pref="430" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="searchButton" min="-2" pref="144" max="-2" attributes="0"/>
+                      <Component id="ButtonTimKiem" min="-2" pref="144" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="161" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -44,39 +44,39 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="textField4" max="32767" attributes="0"/>
+                      <Component id="textFieldQuanHeVoiChuHo" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField3" max="32767" attributes="0"/>
+                      <Component id="textFieldHoVaTen" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField5" max="32767" attributes="0"/>
+                      <Component id="textFieldTenGoiKhac" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="textField6" max="32767" attributes="0"/>
+                      <Component id="textFieldCMND" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField7" max="32767" attributes="0"/>
+                      <Component id="textFieldNgaySinh" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField8" max="32767" attributes="0"/>
+                      <Component id="textFieldGioiTinh" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="textField9" max="32767" attributes="0"/>
+                      <Component id="textFieldQuocTich" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField11" max="32767" attributes="0"/>
+                      <Component id="textFieldDanToc" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField10" max="32767" attributes="0"/>
+                      <Component id="textFieldTonGiao" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="textField12" max="32767" attributes="0"/>
+                      <Component id="textFieldTrinhDoHocVan" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField17" max="32767" attributes="0"/>
+                      <Component id="textFieldTrinhDoChuyenMon" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="textField15" max="32767" attributes="0"/>
+                      <Component id="textFieldNgheNghiepHienTai" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="searchButton1" min="-2" pref="135" max="-2" attributes="0"/>
+                      <Component id="ButtonLuu" min="-2" pref="135" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="textField18" alignment="1" max="32767" attributes="0"/>
+                  <Component id="textFieldGhiChu" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -90,7 +90,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textFieldNhapSoHoKhau" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="searchButton" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="ButtonTimKiem" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="4" max="-2" attributes="0"/>
@@ -98,38 +98,38 @@
               <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldQuanHeVoiChuHo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldHoVaTen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldTenGoiKhac" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldCMND" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldNgaySinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldGioiTinh" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldQuocTich" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldDanToc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldTonGiao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textField12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField17" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldTrinhDoHocVan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldTrinhDoChuyenMon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldNgheNghiepHienTai" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
-              <Component id="textField13" min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldNoiSinh" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
-              <Component id="textField14" min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldQueQuan" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
-              <Component id="textField16" min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldNoiOHienTai" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
-              <Component id="textField18" min="-2" max="-2" attributes="0"/>
+              <Component id="textFieldGhiChu" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="32767" attributes="0"/>
-              <Component id="searchButton1" min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="ButtonLuu" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -159,10 +159,10 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldNhapSoHoKhauActionPerformed"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldNhapSoHoKhauMousePressed"/>
       </Events>
     </Component>
-    <Component class="views.swing.Button" name="searchButton">
+    <Component class="views.swing.Button" name="ButtonTimKiem">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="59" red="59" type="rgb"/>
@@ -178,7 +178,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonTimKiemActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -192,8 +192,9 @@
         <Property name="text" type="java.lang.String" value="TH&#xca;M TH&#xd4;NG TIN NH&#xc2;N KH&#x1ea8;U"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField13">
+    <Component class="views.swing.textfield.TextField" name="textFieldNoiSinh">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -204,8 +205,9 @@
         <Property name="labelText" type="java.lang.String" value="N&#x1a0;I SINH"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField14">
+    <Component class="views.swing.textfield.TextField" name="textFieldQueQuan">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -216,8 +218,9 @@
         <Property name="labelText" type="java.lang.String" value="QU&#xca; QU&#xc1;N"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField16">
+    <Component class="views.swing.textfield.TextField" name="textFieldNoiOHienTai">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -226,12 +229,12 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="12" style="1"/>
         </Property>
-        <Property name="labelText" type="java.lang.String" value="CH&#x1ed6; &#x1ede; HI&#x1ec6;N T&#x1ea0;I"/>
+        <Property name="labelText" type="java.lang.String" value="N&#x1a0;I &#x1ede; HI&#x1ec6;N T&#x1ea0;I"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
-    <Component class="views.swing.Button" name="searchButton1">
+    <Component class="views.swing.Button" name="ButtonLuu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="59" red="59" type="rgb"/>
@@ -247,11 +250,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLuuActionPerformed"/>
       </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField4">
+    <Component class="views.swing.textfield.TextField" name="textFieldQuanHeVoiChuHo">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -261,8 +265,9 @@
         <Property name="labelText" type="java.lang.String" value="QUAN H&#x1ec6; V&#x1eda;I CH&#x1ee6; H&#x1ed8;"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField3">
+    <Component class="views.swing.textfield.TextField" name="textFieldHoVaTen">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -271,12 +276,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="H&#x1ecc; V&#xc0; T&#xca;N"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField3ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField5">
+    <Component class="views.swing.textfield.TextField" name="textFieldTenGoiKhac">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -285,12 +288,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="T&#xca;N G&#x1ecc;I KH&#xc1;C"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField5ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField6">
+    <Component class="views.swing.textfield.TextField" name="textFieldCMND">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -300,8 +301,9 @@
         <Property name="labelText" type="java.lang.String" value="CMND/CCCD"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField7">
+    <Component class="views.swing.textfield.TextField" name="textFieldNgaySinh">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -310,12 +312,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="NG&#xc0;Y SINH"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField7ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField8">
+    <Component class="views.swing.textfield.TextField" name="textFieldGioiTinh">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -324,12 +324,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="GI&#x1eda;I T&#xcd;NH"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField8ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField9">
+    <Component class="views.swing.textfield.TextField" name="textFieldQuocTich">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -339,8 +337,9 @@
         <Property name="labelText" type="java.lang.String" value="QU&#x1ed0;C T&#x1eca;CH"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField10">
+    <Component class="views.swing.textfield.TextField" name="textFieldTonGiao">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -349,12 +348,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="T&#xd4;N GI&#xc1;O"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField10ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField11">
+    <Component class="views.swing.textfield.TextField" name="textFieldDanToc">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -363,12 +360,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="D&#xc2;N T&#x1ed8;C"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField11ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField12">
+    <Component class="views.swing.textfield.TextField" name="textFieldTrinhDoHocVan">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -378,8 +373,9 @@
         <Property name="labelText" type="java.lang.String" value="TR&#xcc;NH &#x110;&#x1ed8; H&#x1ecc;C V&#x1ea4;N"/>
       </Properties>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField15">
+    <Component class="views.swing.textfield.TextField" name="textFieldNgheNghiepHienTai">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -388,12 +384,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="NGH&#x1ec0; NGHI&#x1ec6;P HI&#x1ec6;N T&#x1ea0;I"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField15ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField17">
+    <Component class="views.swing.textfield.TextField" name="textFieldTrinhDoChuyenMon">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
@@ -402,12 +396,10 @@
         </Property>
         <Property name="labelText" type="java.lang.String" value="TR&#xcc;NH &#x110;&#x1ed8; CHUY&#xca;N M&#xd4;N"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField17ActionPerformed"/>
-      </Events>
     </Component>
-    <Component class="views.swing.textfield.TextField" name="textField18">
+    <Component class="views.swing.textfield.TextField" name="textFieldGhiChu">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
