@@ -46,7 +46,7 @@ public class Menu extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/3.png")), "THỦ TỤC NHÂN KHẨU", "Thêm Nhân Khẩu", "Sửa Nhân Khẩu" , "Xóa Nhân Khẩu", "Tạm vắng", "Tạm trú", "Báo tử"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/5.png")), "DANH MỤC", "Hộ Khẩu", "Nhân Khẩu", "Tạm Trú", "Tạm Vắng"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/7.png")), "COVID", "Khai báo COVID", "Khai báo Cách Ly", "Truy vết Tiếp Xúc", "Truy vết Địa Điểm"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/6.png")), "THỐNG KÊ", "Thống kê Dân cư", "Thống kê COVID"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/6.png")), "THỐNG KÊ"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/8.png")), "LỊCH SỬ"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/9.png")), "HỆ THỐNG", "Đổi mật khẩu", "Đăng xuất", "Thoát"));
     }
