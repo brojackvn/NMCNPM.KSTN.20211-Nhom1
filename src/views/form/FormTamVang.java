@@ -4,26 +4,72 @@
  */
 package views.form;
 
+import controllers.ControllerLichSu;
 import controllers.ControllerTamVang;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import models.ModelLichSu;
 import models.ModelTamVang;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
  * @author HO ANH
  */
 public class FormTamVang extends javax.swing.JPanel {
+     private String userName;
+    private String chucVu;
+    private String hoVaTen;
+    private String passWord;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public String getHoVaTen() {
+        return hoVaTen;
+    }
+
+    public void setHoVaTen(String hoVaTen) {
+        this.hoVaTen = hoVaTen;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
     /**
      * Creates new form FormTamVang
      */
     public FormTamVang() {
         initComponents();
     }
-
+    public FormTamVang(String username, String chucvu, String hoVaTen, String password ) {
+           this.hoVaTen = hoVaTen;
+           this.chucVu = chucvu;
+           this.passWord = password;
+           this.userName = username;
+           initComponents();
+       }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -217,6 +263,11 @@ public class FormTamVang extends javax.swing.JPanel {
             NoiTamTrutextField.setText("");
             NgayBatDautextField.setText("");
             NgayKetThuctextField.setText("");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	Date date = new Date();
+            ControllerLichSu lichsuController = new ControllerLichSu();
+                ///public ModelLichSu(String ngayThayDoi, String nguoiThayDoi, String loaiThayDoi, String chucVu)
+                lichsuController.insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Tạm vắng", this.chucVu));
         } catch (SQLException ex) {
             Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

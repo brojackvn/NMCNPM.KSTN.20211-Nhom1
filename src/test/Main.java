@@ -141,11 +141,11 @@ public class Main extends javax.swing.JFrame {
                     } else if (subMenuIndex == 2) { // Xoa Nhan Khẩu
                         main.showForm(new FormXoaNhanKhau());
                     } else if (subMenuIndex == 3) { // Tạm Vắng
-                        main.showForm(new FormTamVang());
+                        main.showForm(new FormTamVang(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 4) { // Tạm trú
-                        main.showForm(new FormTamTru());
+                        main.showForm(new FormTamTru(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 5) { // Báo tử
-                        main.showForm(new FormBaoTu());
+                        main.showForm(new FormBaoTu(userName, chucVu, hoVaTen, passWord));
                     }
                 } else if (menuIndex == 4) { // Danh mục
                     if (subMenuIndex == 0) { // Ho Khẩu
