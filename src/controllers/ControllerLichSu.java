@@ -27,4 +27,19 @@ public class ControllerLichSu {
             return resultList;
         }
     }
+    public boolean insertLichSu(ModelLichSu modelLichSu) throws SQLException, ClassNotFoundException{
+        String sql = "INSERT INTO `lich_su`(ngayThayDoi, nguoiThayDoi, loaiThayDoi, chucVu) VALUES (?,?,?,?)";
+        try (
+                Connection connection = ConnectDatabase.openConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
+        ) {
+            pstm.setString(1,modelLichSu.getNgayThayDoi());
+            pstm.setString(2, modelLichSu.getNguoiThayDoi());
+            pstm.setString(3, modelLichSu.getLoaiThayDoi());
+            pstm.setString(4, modelLichSu.getChucVu());
+           
+           
+            return (pstm.executeUpdate() > 0 ? true : false);
+        }
+    }
 }
