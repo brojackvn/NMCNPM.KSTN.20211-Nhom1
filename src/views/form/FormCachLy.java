@@ -335,6 +335,9 @@ public class FormCachLy extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
         }
         else{
+            ControllerCachLyCovid cachlycontroller = new ControllerCachLyCovid();
+            try{
+            if (!cachlycontroller.checkCMND(CMCDCovidtextField.getText())){
         ModelCachLyCovid x = new ModelCachLyCovid();
            x.setCMND(CMCDCovidtextField.getText());
            x.setDiaDiemDaDiQua(DiaDiemDiChuyentextField1.getText());
@@ -357,6 +360,28 @@ public class FormCachLy extends javax.swing.JPanel {
           noiCachLytextField.setText("");
           soLanTestButtonGroup.clearSelection();
           thoiGianBatDautextField.setText("");
+        }
+            else{
+            //update cach ly
+            ModelCachLyCovid x = new ModelCachLyCovid();
+           x.setCMND(CMCDCovidtextField.getText());
+           x.setDiaDiemDaDiQua(DiaDiemDiChuyentextField1.getText());
+           x.setMucDoCachLy(getSelectedButtonText(mucDoCachLyButtonGroup));
+           x.setNguoiTao("user1");
+           x.setNoiCachLy(noiCachLytextField.getText());
+           x.setSoLanTest(Integer.parseInt(getSelectedButtonText(soLanTestButtonGroup)));
+           x.setThoiGianBatDau(thoiGianBatDautextField.getText());
+            cachlycontroller.updateKhaiBaoCovid(x);
+             CMCDCovidtextField.setText("");
+          DiaDiemDiChuyentextField1.setText("");
+          mucDoCachLyButtonGroup.clearSelection();
+          noiCachLytextField.setText("");
+          soLanTestButtonGroup.clearSelection();
+          thoiGianBatDautextField.setText("");
+            }
+            }
+           catch(Exception e){
+           }
         }
     }//GEN-LAST:event_SaveButtonActionPerformed
 

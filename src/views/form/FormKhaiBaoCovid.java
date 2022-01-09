@@ -271,7 +271,9 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "CHƯA NHẠP ĐỦ CÁC TRƯỜNG CẦN THIẾT");
         }
         else{
-           
+           ControllerKhaiBaoCovid checkCMNDkhai = new ControllerKhaiBaoCovid();
+           try{
+           if (!checkCMNDkhai.checkCMND(CMCDCovidtextField.getText())){
         try{
         ControllerKhaiBaoCovid khaiBaoCovidController = new ControllerKhaiBaoCovid();
         ModelKhaiBaoCovid x = new ModelKhaiBaoCovid(CMCDCovidtextField.getText(), Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)), getSelectedButtonText(TinhTrangSucKhoeButtonGroup), LanTestGanNhattextField.getText(), ketQuaLanTestGanNhattextField.getText(), DiaDiemDiChuyentextField.getText(), "user1");
@@ -295,7 +297,24 @@ public class FormKhaiBaoCovid extends javax.swing.JPanel {
         }
         catch(Exception ex){
         JOptionPane.showMessageDialog(null, "Nhap sai");
-        }
+        }}
+           else{
+            checkCMNDkhai.updateKhaiBaoCovid(new ModelKhaiBaoCovid(CMCDCovidtextField.getText(), Integer.parseInt(getSelectedButtonText(SoMuiTiemButton)), getSelectedButtonText(TinhTrangSucKhoeButtonGroup), LanTestGanNhattextField.getText(), ketQuaLanTestGanNhattextField.getText(), DiaDiemDiChuyentextField.getText(), "user1"));
+            CMCDCovidtextField.setText("");
+            DiaDiemDiChuyentextField.setText("");
+            DiaDiemDiChuyentextField.setText("");
+            KieuButtonGroup.clearSelection();
+            TinhTrangSucKhoeButtonGroup.clearSelection();
+            SoMuiTiemButton.clearSelection();
+            LanTestGanNhattextField.setText("");
+            DiaDiemDiChuyentextField.setText("");
+            ketQuaLanTestGanNhattextField.setText("");
+            
+           }
+           
+           }
+           catch(Exception e){}
+        
     }
     }//GEN-LAST:event_SaveButtonActionPerformed
 

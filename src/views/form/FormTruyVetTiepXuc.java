@@ -37,12 +37,10 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
     
     public void initTableData() {
         // Các data thì mình sẽ lấy từ database
-        for (int i=0; i<mangmangTruyVetDiaDiem.size(); i++){
-            for (int j=0; j<mangmangTruyVetDiaDiem.get(i).size(); j++){
-                table1.addRow(new ModelTruyVetDiaDiem(mangmangTruyVetDiaDiem.get(i).get(j).getNgaySinh(), mangmangTruyVetDiaDiem.get(i).get(j).getHoVaTen()).toRowTable());
-            }
-            
+        for (int i=0; i<mangTruyVetDiaDiem.size(); i++){
+            table1.addRow(new ModelTruyVetDiaDiem(mangTruyVetDiaDiem.get(i).getNgaySinh(), mangTruyVetDiaDiem.get(i).getHoVaTen()).toRowTable());
         }
+       
         
     }
     
@@ -155,7 +153,7 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "BẠN CHƯA NHẬP CHỨNG MINH NHÂN DÂN");
         }
         else{
-        mangmangTruyVetDiaDiem.clear();
+        mangTruyVetDiaDiem.clear();
         clearTableData(table1);
     
             
@@ -169,23 +167,10 @@ public class FormTruyVetTiepXuc extends javax.swing.JPanel {
             ControllerTruyVetTiepXuc truyVetTiepXuc = new ControllerTruyVetTiepXuc();
             String diaDiemTiepXuc = new String(truyVetTiepXuc.findDiaDiemByCMND(x.getCMND()));
             String[] mangDiaDiemTiepXuc=diaDiemTiepXuc.split("; ");
-            for(int i=0; i<mangDiaDiemTiepXuc.length;i++){
-                
-                try {
-                   
-                    ControllerTruyVetDiaDiem truyVetDiaDiem = new ControllerTruyVetDiaDiem();
-                    mangTruyVetDiaDiem = truyVetDiaDiem.findNguoiByDiaDiem(new String(mangDiaDiemTiepXuc[i]));
-              
-                    mangmangTruyVetDiaDiem.add(mangTruyVetDiaDiem);
-                   
-                } catch (SQLException ex) {
-                    Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(FormTruyVetDiaDiem.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                
-            }
+            ControllerTruyVetDiaDiem truyverdiadiemController = new ControllerTruyVetDiaDiem();
+            
+            mangTruyVetDiaDiem = truyverdiadiemController.findNguoiByMangDiaDiem(mangDiaDiemTiepXuc);
+            
            
 //            truyVetTiepXuc.findNguoiByDiaDiem(mangDiaDiemTiepXuc[0]);
             

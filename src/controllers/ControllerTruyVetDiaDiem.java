@@ -74,7 +74,7 @@ public class ControllerTruyVetDiaDiem {
                
             while (rs.next()) {
 
-                if(rs.getString("diaDiemDaDiQua").equals(diaDiem)){
+                if(rs.getString("diaDiemDaDiQua").contains(diaDiem)){
                     ControllerTruyVetDiaDiem truyvetdiadiem = new ControllerTruyVetDiaDiem();
                     ModelTruyVetDiaDiem x = new ModelTruyVetDiaDiem();
                     String hoVaTen;
@@ -92,6 +92,48 @@ public class ControllerTruyVetDiaDiem {
               
                 
             }
+            return mangTruyVetDiaDiem;
+        }
+    }
+     
+     
+     
+    public ArrayList<ModelTruyVetDiaDiem> findNguoiByMangDiaDiem(String[] diaDiem) throws SQLException, ClassNotFoundException {
+  
+        String sql = "SELECT * FROM khai_bao_covid where diaDiemDaDiQua like ?";
+        for (int i=1; i<diaDiem.length; i++){
+            sql = sql + " or diaDiemDaDiqua like ?";
+        }
+        
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt = con.prepareStatement(sql);
+        ) {
+            pstmt.setString(1, "123");
+            for (int i=0; i<diaDiem.length; i++){
+                pstmt.setString(i+1, "%" + diaDiem[i] +"%");
+                System.out.println(diaDiem[i]);
+            }
+           
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                System.out.println(rs.getString("CMND"));
+                 ControllerTruyVetDiaDiem truyvetdiadiem = new ControllerTruyVetDiaDiem();
+                ModelTruyVetDiaDiem x = new ModelTruyVetDiaDiem();
+                String hoVaTen;
+                String ngaySinh;
+                hoVaTen = new String(truyvetdiadiem.findHoVaTenByCMND(rs.getString("CMND")));
+                ngaySinh = new String(truyvetdiadiem.findNgaySinhByCMND(rs.getString("CMND")));
+                
+                x.setHoVaTen(hoVaTen);
+                x.setNgaySinh(ngaySinh);
+                System.out.println(x.getHoVaTen());
+                System.out.println(x.getNgaySinh());
+           
+                mangTruyVetDiaDiem.add(x);
+            }
+            
             return mangTruyVetDiaDiem;
         }
     }
