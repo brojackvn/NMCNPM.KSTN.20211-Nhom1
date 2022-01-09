@@ -48,54 +48,13 @@ public class Main extends javax.swing.JFrame {
     private Header header;
     private MainForm main;
     private Animator animator;
-    private String userName;
-    private String chucVu;
-    private String hoVaTen;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getChucVu() {
-        return chucVu;
-    }
-
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
-    }
-
-    public String getHoVaTen() {
-        return hoVaTen;
-    }
-
-    public void setHoVaTen(String hoVaTen) {
-        this.hoVaTen = hoVaTen;
-    }
-
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-    private String passWord;
     
-    public Main(String userName, String chucVu, String hoVaTen, String passWord) {
-
+    public Main() {
         initComponents();
         init();
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.userName = userName;
-        this.chucVu = chucVu;
-        this.hoVaTen = hoVaTen;
-        this.passWord = passWord;
     }
     
     private void init() {
@@ -289,6 +248,12 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Main().setVisible(true);
+            }
+        });
         
     }
 

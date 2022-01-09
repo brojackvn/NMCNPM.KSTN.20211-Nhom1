@@ -247,10 +247,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
            for(int i=0; i<listNhanKhau.size(); i++){
                 table1.addRow(listNhanKhau.get(i).toRowTableTraCuuHoKhau());
            }
-        }catch(Exception e){};
-        
-        
-
+        } catch(Exception e){};
         textFieldNhapSoHoKhau.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
