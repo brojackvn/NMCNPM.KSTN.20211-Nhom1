@@ -21,6 +21,7 @@ import views.form.FormDanhMucHoKhau;
 import views.form.FormDanhMucNhanKhau;
 import views.form.FormDanhMucTamTru;
 import views.form.FormDanhMucTamVang;
+import views.form.FormDoiMatKhau;
 import views.form.FormHeThong;
 import views.form.FormHome;
 import views.form.FormKhaiBaoCovid;
@@ -97,6 +98,15 @@ public class Main extends javax.swing.JFrame {
         this.hoVaTen = hoVaTen;
         this.passWord = passWord;
     }
+      public Main() {
+
+        initComponents();
+        init();
+        setTitle("Quản lý nhân khẩu - Ver 1.0.0");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
+    }
     
     private void init() {
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
@@ -162,7 +172,19 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 7) { // Lịch sử
                     main.showForm(new FormLichSu());
                 } else if (menuIndex == 8) { // Hệ thống
-                    main.showForm(new FormHeThong());
+                    if (subMenuIndex == 0){
+                        main.showForm(new FormDoiMatKhau(userName, chucVu, hoVaTen, passWord));
+                    }
+                    if (subMenuIndex == 1){
+                        new LogIn().setVisible(true);
+                        setVisible(false);
+                        
+                    }
+                    if (subMenuIndex == 2){
+                        
+                        setVisible(false);
+                    }
+                    
                 }
             }
         });
@@ -263,7 +285,7 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -287,7 +309,12 @@ public class Main extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+            java.awt.EventQueue.invokeLater(new Runnable(){
+    
+            public void run(){
+                new Main().setVisible(true);
+            }
+    });
         /* Create and display the form */
         
     }
