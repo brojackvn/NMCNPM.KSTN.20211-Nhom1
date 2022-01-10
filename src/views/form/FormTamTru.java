@@ -5,6 +5,7 @@
 package views.form;
 
 import controllers.ControllerLichSu;
+import controllers.ControllerNhanKhau;
 import controllers.ControllerTamTru;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -297,6 +298,8 @@ public class FormTamTru extends javax.swing.JPanel {
                 
         
         try {
+            ControllerNhanKhau checkCMND = new ControllerNhanKhau();
+            if (checkCMND.checkCMNDIsExist(CMCDtextField.getText())){
             ControllerTamTru tamTruController = new ControllerTamTru();
             ModelTamTru x = new ModelTamTru();
             x.setCMND(CMCDtextField.getText());
@@ -324,7 +327,13 @@ public class FormTamTru extends javax.swing.JPanel {
             ControllerLichSu lichsuController = new ControllerLichSu();
                 ///public ModelLichSu(String ngayThayDoi, String nguoiThayDoi, String loaiThayDoi, String chucVu)
                 lichsuController.insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Tạm trú", this.chucVu));
-        } catch (SQLException ex) {
+        }
+            else{
+                JOptionPane.showMessageDialog(null, "Chứng minh nhân dân không tồn tại");
+            }
+        }
+        
+        catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Nhập sai");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Nhập sai");

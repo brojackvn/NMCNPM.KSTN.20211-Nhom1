@@ -5,6 +5,7 @@
 package views.form;
 
 import controllers.ControllerLichSu;
+import controllers.ControllerNhanKhau;
 import controllers.ControllerTamVang;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -246,6 +247,8 @@ public class FormTamVang extends javax.swing.JPanel {
         }
         else{
         try {
+            ControllerNhanKhau checkCMND = new ControllerNhanKhau();
+            if (checkCMND.checkCMNDIsExist(CMCDTamVangtextField.getText())){
             ControllerTamVang tamVangController = new ControllerTamVang();
             ModelTamVang x = new ModelTamVang();
             x.setCMND(CMCDTamVangtextField.getText());
@@ -268,6 +271,10 @@ public class FormTamVang extends javax.swing.JPanel {
             ControllerLichSu lichsuController = new ControllerLichSu();
                 ///public ModelLichSu(String ngayThayDoi, String nguoiThayDoi, String loaiThayDoi, String chucVu)
                 lichsuController.insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Tạm vắng", this.chucVu));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Chứng minh nhân dân không tồn tại");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(FormTamVang.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
