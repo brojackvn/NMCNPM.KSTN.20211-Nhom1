@@ -28,23 +28,6 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
         obj.showMessage(message);
         return obj.isOk();
     }
-//        textFieldNhapSoHoKhau;
-//        textFieldCMND;
-//        textFieldQuanHeVoiChuHo;
-//        textFieldHoVaTen;
-//        textFieldTenGoiKhac;
-//        textFieldNgaySinh;
-//        textFieldGioiTinh;
-//        textFieldQuocTich;
-//        textFieldDanToc;
-//        textFieldTonGiao;
-//        textFieldTrinhDoHocVan;
-//        textFieldTrinhDoChuyenMon;
-//        textFieldNgheNghiepHienTai;
-//        textFieldNoiSinh;
-//        textFieldQueQuan;
-//        textFieldNoiOHienTai;
-//        textFieldGhiChu;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -415,7 +398,7 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }    
     }//GEN-LAST:event_ButtonLuuActionPerformed
 
     private void textFieldNhapSoHoKhauMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhauMousePressed
