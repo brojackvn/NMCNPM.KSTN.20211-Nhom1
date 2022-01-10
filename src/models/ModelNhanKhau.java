@@ -1,5 +1,6 @@
 package models;
 
+import views.event.EventActionFormTach;
 import views.event.EventActionFormXoa;
 
 public class ModelNhanKhau {
@@ -66,6 +67,12 @@ public class ModelNhanKhau {
         this.noiThuongTru = noiThuongTru;
     }
 
+    public ModelNhanKhau(String hoVaTen, String CMND, String quanHeChuHo) {
+        this.hoVaTen = hoVaTen;
+        this.CMND = CMND;
+        this.quanHeChuHo = quanHeChuHo;
+    }
+
     public Object[] toRowTableNhanKhau() {
         if (gioiTinh==1) return new Object[]{hoVaTen, ngaySinh,"Nam",ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
         else return new Object[]{hoVaTen, ngaySinh,"Nữ",ngheNghiepHienTai, danToc, noiOHienTai, noiThuongTru};
@@ -80,6 +87,10 @@ public class ModelNhanKhau {
         if (gioiTinh == 0) return new Object[]{CMND, hoVaTen, ngaySinh, "Nữ", quanHeChuHo, new ModelAction(this, event)};
         else return new Object[]{CMND, hoVaTen, ngaySinh, "Nam", quanHeChuHo, new ModelAction(this, event)};
     } 
+    
+    public Object[] toRowTableFormTachNhanKhau(EventActionFormTach event) {
+        return new Object[]{CMND, hoVaTen, quanHeChuHo};
+    }
     
     public String getSoHoKhau() {
         return soHoKhau;

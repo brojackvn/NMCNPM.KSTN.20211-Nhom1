@@ -1,16 +1,15 @@
 package models;
 
 import views.event.EventActionFormTach;
-import views.event.EventActionFormXoa;
 
-public class ModelAction {
+public class ModelActionMove {
     private ModelNhanKhau nhanKhau;
-    private EventActionFormXoa event;
+    private EventActionFormTach event;
     
-    public ModelAction() {
+    public ModelActionMove() {
     }
 
-    public ModelAction(ModelNhanKhau nhanKhau, EventActionFormXoa event) {
+    public ModelActionMove(ModelNhanKhau nhanKhau, EventActionFormTach event) {
         this.nhanKhau = nhanKhau;
         this.event = event;
     }
@@ -23,11 +22,11 @@ public class ModelAction {
         this.nhanKhau = nhanKhau;
     }
 
-    public EventActionFormXoa getEvent() {
+    public EventActionFormTach getEventActionFormTach() {
         return event;
     }
 
-    public void setEvent(EventActionFormXoa event) {
+    public void setEventActionFormTach(EventActionFormTach event) {
         this.event = event;
-    } 
+    }
 }
