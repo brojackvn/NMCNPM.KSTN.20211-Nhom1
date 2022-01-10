@@ -26,6 +26,7 @@ public class ModelSoHoKhau {
         this.nguoiTao = nguoiTao;
     }
     
+    
     public Object[] toRowTable() {
 //        return new Object[]{new ModelProfile(icon, name), gender, course, df.format(fees), new ModelAction(this, event)};
         return new Object[]{hoVaTenChuHo, diaChi, ngayDangKi, nguoiTao};

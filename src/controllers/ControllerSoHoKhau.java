@@ -80,4 +80,22 @@ public class ControllerSoHoKhau {
             return resultList;
         }
     }
+    
+    public boolean insert(ModelSoHoKhau SHK) throws SQLException, ClassNotFoundException {
+        String sql
+                = "INSERT INTO `ho_khau`(`hoVaTenChuHo`, `soHoKhau`, `diaChi`, `ngayDangKi`, `nguoiTao`)"
+                + "VALUES (?,?,?,?,?)";
+        try (
+                Connection connection = ConnectDatabase.openConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
+        ) {
+            pstm.setString(1, SHK.getHoVaTenChuHo());
+            pstm.setString(2, SHK.getSoHoKhau());
+            pstm.setString(3, SHK.getDiaChi());
+            pstm.setString(4, SHK.getNgayDangKi());
+            pstm.setString(5, SHK.getNguoiTao());
+            
+            return (pstm.executeUpdate() > 0 ? true : false);
+        }
+    }
 }
