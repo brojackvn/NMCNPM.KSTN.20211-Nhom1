@@ -5,25 +5,70 @@
 package views.form;
 
 import controllers.ControllerKhaiTu;
+import controllers.ControllerLichSu;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.ModelKhaiTu;
+import models.ModelLichSu;
 
 /**
  *
  * @author huutu
  */
 public class FormBaoTu extends javax.swing.JPanel {
+     private String userName;
+    private String chucVu;
+    private String hoVaTen;
+    private String passWord;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public String getHoVaTen() {
+        return hoVaTen;
+    }
+
+    public void setHoVaTen(String hoVaTen) {
+        this.hoVaTen = hoVaTen;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
     /**
      * Creates new form FormBaoTu1
      */
     public FormBaoTu() {
         initComponents();
     }
-
+    public FormBaoTu(String username, String chucvu, String hoVaTen, String password ) {
+           this.hoVaTen = hoVaTen;
+           this.chucVu = chucvu;
+           this.passWord = password;
+           this.userName = username;
+           initComponents();
+       }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,7 +274,7 @@ public class FormBaoTu extends javax.swing.JPanel {
 
             try{
                 ControllerKhaiTu khaiTuController = new ControllerKhaiTu();
-                ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), nguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), ngayMattextField.getText(), lyDotextField.getText(), "user1", ngayKhaitextField.getText());
+                ModelKhaiTu x = new ModelKhaiTu(NhapSoHoKhautextField.getText(), nguoiKhaitextField.getText(), CMNDCCCDBaoTutextField.getText(), ngayMattextField.getText(), lyDotextField.getText(), this.hoVaTen, ngayKhaitextField.getText());
 
                 try {
                     khaiTuController.insertKhaiTu(x);
@@ -244,6 +289,11 @@ public class FormBaoTu extends javax.swing.JPanel {
                 ngayMattextField.setText("");
                 lyDotextField.setText("");
                 ngayKhaitextField.setText("");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	Date date = new Date();
+                ControllerLichSu lichsuController = new ControllerLichSu();
+                ///public ModelLichSu(String ngayThayDoi, String nguoiThayDoi, String loaiThayDoi, String chucVu)
+                lichsuController.insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Báo tử", this.chucVu));
             }
             catch(Exception ex){
                 JOptionPane.showMessageDialog(null, "Nhap sai");
