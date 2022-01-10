@@ -269,57 +269,61 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
         // TODO add your handling code here:
         try {
-          String loc = ".\\demo.pdf";       
-          PdfWriter writer = new PdfWriter(loc);           
-          PdfDocument pdf = new PdfDocument(writer);              
-          pdf.addNewPage(); 
-          PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
-          
-          Document document = new Document(pdf);              
-          String para1 = "Mã số sổ hộ khẩu: " + textFieldNhapSoHoKhau.getText();
-          Paragraph paragraph1 = new Paragraph(para1).setFont(font);             
-          String para2 = "Họ và tên chủ hộ: " + textFieldhoVaTenChuHo.getText();
-          Paragraph paragraph2 = new Paragraph(para2).setFont(font);             
-          String para3 = "Địa chỉ: " + textFielddiaChi.getText();
-          Paragraph paragraph3 = new Paragraph(para3).setFont(font);             
-          String para4 = "Ngày đăng kí: " + textFieldngayDangKi.getText() + "\n\n";
-          Paragraph paragraph4 = new Paragraph(para4).setFont(font);             
-          
-          document.add(paragraph1);       
-          document.add(paragraph2);       
-          document.add(paragraph3);       
-          document.add(paragraph4);       
-          
-          Table table = new Table(new float[]{100F, 100F, 100F, 100F, 100F}); 
+            String loc = ".\\demo.pdf";
+            PdfWriter writer = new PdfWriter(loc);
+            PdfDocument pdf = new PdfDocument(writer);
+            pdf.addNewPage();
+            PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
 
-          Cell cell1 = new Cell();
-          cell1.add(new Paragraph("Họ và tên").setFont(font));
-          table.addCell(cell1);
-          
-          Cell cell2 = new Cell();
-          cell2.add(new Paragraph("Ngày sinh").setFont(font));
-          table.addCell(cell2);
+            Document document = new Document(pdf);
+            String para1 = "Mã số sổ hộ khẩu: " + textFieldNhapSoHoKhau.getText();
+            Paragraph paragraph1 = new Paragraph(para1).setFont(font);
+            String para2 = "Họ và tên chủ hộ: " + textFieldhoVaTenChuHo.getText();
+            Paragraph paragraph2 = new Paragraph(para2).setFont(font);
+            String para3 = "Địa chỉ: " + textFielddiaChi.getText();
+            Paragraph paragraph3 = new Paragraph(para3).setFont(font);
+            String para4 = "Ngày đăng kí: " + textFieldngayDangKi.getText() + "\n\n";
+            Paragraph paragraph4 = new Paragraph(para4).setFont(font);
 
-          Cell cell3 = new Cell();
-          cell3.add(new Paragraph("Giới tính").setFont(font));
-          table.addCell(cell3);
-          
-          Cell cell4 = new Cell();
-          cell4.add(new Paragraph("Quan hệ với chủ hộ").setFont(font));
-          table.addCell(cell4);
+            document.add(paragraph1);
+            document.add(paragraph2);
+            document.add(paragraph3);
+            document.add(paragraph4);
 
-          Cell cell5 = new Cell();
-          cell5.add(new Paragraph("Nơi ở hiện tại").setFont(font));
-          table.addCell(cell5);
-          
-          // for () {
+            Table table = new Table(new float[]{100F, 100F, 100F, 100F, 100F});
 
-          // }
+            Cell cell1 = new Cell();
+            cell1.add(new Paragraph("Họ và tên").setFont(font));
+            table.addCell(cell1);
 
-          document.add(table);
-          
-          document.close();             
-          System.out.println("PDF created");
+            Cell cell2 = new Cell();
+            cell2.add(new Paragraph("Ngày sinh").setFont(font));
+            table.addCell(cell2);
+
+            Cell cell3 = new Cell();
+            cell3.add(new Paragraph("Giới tính").setFont(font));
+            table.addCell(cell3);
+
+            Cell cell4 = new Cell();
+            cell4.add(new Paragraph("Quan hệ với chủ hộ").setFont(font));
+            table.addCell(cell4);
+
+            Cell cell5 = new Cell();
+            cell5.add(new Paragraph("Nơi ở hiện tại").setFont(font));
+            table.addCell(cell5);
+
+            ArrayList<String> arr = table1.readTable();
+            for (int i = 0; i < arr.size(); ++i) {
+//                System.out.println(i);
+                Cell cell = new Cell();
+                cell.add(new Paragraph(arr.get(i)).setFont(font));
+                table.addCell(cell);
+            }
+
+            document.add(table);
+
+            document.close();
+            System.out.println("PDF created");
         } catch (Exception e) {
           System.out.println(e);
         }

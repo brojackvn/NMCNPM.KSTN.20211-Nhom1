@@ -2,6 +2,7 @@ package views.swing.table;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -98,5 +99,18 @@ public class Table extends JTable {
         JPanel p = new JPanel();
         scroll.setCorner(JScrollPane.UPPER_RIGHT_CORNER, p);
         scroll.setBorder(new EmptyBorder(5,10,5,10));
+    }
+    
+    public ArrayList<String> readTable() {
+        ArrayList<String> arr = new ArrayList<>();
+        DefaultTableModel mod = (DefaultTableModel) getModel();
+        System.out.println(mod.getRowCount());
+        System.out.println(mod.getColumnCount());
+        for (int i = 0; i < mod.getRowCount(); ++i) {   
+            for (int j = 0; j < mod.getColumnCount(); ++j) {
+                arr.add(mod.getValueAt(i, j).toString());
+            }
+        }
+        return arr;
     }
 }
