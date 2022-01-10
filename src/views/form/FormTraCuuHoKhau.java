@@ -30,6 +30,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     public void initThongTinSHK() {
         
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -227,7 +228,7 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     }//GEN-LAST:event_textFieldNhapSoHoKhauActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        System.out.println("Helloew wwww");
+//        System.out.println("Helloew wwww");
         String MaSHK = textFieldNhapSoHoKhau.getText();
     
         try{

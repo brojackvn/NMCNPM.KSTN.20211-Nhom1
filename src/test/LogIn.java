@@ -178,8 +178,7 @@ public class LogIn extends javax.swing.JFrame {
         }
         
             ;
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
         
        
         

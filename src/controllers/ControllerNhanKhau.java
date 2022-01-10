@@ -115,9 +115,7 @@ public class ControllerNhanKhau {
             pstm.setString(14, nhanKhau.getTrinhDoChuyenMon());
             pstm.setString(15, nhanKhau.getNgheNghiepHienTai());
             pstm.setString(16, nhanKhau.getGhiChu());
-//            pstm.setString(17, nhanKhau.getLiDoXoaDKThuongTru());
             pstm.setString(17, nhanKhau.getQuanHeChuHo());
-//            pstm.setString(19, nhanKhau.getNguoiTao());
             return (pstm.executeUpdate() > 0 ? true : false);
         }
     }
