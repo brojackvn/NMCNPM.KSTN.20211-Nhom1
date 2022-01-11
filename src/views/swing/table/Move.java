@@ -4,18 +4,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import models.ModelAction;
-import views.swing.icon.GoogleMaterialDesignIcons;
-import views.swing.icon.IconFontSwing;
+import models.ModelMove;
 
 public class Move extends javax.swing.JPanel {
-    public Move(ModelAction data) {
+    public Move(ModelMove data) {
         initComponents();
-//        cmdMove.setIcon(IconFontSwing.buildIcon(GoogleMaterialDesignIcons.SYNC, 60, new Color(119,216,77), new Color(113, 74, 67)));
         cmdMove.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                data.getEvent().move(data.getNhanKhau());
             }
         });
     }
@@ -45,7 +42,8 @@ public class Move extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(cmdMove, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(cmdMove, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

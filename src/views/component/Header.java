@@ -1,10 +1,30 @@
 package views.component;
 
+import controllers.ControllerUser;
+import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.ModelUser;
+import views.form.FormThemNhanKhau;
 
 public class Header extends javax.swing.JPanel {
-    public Header() {
+    private String username;
+    private String chucVu;
+    private String hoVaTen;
+    private String password;
+    
+    public Header(String userName, String chucVu, String hoVaTen, String password) {
         initComponents();
+        this.username = userName;
+        this.chucVu = chucVu;
+        this.hoVaTen = hoVaTen;
+        this.password = password;
+        
+        System.out.println(hoVaTen + " " + chucVu);
+        lbUsername.setText(hoVaTen);
+        lbRole.setText(chucVu);
     }
 
     public void addMenuEvent(ActionListener event) {
@@ -43,9 +63,6 @@ public class Header extends javax.swing.JPanel {
         pic.setIcon(new javax.swing.ImageIcon("E:\\My picture\\Photoshop\\DSC00330.jpg")); // NOI18N
 
         lbUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lbUsername.setText("Nhóm 1_CNPM");
-
-        lbRole.setText("Tổ trưởng");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -65,7 +82,7 @@ public class Header extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
                 .addComponent(buttonBadges5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonBadges4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)

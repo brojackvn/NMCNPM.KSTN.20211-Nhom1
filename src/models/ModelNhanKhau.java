@@ -67,7 +67,7 @@ public class ModelNhanKhau {
         this.noiThuongTru = noiThuongTru;
     }
 
-    public ModelNhanKhau(String hoVaTen, String CMND, String quanHeChuHo) {
+    public ModelNhanKhau(String CMND, String hoVaTen, String quanHeChuHo) {
         this.hoVaTen = hoVaTen;
         this.CMND = CMND;
         this.quanHeChuHo = quanHeChuHo;
@@ -89,7 +89,7 @@ public class ModelNhanKhau {
     } 
     
     public Object[] toRowTableFormTachNhanKhau(EventActionFormTach event) {
-        return new Object[]{CMND, hoVaTen, quanHeChuHo};
+        return new Object[]{CMND, hoVaTen, quanHeChuHo, new ModelMove(this, event)};
     }
     
     public String getSoHoKhau() {

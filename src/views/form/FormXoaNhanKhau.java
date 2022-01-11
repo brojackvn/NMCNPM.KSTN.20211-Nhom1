@@ -1,15 +1,19 @@
 package views.form;
 
+import controllers.ControllerLichSu;
 import controllers.ControllerNhanKhau;
 import controllers.ControllerSoHoKhau;
 import java.awt.Component;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
+import models.ModelLichSu;
 import models.ModelNhanKhau;
 import models.ModelSoHoKhau;
 import test.Main;
@@ -23,7 +27,12 @@ public class FormXoaNhanKhau extends javax.swing.JPanel {
     private ArrayList<ModelNhanKhau> stackArrayList = new ArrayList<>();
     private boolean flag = false;
     
-    public FormXoaNhanKhau() {
+    private String username;
+    private String chucVu;
+    private String hoVaTen;
+    private String password;
+    
+    public FormXoaNhanKhau(String userName, String chucVu, String hoVaTen, String passWord) {
         initComponents();
         table1.fixTable(jScrollPane1);
         table1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
@@ -38,31 +47,37 @@ public class FormXoaNhanKhau extends javax.swing.JPanel {
         });
         table1.removeColumn(table1.getColumnModel().getColumn(0));
         initTableData();
+        this.username = userName;
+        this.chucVu = chucVu;
+        this.hoVaTen = hoVaTen;
+        this.password = password;
     }
 
     public void initTableData() {
         EventActionFormXoa eventAction = new EventActionFormXoa() {
             @Override
             public void delete(ModelNhanKhau nhanKhau) {
-                showMessage("Bạn muốn xóa nhân khẩu: " + nhanKhau.getHoVaTen(),1);
+                boolean ans = showMessageOption("Bạn muốn xóa nhân khẩu: " + nhanKhau.getHoVaTen());
                 table1.removeRow(table1.getSelectedRow());
                 System.out.println(table1.getSelectedRow());
-                for (int i = 0; i < arr.size(); ++i) {
-                    if (arr.get(i).getCMND().equals(nhanKhau.getCMND())) {
-                        stackArrayList.add(arr.get(i));
-                        arr.remove(i);
-                        table1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
-                            @Override
-                            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
-                                TableHeader header = new TableHeader(o + "");
-                                if (i1 == 4) {
-                                    header.setHorizontalAlignment(JLabel.CENTER);
+                if (ans) {
+                    for (int i = 0; i < arr.size(); ++i) {
+                        if (arr.get(i).getCMND().equals(nhanKhau.getCMND())) {
+                            stackArrayList.add(arr.get(i));
+                            arr.remove(i);
+                            table1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
+                                @Override
+                                public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+                                    TableHeader header = new TableHeader(o + "");
+                                    if (i1 == 4) {
+                                        header.setHorizontalAlignment(JLabel.CENTER);
+                                    }
+                                    return header;
                                 }
-                                return header;
-                            }
-                        });
-                        table1.removeColumn(table1.getColumnModel().getColumn(0));
-                    }
+                            });
+                            table1.removeColumn(table1.getColumnModel().getColumn(0));
+                        }
+                    }    
                 }
             }
         };
@@ -318,6 +333,10 @@ public class FormXoaNhanKhau extends javax.swing.JPanel {
                     new ControllerNhanKhau().delete(stackArrayList.get(i).getCMND());
                 }
                 showMessage("Bạn đã xóa thành công nhân khẩu", 1);
+                
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                new ControllerLichSu().insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Thêm nhân khẩu", this.chucVu));
             }
         } catch (SQLException ex) {
             Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);

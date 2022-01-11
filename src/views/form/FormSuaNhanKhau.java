@@ -1,20 +1,31 @@
 package views.form;
 
+import controllers.ControllerLichSu;
 import controllers.ControllerNhanKhau;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.ModelLichSu;
 import models.ModelNhanKhau;
 import test.Main;
 import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
 
 public class FormSuaNhanKhau extends javax.swing.JPanel {
-
     boolean flag = false;
-
-    public FormSuaNhanKhau() {
+    private String username;
+    private String chucVu;
+    private String hoVaTen;
+    private String password;
+    
+    public FormSuaNhanKhau(String userName, String chucVu, String hoVaTen, String passWord) {
         initComponents();
+        this.username = userName;
+        this.chucVu = chucVu;
+        this.hoVaTen = hoVaTen;
+        this.password = password;
     }
 
     private void showMessage(String message, int func) {
@@ -201,11 +212,11 @@ public class FormSuaNhanKhau extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 694, Short.MAX_VALUE))
+                        .addGap(0, 714, Short.MAX_VALUE))
                     .addComponent(jSeparator2)
                     .addComponent(textFieldQueQuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textFieldNoiSinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -248,7 +259,7 @@ public class FormSuaNhanKhau extends javax.swing.JPanel {
                         .addComponent(ButtonLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(textFieldGhiChu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(10, 10, 10))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,6 +407,11 @@ public class FormSuaNhanKhau extends javax.swing.JPanel {
                     boolean res = new ControllerNhanKhau().update(modelNhanKhau);
                     if (res) {
                         showMessage("Cập nhật thành công nhân khẩu vào CSDL", 1);
+                        
+                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                        Date date = new Date();
+                        new ControllerLichSu().insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Sửa nhân khẩu", this.chucVu));
+                        
                         textFieldCMND.setEditable(false);
                         textFieldQuanHeVoiChuHo.setEditable(false);
                         textFieldHoVaTen.setEditable(false);

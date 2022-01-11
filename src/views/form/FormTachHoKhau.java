@@ -1,5 +1,6 @@
 package views.form;
 
+import controllers.ControllerNhanKhau;
 import controllers.ControllerSoHoKhau;
 import java.awt.Component;
 import java.sql.SQLException;
@@ -14,18 +15,20 @@ import models.ModelSoHoKhau;
 import test.Main;
 import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
+import views.dialog.MessageTextField;
 import views.event.EventActionFormTach;
 import views.event.EventActionFormXoa;
 import views.swing.table.TableHeader;
 
 public class FormTachHoKhau extends javax.swing.JPanel {
     private boolean flag = false;
-    private ArrayList<ModelNhanKhau> arrMuonTach;
-    private ArrayList<ModelNhanKhau> arrSauTach;
-        
+    private ArrayList<ModelNhanKhau> arrMuonTach = new ArrayList<>();
+    private ArrayList<ModelNhanKhau> arrSauTach = new ArrayList<>();
+    ModelSoHoKhau soHoKhau;
     public FormTachHoKhau() {
         initComponents();
         tableMuonTach.fixTable(jScrollPane1);
+        
         tableMuonTach.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
@@ -37,6 +40,7 @@ public class FormTachHoKhau extends javax.swing.JPanel {
             }
         });
         tableMuonTach.removeColumn(tableMuonTach.getColumnModel().getColumn(0));
+        initTableMuonTachData();
         
         tableSauTach.fixTable(jScrollPane2);
         tableSauTach.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
@@ -50,41 +54,117 @@ public class FormTachHoKhau extends javax.swing.JPanel {
             }
         });
         tableSauTach.removeColumn(tableSauTach.getColumnModel().getColumn(0));
-        
-        initTableMuonTachData();
+        initTableSauTachData();
     }
 
     public void initTableMuonTachData() {
-        EventActionFormTach eventAction = new EventActionFormTach() {
+        EventActionFormTach eventActionFormTach = new EventActionFormTach() {
             @Override
             public void move(ModelNhanKhau nhanKhau) {
-//                showMessage("Bạn muốn xóa nhân khẩu: " + nhanKhau.getHoVaTen(),1);
-//                table1.removeRow(table1.getSelectedRow());
-//                System.out.println(table1.getSelectedRow());
-//                for (int i = 0; i < arr.size(); ++i) {
-//                    if (arr.get(i).getCMND().equals(nhanKhau.getCMND())) {
-//                        stackArrayList.add(arr.get(i));
-//                        arr.remove(i);
-//                        table1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
-//                            @Override
-//                            public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
-//                                TableHeader header = new TableHeader(o + "");
-//                                if (i1 == 4) {
-//                                    header.setHorizontalAlignment(JLabel.CENTER);
-//                                }
-//                                return header;
-//                            }
-//                        });
-//                        table1.removeColumn(table1.getColumnModel().getColumn(0));
-//                    }
-//                }
+                System.out.println("chuyen nhan khau");
+                boolean ans = showMessageOption("Bạn muốn chuyển nhân khẩu: " + nhanKhau.getHoVaTen());
+                if (ans) {
+                    tableMuonTach.removeRow(tableMuonTach.getSelectedRow());
+                    System.out.println(tableMuonTach.getSelectedRow());
+                    for (int i = 0; i < arrMuonTach.size(); ++i) {
+                        if (arrMuonTach.get(i).getCMND().equals(nhanKhau.getCMND())) {
+                            arrSauTach.add(arrMuonTach.get(i));
+                            initTableSauTachData();
+                            arrMuonTach.remove(i);
+                            tableMuonTach.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
+                                @Override
+                                public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+                                    TableHeader header = new TableHeader(o + "");
+                                    if (i1 == 2) {
+                                        header.setHorizontalAlignment(JLabel.CENTER);
+                                    }
+                                    return header;
+                                }
+                            });
+                            tableMuonTach.removeColumn(tableMuonTach.getColumnModel().getColumn(0));
+                        }
+                    }
+                }
             }
         };
+        tableMuonTach.clearRow();
+        for (int i = 0; i < arrMuonTach.size(); ++i) {
+            tableMuonTach.addRow(new ModelNhanKhau(arrMuonTach.get(i).getCMND(), arrMuonTach.get(i).getHoVaTen(), " ").toRowTableFormTachNhanKhau(eventActionFormTach));
+        }
+    }
+    
+        public void initTableSauTachData() {
+        EventActionFormTach eventActionFormTach = new EventActionFormTach() {
+            @Override
+            public void move(ModelNhanKhau nhanKhau) {
+                System.out.println("chuyen nhan khau");
+                boolean ans = showMessageOption("Bạn muốn chuyển nhân khẩu: " + nhanKhau.getHoVaTen());
+                if (ans) {
+                    tableSauTach.removeRow(tableSauTach.getSelectedRow());
+                    System.out.println(tableSauTach.getSelectedRow());
+                    for (int i = 0; i < arrSauTach.size(); ++i) {
+                        if (arrSauTach.get(i).getCMND().equals(nhanKhau.getCMND())) {
+                            arrMuonTach.add(arrSauTach.get(i));
+                            initTableMuonTachData();
+                            arrSauTach.remove(i);
+                            tableSauTach.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
+                                @Override
+                                public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+                                    TableHeader header = new TableHeader(o + "");
+                                    if (i1 == 2) {
+                                        header.setHorizontalAlignment(JLabel.CENTER);
+                                    }
+                                    return header;
+                                }
+                            });
+                            tableSauTach.removeColumn(tableSauTach.getColumnModel().getColumn(0));
+                        }
+                    }
+                }
+            }
+        };
+        tableSauTach.clearRow();
+        for (int i = 0; i < arrSauTach.size(); ++i) {
+            tableSauTach.addRow(new ModelNhanKhau(arrSauTach.get(i).getCMND(), arrSauTach.get(i).getHoVaTen(), " ").toRowTableFormTachNhanKhau(eventActionFormTach));
+        }
+    }
+    
+    public boolean checkEmptyCell() {
+        for (int i = 0; i < arrMuonTach.size(); ++i) {
+            if (String.valueOf(tableMuonTach.getModel().getValueAt(i, 2)).equals(" ")) {
+                return false;
+            }
+        }
+        for (int i = 0; i < arrSauTach.size(); ++i) {
+            if (String.valueOf(tableSauTach.getModel().getValueAt(i, 2)).equals(" ")) {
+                return false;
+            }
+        }
+        return true;
+    }    
+    
+    public boolean checkCMNDinTable() {
+        int co = 0;
+        for (int i = 0; i < arrMuonTach.size(); ++i) {
+            if (textFieldCMNDMuonTach.getText().equals(arrMuonTach.get(i).getCMND())) {
+                ++co;
+                break;
+            }
+        }
+        if (co == 0) {
+            return false;
+        }
         
-//        for (int i = 0; i < arr.size(); ++i) {
-//                table1.addRow(new ModelNhanKhau(arr.get(i).getCMND(), arr.get(i).getHoVaTen(), arr.get(i).getNgaySinh(), arr.get(i).getGioiTinh(), arr.get(i).getQuanHeChuHo()).toRowTableFormXoaNhanKhau(eventAction));
-//        }
-        tableMuonTach.addRow(new ModelNhanKhau("456", "NNN", "Con").toRowTableFormTachNhanKhau(eventAction));
+        for (int i = 0; i < arrSauTach.size(); ++i) {
+            if (textFieldCMNDSauTach.getText().equals(arrSauTach.get(i).getCMND())) {
+                ++co;
+                break;
+            }
+        }
+        if (co == 1) {
+            return false;
+        }
+        return true;
     }
     
     private void showMessage(String message, int func) {
@@ -97,8 +177,12 @@ public class FormTachHoKhau extends javax.swing.JPanel {
         obj.showMessage(message);
         return obj.isOk();
     }
-    
 
+    private String showMessageTextField() {
+        MessageTextField obj = new MessageTextField(Main.getFrames()[0], true);
+        obj.showMessage();
+        return obj.dataTextField;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,7 +195,7 @@ public class FormTachHoKhau extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableMuonTach = new views.swing.table.Table();
         jLabel2 = new javax.swing.JLabel();
-        ButtonHoanThanh = new views.swing.Button();
+        ButtonTiepTuc = new views.swing.Button();
         textFieldCMNDSauTach = new views.swing.textfield.TextField();
         jLabel3 = new javax.swing.JLabel();
         textFieldNgayDangKi = new views.swing.textfield.TextField();
@@ -129,9 +213,9 @@ public class FormTachHoKhau extends javax.swing.JPanel {
         textFieldNhapSoHoKhauMuonTach.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         textFieldNhapSoHoKhauMuonTach.setLabelText("NHẬP MÃ SỐ SỔ HỘ KHẨU MUỐN TÁCH");
         textFieldNhapSoHoKhauMuonTach.setOpaque(false);
-        textFieldNhapSoHoKhauMuonTach.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldNhapSoHoKhauMuonTachActionPerformed(evt);
+        textFieldNhapSoHoKhauMuonTach.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldNhapSoHoKhauMuonTachMousePressed(evt);
             }
         });
 
@@ -164,7 +248,7 @@ public class FormTachHoKhau extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -177,14 +261,14 @@ public class FormTachHoKhau extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
         jLabel2.setText("NHẬP THÔNG TIN SỔ HỘ KHẨU MUỐN TÁCH");
 
-        ButtonHoanThanh.setBackground(new java.awt.Color(89, 89, 255));
-        ButtonHoanThanh.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonHoanThanh.setText("HOÀN THÀNH");
-        ButtonHoanThanh.setToolTipText("");
-        ButtonHoanThanh.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        ButtonHoanThanh.addActionListener(new java.awt.event.ActionListener() {
+        ButtonTiepTuc.setBackground(new java.awt.Color(89, 89, 255));
+        ButtonTiepTuc.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonTiepTuc.setText("TIẾP TỤC");
+        ButtonTiepTuc.setToolTipText("");
+        ButtonTiepTuc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        ButtonTiepTuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonHoanThanhActionPerformed(evt);
+                ButtonTiepTucActionPerformed(evt);
             }
         });
 
@@ -215,7 +299,7 @@ public class FormTachHoKhau extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -241,30 +325,39 @@ public class FormTachHoKhau extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
-                    .addComponent(textFieldCMNDMuonTach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2))
-                .addGap(20, 20, 20)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(textFieldCMNDMuonTach, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textFieldNgayDangKi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
-                    .addComponent(textFieldCMNDSauTach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textFieldCMNDSauTach, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textFieldNgayDangKi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(245, 245, 245)
                 .addComponent(textFielddiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(245, 245, 245))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(134, Short.MAX_VALUE)
                 .addComponent(textFieldNhapSoHoKhauMuonTach, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75)
                 .addComponent(ButtonTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ButtonHoanThanh, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonTiepTuc, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -285,40 +378,51 @@ public class FormTachHoKhau extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(textFieldCMNDSauTach, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textFieldNgayDangKi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(textFieldNgayDangKi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(textFieldCMNDMuonTach, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
-                .addComponent(ButtonHoanThanh, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ButtonTiepTuc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldNhapSoHoKhauMuonTachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhauMuonTachActionPerformed
+    private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
         try {
-            if (textFieldNhapSoHoKhauMuonTach.getText().equals("")) {
-                showMessage("Vui lòng nhập mã sổ hộ khẩu", 2);
+            if (flag == true) {
+                ButtonTimKiem.setEnabled(false);
             } else {
-                if (!new ControllerSoHoKhau().checkMaSHKIsExist(textFieldNhapSoHoKhauMuonTach.getText())) {
-                    showMessage("Mã sổ hộ khẩu không tồn tại", 2);
-                    textFieldNhapSoHoKhauMuonTach.setText("");
+                if (textFieldNhapSoHoKhauMuonTach.getText().equals("")) {
+                    showMessage("Vui lòng nhập mã sổ hộ khẩu", 2);
                 } else {
-                    flag = true;
-                    showMessage("Nhập thông tin nhân khẩu", 1);
-                    ModelSoHoKhau soHoKhau = new ControllerSoHoKhau().TraCuuSHK(textFieldNhapSoHoKhauMuonTach.getText());
-                    textFielddiaChi.setText(soHoKhau.getDiaChi());
-                    
-                    textFieldCMNDMuonTach.setEditable(true);
-                    textFieldCMNDSauTach.setEditable(true);
-                    textFieldNgayDangKi.setEditable(true);
+                    if (!new ControllerSoHoKhau().checkMaSHKIsExist(textFieldNhapSoHoKhauMuonTach.getText())) {
+                        showMessage("Mã sổ hộ khẩu không tồn tại", 2);
+                        textFieldNhapSoHoKhauMuonTach.setText("");
+                    } else {
+                        flag = true;
+                        showMessage("Nhập thông tin nhân khẩu", 1);
+                        ButtonTimKiem.setEnabled(false);
+                        arrMuonTach = new ControllerNhanKhau().selectDanhMucNhanKhau(textFieldNhapSoHoKhauMuonTach.getText());
+                        initTableMuonTachData();
+                        
+                        soHoKhau = new ControllerSoHoKhau().TraCuuSHK(textFieldNhapSoHoKhauMuonTach.getText());
+                        textFielddiaChi.setText(soHoKhau.getDiaChi());
+                        
+                        textFieldCMNDMuonTach.setText("");
+                        textFieldCMNDSauTach.setText("");
+                        textFieldNgayDangKi.setText("");
+                        textFieldCMNDMuonTach.setEditable(true);
+                        textFieldCMNDSauTach.setEditable(true);
+                        textFieldNgayDangKi.setEditable(true);
+                    }
                 }
             }
         } catch (SQLException ex) {
@@ -326,19 +430,104 @@ public class FormTachHoKhau extends javax.swing.JPanel {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_textFieldNhapSoHoKhauMuonTachActionPerformed
-
-    private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
-
     }//GEN-LAST:event_ButtonTimKiemActionPerformed
 
-    private void ButtonHoanThanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonHoanThanhActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonHoanThanhActionPerformed
+    private void ButtonTiepTucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTiepTucActionPerformed
+        try {
+            if (flag == true) {
+                if (tableSauTach.getRowCount() == 0 || tableMuonTach.getRowCount() == 0 || textFieldCMNDMuonTach.getText().equals("") || textFieldCMNDSauTach.getText().equals("") || textFieldNgayDangKi.getText().equals("")) {
+                    showMessage("Vui lòng hoàn thành trước khi lưu", 2);
+                } else if (checkCMNDinTable() == false) {
+                    showMessage("Mã CMND/CCCD không tồn tại trong SHK", 2);
+                } else {
+                    if (checkEmptyCell()) {
+                        String maSHKMoi = showMessageTextField();
+                        if (maSHKMoi != null) {
+                            // update hoVaTenChuHo table muon tach 
+                            soHoKhau.setHoVaTenChuHo(new ControllerNhanKhau().TraCuuNhanKhau(textFieldCMNDMuonTach.getText()).getHoVaTen());
+                            // update quanhechuho cho nhan khau
+                            for (int i = 0; i < arrMuonTach.size(); ++i) {
+                                arrMuonTach.get(i).setQuanHeChuHo(tableMuonTach.getModel().getValueAt(i, 2).toString());
+                                new ControllerNhanKhau().updateQHCH(arrMuonTach.get(i).getCMND(), arrMuonTach.get(i).getQuanHeChuHo());
+                            }
+                             
+                            // insert shk moi vao csdl
+                            ModelSoHoKhau shkMoi = new ModelSoHoKhau();
+                            shkMoi.setSoHoKhau(maSHKMoi);
+                            shkMoi.setNgayDangKi(textFieldNgayDangKi.getText());
+                            shkMoi.setDiaChi(textFielddiaChi.getText());
+                            shkMoi.setHoVaTenChuHo(new ControllerNhanKhau().TraCuuNhanKhau(textFieldCMNDSauTach.getText()).getHoVaTen());
+                            new ControllerSoHoKhau().insert(shkMoi);
+                            
+                            // update shk, quanhechuho cho nhan khau
+                            for (int i = 0; i < arrSauTach.size(); ++i) {
+                                arrSauTach.get(i).setSoHoKhau(maSHKMoi);
+                                arrSauTach.get(i).setQuanHeChuHo(tableSauTach.getModel().getValueAt(i, 2).toString());
+                                
+                                new ControllerNhanKhau().updateQHCKandSHK(arrSauTach.get(i).getCMND(), arrSauTach.get(i).getQuanHeChuHo(), maSHKMoi);
+                            }
+                            
+                            // Tra ve lai ban dau
+                            ButtonTimKiem.setEnabled(true);
+                            textFieldNhapSoHoKhauMuonTach.setText("");
+                            textFieldCMNDMuonTach.setText("");
+                            textFieldCMNDSauTach.setText("");
+                            textFieldNgayDangKi.setText("");
+                            textFielddiaChi.setText(" ");
+                            textFieldCMNDMuonTach.setEditable(false);
+                            textFieldCMNDSauTach.setEditable(false);
+                            textFieldNgayDangKi.setEditable(false);
+                            textFielddiaChi.setEditable(false);
+
+                            tableMuonTach.clearRow();
+                            tableSauTach.clearRow();
+                            arrMuonTach.clear();
+                            arrSauTach.clear();
+                            flag = false;
+                        }
+                    } else {
+                        showMessage("Nhấn đúp chuột vào ô QHCH đề điền TT", 2);
+                    }
+
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ButtonTiepTucActionPerformed
+
+    private void textFieldNhapSoHoKhauMuonTachMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhauMuonTachMousePressed
+        if (flag == true) {
+            boolean ans = showMessageOption("Bạn muốn tách sổ hộ khẩu khác");
+            if (ans) {
+                flag = false;
+                ButtonTimKiem.setEnabled(true);
+                textFieldNhapSoHoKhauMuonTach.setFocusable(true);
+                textFieldNhapSoHoKhauMuonTach.setText("");
+                textFieldCMNDMuonTach.setText("");
+                textFieldCMNDSauTach.setText("");
+                textFieldNgayDangKi.setText("");
+                textFielddiaChi.setText(" ");
+                textFieldCMNDMuonTach.setEditable(false);
+                textFieldCMNDSauTach.setEditable(false);
+                textFieldNgayDangKi.setEditable(false);
+                textFielddiaChi.setEditable(false);
+                
+                tableMuonTach.clearRow();
+                tableSauTach.clearRow();
+                arrMuonTach.clear();
+                arrSauTach.clear();
+            } else {
+                textFieldNhapSoHoKhauMuonTach.setFocusable(false);
+            }
+        }
+    }//GEN-LAST:event_textFieldNhapSoHoKhauMuonTachMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private views.swing.Button ButtonHoanThanh;
+    private views.swing.Button ButtonTiepTuc;
     private views.swing.Button ButtonTimKiem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

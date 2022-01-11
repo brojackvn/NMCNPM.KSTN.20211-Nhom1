@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import views.swing.scrollbar.ScrollBarCustom;
 import models.ModelAction;
-import models.ModelActionMove;
+import models.ModelMove;
         
 public class Table extends JTable {
     public Table() {
@@ -41,18 +41,16 @@ public class Table extends JTable {
                         cell.setBackground(Color.WHITE);
                     }
                     return cell;
-                } 
-//                else if (o instanceof ModelActionMove) {
-//                    ModelActionMove data = (ModelActionMove) o;
-//                    Move cell = new Move(data);
-//                    if (selected) {
-//                        cell.setBackground(new Color(239,244,255));
-//                    } else {
-//                        cell.setBackground(Color.WHITE);
-//                    }
-//                    return cell;
-//                } 
-                else {
+                } else if (o instanceof ModelMove) {
+                    ModelMove data = (ModelMove) o;
+                    Move cell = new Move(data);
+                    if (selected) {
+                        cell.setBackground(new Color(239,244,255));
+                    } else {
+                        cell.setBackground(Color.WHITE);
+                    }
+                    return cell;
+                } else {
                     Component com = super.getTableCellRendererComponent(jtable, o, selected, focus, i, i1);
                     setBorder(new EmptyBorder(10, 5, 10, 5));
 //                    setBorder(noFocusBorder);
@@ -72,6 +70,8 @@ public class Table extends JTable {
     public TableCellEditor getCellEditor(int row, int col) {
         if (col == 4) {
             return new TableCellAction();
+        } else if (col == 2) {
+            return new TableCellMove();
         } else {
             return super.getCellEditor(row, col);
         }

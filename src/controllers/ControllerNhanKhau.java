@@ -204,4 +204,30 @@ public class ControllerNhanKhau {
             return pstmt.executeUpdate() > 0 ? true:false;
         }
     }
+    
+    public boolean updateQHCH(String CMND, String quanHeChuHo) throws ClassNotFoundException, SQLException {
+        String sql = "UPDATE `nhan_khau` SET `quanHeChuHo`= ? WHERE `CMND` = ?";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstm = con.prepareStatement(sql);
+        ) {
+            pstm.setString(1, quanHeChuHo);
+            pstm.setString(2, CMND);
+            return pstm.executeUpdate() > 0 ? true:false;
+        }
+    }
+    
+    public boolean updateQHCKandSHK(String CMND, String quanHeChuHo, String SHK) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE `nhan_khau` SET `soHoKhau`=?, `quanHeChuHo`=? WHERE `CMND` = ?";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstm = con.prepareStatement(sql);
+        ) {
+            pstm.setString(1, SHK);
+            pstm.setString(2, quanHeChuHo);
+            pstm.setString(3, CMND);
+    
+            return pstm.executeUpdate() > 0 ? true:false;
+        }
+    }
 }
