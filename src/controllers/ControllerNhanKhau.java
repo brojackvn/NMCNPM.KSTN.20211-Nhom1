@@ -51,6 +51,7 @@ public class ControllerNhanKhau {
             pstmt.setString(1, CMND);
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
+                NhanKhau.setTonGiao(rs.getString("tonGiao"));
                 NhanKhau.setSoHoKhau(rs.getString("soHoKhau"));
                 NhanKhau.setHoVaTen(rs.getString("hoVaTen"));
                 NhanKhau.setTenGoiKhac(rs.getString("tenGoiKhac"));
@@ -59,7 +60,6 @@ public class ControllerNhanKhau {
                 NhanKhau.setDanToc(rs.getString("danToc"));
                 NhanKhau.setNoiSinh(rs.getString("noiSinh"));
                 NhanKhau.setQueQuan(rs.getString("queQuan"));
-                NhanKhau.setTonGiao(rs.getString("tonGiao"));
                 NhanKhau.setQuocTich(rs.getString("quocTich"));
                 NhanKhau.setCMND(rs.getString("CMND"));
                 NhanKhau.setNoiOHienTai(rs.getString("noiOHienTai"));
@@ -202,6 +202,22 @@ public class ControllerNhanKhau {
             pstmt.setString(1, CMND);
 
             return pstmt.executeUpdate() > 0 ? true:false;
+        }
+    }
+    
+    public String get_NoiThuongTru(String SoHoKhau) throws SQLException, ClassNotFoundException{
+        String sql = "select * FROM `ho_khau` WHERE soHoKhau = ?";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt = con.prepareStatement(sql);
+        ) {
+            pstmt.setString(1, SoHoKhau);
+            ResultSet rs = pstmt.executeQuery();
+            
+            String result = new String();
+            if(rs.next()) {result = rs.getString("diaChi");}
+            return result;
+            
         }
     }
 }

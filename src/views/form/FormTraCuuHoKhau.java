@@ -20,9 +20,14 @@ import models.ModelSoHoKhau;
 import views.swing.scrollbar.ScrollBarCustom;
 import controllers.ControllerSoHoKhau;
 import java.util.ArrayList;
+import test.Main;
+import views.dialog.MessageConfirm;
+import views.dialog.MessageOption;
 
 public class FormTraCuuHoKhau extends javax.swing.JPanel { 
  
+    public boolean flag = false;
+    
     public FormTraCuuHoKhau() {
         initComponents();
         table1.fixTable(jScrollPane1);
@@ -38,9 +43,27 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
    
     }
     
-    public void initThongTinSHK() {
-        
+    public void clearTableData(views.swing.table.Table table1){
+        while (table1.getRowCount()>0)
+          {
+             table1.removeRow(0);
+          }
     }
+    
+    public void initThongTinSHK() {  
+    }
+    
+    private void showMessage(String message, int func) {
+        MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
+        obj.showMessage(message);
+    }
+
+    private boolean showMessageOption(String message) {
+        MessageOption obj = new MessageOption(Main.getFrames()[0], true);
+        obj.showMessage(message);
+        return obj.isOk();
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -68,6 +91,11 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
         textFieldNhapSoHoKhau.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         textFieldNhapSoHoKhau.setLabelText("NHẬP MÃ SỐ SỔ HỘ KHẨU");
         textFieldNhapSoHoKhau.setOpaque(false);
+        textFieldNhapSoHoKhau.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldNhapSoHoKhauMousePressed(evt);
+            }
+        });
         textFieldNhapSoHoKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldNhapSoHoKhauActionPerformed(evt);
@@ -238,28 +266,35 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     }//GEN-LAST:event_textFieldNhapSoHoKhauActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        System.out.println("Helloew wwww");
+
+        
         String MaSHK = textFieldNhapSoHoKhau.getText();
     
         try{
            ControllerSoHoKhau CTLSoHoKhau = new ControllerSoHoKhau();
+           if(CTLSoHoKhau.checkMaSHKIsExist(MaSHK)){
+                flag = true;
+                //So Ho Khau
+                ModelSoHoKhau SHK = CTLSoHoKhau.TraCuuSHK(MaSHK);
+                //List Nhan Khau Trong Ho
+                ArrayList<ModelNhanKhau> listNhanKhau = CTLSoHoKhau.getListNhanKhau_fromSoSHK(MaSHK);
 
-           //So Ho Khau
-           ModelSoHoKhau SHK = CTLSoHoKhau.TraCuuSHK(MaSHK);
-           //List Nhan Khau Trong Ho
-           ArrayList<ModelNhanKhau> listNhanKhau = CTLSoHoKhau.getListNhanKhau_fromSoSHK(MaSHK);
+                //hiển thị thông tin về Hộ Khẩu
+                textFieldhoVaTenChuHo.setText(SHK.getHoVaTenChuHo());
+                textFielddiaChi.setText(SHK.getDiaChi());
+                textFieldngayDangKi.setText(SHK.getNgayDangKi());
 
-           //hiển thị thông tin về Hộ Khẩu
-           textFieldhoVaTenChuHo.setText(SHK.getHoVaTenChuHo());
-           textFielddiaChi.setText(SHK.getDiaChi());
-           textFieldngayDangKi.setText(SHK.getNgayDangKi());
-
-           //hiển thị thông tin về nhân khẩu trong hộ
-           for(int i=0; i<listNhanKhau.size(); i++){
-                table1.addRow(listNhanKhau.get(i).toRowTableTraCuuHoKhau());
+                //hiển thị thông tin về nhân khẩu trong hộ
+                for(int i=0; i<listNhanKhau.size(); i++){
+                     table1.addRow(listNhanKhau.get(i).toRowTableTraCuuHoKhau());
+                }   
            }
+           else{
+               showMessage("Sổ hộ khẩu không tồn tại.", 2);
+           }
+
+
         } catch(Exception e){};
-        textFieldNhapSoHoKhau.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void textFieldhoVaTenChuHoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldhoVaTenChuHoActionPerformed
@@ -268,64 +303,69 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
 
     private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
         // TODO add your handling code here:
-        try {
-            String loc = ".\\demo.pdf";
-            PdfWriter writer = new PdfWriter(loc);
-            PdfDocument pdf = new PdfDocument(writer);
-            pdf.addNewPage();
-            PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
+        
+        if(textFieldNhapSoHoKhau.getText().equals("")){
+            showMessage("Vui lòng nhập tìm kiếm", 2);
+        }
+        else{
+            try {
+                String loc = ".\\demo.pdf";
+                PdfWriter writer = new PdfWriter(loc);
+                PdfDocument pdf = new PdfDocument(writer);
+                pdf.addNewPage();
+                PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
 
-            Document document = new Document(pdf);
-            String para1 = "Mã số sổ hộ khẩu: " + textFieldNhapSoHoKhau.getText();
-            Paragraph paragraph1 = new Paragraph(para1).setFont(font);
-            String para2 = "Họ và tên chủ hộ: " + textFieldhoVaTenChuHo.getText();
-            Paragraph paragraph2 = new Paragraph(para2).setFont(font);
-            String para3 = "Địa chỉ: " + textFielddiaChi.getText();
-            Paragraph paragraph3 = new Paragraph(para3).setFont(font);
-            String para4 = "Ngày đăng kí: " + textFieldngayDangKi.getText() + "\n\n";
-            Paragraph paragraph4 = new Paragraph(para4).setFont(font);
+                Document document = new Document(pdf);
+                String para1 = "Mã số sổ hộ khẩu: " + textFieldNhapSoHoKhau.getText();
+                Paragraph paragraph1 = new Paragraph(para1).setFont(font);
+                String para2 = "Họ và tên chủ hộ: " + textFieldhoVaTenChuHo.getText();
+                Paragraph paragraph2 = new Paragraph(para2).setFont(font);
+                String para3 = "Địa chỉ: " + textFielddiaChi.getText();
+                Paragraph paragraph3 = new Paragraph(para3).setFont(font);
+                String para4 = "Ngày đăng kí: " + textFieldngayDangKi.getText() + "\n\n";
+                Paragraph paragraph4 = new Paragraph(para4).setFont(font);
 
-            document.add(paragraph1);
-            document.add(paragraph2);
-            document.add(paragraph3);
-            document.add(paragraph4);
+                document.add(paragraph1);
+                document.add(paragraph2);
+                document.add(paragraph3);
+                document.add(paragraph4);
 
-            Table table = new Table(new float[]{100F, 100F, 100F, 100F, 100F});
+                Table table = new Table(new float[]{100F, 100F, 100F, 100F, 100F});
 
-            Cell cell1 = new Cell();
-            cell1.add(new Paragraph("Họ và tên").setFont(font));
-            table.addCell(cell1);
+                Cell cell1 = new Cell();
+                cell1.add(new Paragraph("Họ và tên").setFont(font));
+                table.addCell(cell1);
 
-            Cell cell2 = new Cell();
-            cell2.add(new Paragraph("Ngày sinh").setFont(font));
-            table.addCell(cell2);
+                Cell cell2 = new Cell();
+                cell2.add(new Paragraph("Ngày sinh").setFont(font));
+                table.addCell(cell2);
 
-            Cell cell3 = new Cell();
-            cell3.add(new Paragraph("Giới tính").setFont(font));
-            table.addCell(cell3);
+                Cell cell3 = new Cell();
+                cell3.add(new Paragraph("Giới tính").setFont(font));
+                table.addCell(cell3);
 
-            Cell cell4 = new Cell();
-            cell4.add(new Paragraph("Quan hệ với chủ hộ").setFont(font));
-            table.addCell(cell4);
+                Cell cell4 = new Cell();
+                cell4.add(new Paragraph("Quan hệ với chủ hộ").setFont(font));
+                table.addCell(cell4);
 
-            Cell cell5 = new Cell();
-            cell5.add(new Paragraph("Nơi ở hiện tại").setFont(font));
-            table.addCell(cell5);
+                Cell cell5 = new Cell();
+                cell5.add(new Paragraph("Nơi ở hiện tại").setFont(font));
+                table.addCell(cell5);
 
-            ArrayList<String> arr = table1.readTable();
-            for (int i = 0; i < arr.size(); ++i) {
-//                System.out.println(i);
-                Cell cell = new Cell();
-                cell.add(new Paragraph(arr.get(i)).setFont(font));
-                table.addCell(cell);
+                ArrayList<String> arr = table1.readTable();
+                for (int i = 0; i < arr.size(); ++i) {
+                    Cell cell = new Cell();
+                    cell.add(new Paragraph(arr.get(i)).setFont(font));
+                    table.addCell(cell);
+                }
+
+                document.add(table);
+
+                document.close();
+                System.out.println("PDF created");
+            } catch (Exception e) {
+              System.out.println(e);
             }
-
-            document.add(table);
-
-            document.close();
-            System.out.println("PDF created");
-        } catch (Exception e) {
-          System.out.println(e);
         }
     }//GEN-LAST:event_searchButton1ActionPerformed
 
@@ -336,6 +376,25 @@ public class FormTraCuuHoKhau extends javax.swing.JPanel {
     private void textFieldngayDangKiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldngayDangKiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldngayDangKiActionPerformed
+
+    private void textFieldNhapSoHoKhauMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNhapSoHoKhauMousePressed
+        if(flag==true){
+            boolean ans = showMessageOption("Bạn có muốn nhập sổ hộ khẩu khác hay không?");
+            if(ans==true){
+                textFieldNhapSoHoKhau.setFocusable(true);
+                textFieldNhapSoHoKhau.setText("");
+                clearTableData(table1);
+                textFielddiaChi.setText(" ");
+                textFieldhoVaTenChuHo.setText(" ");
+                textFieldngayDangKi.setText(" ");
+                flag = false;
+            }
+            else{
+                textFieldNhapSoHoKhau.setFocusable(false);
+            }
+        }
+        
+    }//GEN-LAST:event_textFieldNhapSoHoKhauMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

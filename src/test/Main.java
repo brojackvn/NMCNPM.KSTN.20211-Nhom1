@@ -129,7 +129,7 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 2) { // Thủ tục Hộ Khẩu
                     if (subMenuIndex == 0) { // Đăng kí Hộ Khẩu
-                        main.showForm(new FormDangKiHoKhau());
+                        main.showForm(new FormDangKiHoKhau(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 1) { // Tách Hộ Khẩu
                         main.showForm(new FormTachHoKhau());
                     }

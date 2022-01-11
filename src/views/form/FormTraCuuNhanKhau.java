@@ -1,10 +1,25 @@
 
 package views.form;
 
+import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
 import models.ModelNhanKhau;
 import controllers.ControllerNhanKhau;
+import java.util.ArrayList;
+import test.Main;
+import views.dialog.MessageConfirm;
+import views.dialog.MessageOption;
 
 public class FormTraCuuNhanKhau extends javax.swing.JPanel {
+    
+    public boolean flag = false;
 
     public FormTraCuuNhanKhau() {
         initComponents();
@@ -13,6 +28,24 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
 
     public void initTable() {
         
+    }
+    
+        private void showMessage(String message, int func) {
+        MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
+        obj.showMessage(message);
+    }
+
+    private boolean showMessageOption(String message) {
+        MessageOption obj = new MessageOption(Main.getFrames()[0], true);
+        obj.showMessage(message);
+        return obj.isOk();
+    }
+    
+        public void clearTableData(views.swing.table.Table table1){
+        while (table1.getRowCount()>0)
+          {
+             table1.removeRow(0);
+          }
     }
     
     @SuppressWarnings("unchecked")
@@ -39,7 +72,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textFieldNoiSinh = new views.swing.textfield.TextField();
         textFieldQueQuan = new views.swing.textfield.TextField();
         textFieldThuongTru = new views.swing.textfield.TextField();
-        textFieldcChoOHienTai = new views.swing.textfield.TextField();
+        textFieldChoOHienTai = new views.swing.textfield.TextField();
         searchButton1 = new views.swing.Button();
         textFieldGhiChu = new views.swing.textfield.TextField();
 
@@ -53,6 +86,11 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textFieldNhapCMND.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         textFieldNhapCMND.setLabelText("NHẬP MÃ SỐ CMND/CCCD");
         textFieldNhapCMND.setOpaque(false);
+        textFieldNhapCMND.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldNhapCMNDMousePressed(evt);
+            }
+        });
         textFieldNhapCMND.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldNhapCMNDActionPerformed(evt);
@@ -164,12 +202,12 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         textFieldThuongTru.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         textFieldThuongTru.setLabelText("NƠI THƯỜNG TRÚ");
 
-        textFieldcChoOHienTai.setEditable(false);
-        textFieldcChoOHienTai.setBackground(new java.awt.Color(245, 245, 245));
-        textFieldcChoOHienTai.setText(" ");
-        textFieldcChoOHienTai.setAutoscrolls(false);
-        textFieldcChoOHienTai.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        textFieldcChoOHienTai.setLabelText("CHỖ Ở HIỆN TẠI");
+        textFieldChoOHienTai.setEditable(false);
+        textFieldChoOHienTai.setBackground(new java.awt.Color(245, 245, 245));
+        textFieldChoOHienTai.setText(" ");
+        textFieldChoOHienTai.setAutoscrolls(false);
+        textFieldChoOHienTai.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        textFieldChoOHienTai.setLabelText("CHỖ Ở HIỆN TẠI");
 
         searchButton1.setBackground(new java.awt.Color(89, 89, 255));
         searchButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -217,7 +255,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textFieldcChoOHienTai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textFieldChoOHienTai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textFieldThuongTru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textFieldQueQuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(textFieldNoiSinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -291,7 +329,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textFieldThuongTru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(textFieldcChoOHienTai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldChoOHienTai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textFieldGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,43 +343,107 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
     }//GEN-LAST:event_textFieldNhapCMNDActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        System.out.println("Helloew wwww");
-        //System.out.println(textFieldNhapCMND.getText());
- 
+
         String CMND = textFieldNhapCMND.getText();
 
         try{
+            
             ControllerNhanKhau CTLNhanKhau = new ControllerNhanKhau();
-            ModelNhanKhau NhanKhau = CTLNhanKhau.TraCuuNhanKhau(CMND);
-            textFieldChuyenMon.setText(NhanKhau.getTrinhDoChuyenMon());
-            textFieldDanToc.setText(NhanKhau.getDanToc());
-            textFieldGhiChu.setText(NhanKhau.getGhiChu());
-            textFieldHoVaTen.setText(NhanKhau.getHoVaTen());
-            textFieldHocVan.setText(NhanKhau.getTrinhDoHocVan());
-            textFieldMaSHK.setText(NhanKhau.getSoHoKhau());
-            textFieldNgaysinh.setText(NhanKhau.getNgaySinh());
-            textFieldNgheNghiep.setText(NhanKhau.getNgheNghiepHienTai());
-            textFieldNoiSinh.setText(NhanKhau.getNoiSinh());
-            textFieldQuanHeChuHo.setText(NhanKhau.getQuanHeChuHo());
-            textFieldQueQuan.setText(NhanKhau.getQueQuan());
-            textFieldQuocTich.setText(NhanKhau.getQuocTich());
-            textFieldTenGoiKhac.setText(NhanKhau.getTenGoiKhac());
-            textFieldThuongTru.setText(NhanKhau.getNoiThuongTru());
-            textFieldTonGiao.setText(NhanKhau.getTonGiao());
-            textFieldcChoOHienTai.setText(NhanKhau.getNoiOHienTai());
+            if(CTLNhanKhau.checkCMNDIsExist(CMND)){
+                flag = true;
+                ModelNhanKhau NhanKhau = CTLNhanKhau.TraCuuNhanKhau(CMND);
 
-            if(NhanKhau.getGioiTinh()==1) textFieldGioiTinh.setText("Nam");//HERE
-            else textFieldGioiTinh.setText("Nữ");
+                if(NhanKhau.getGioiTinh()==1) textFieldGioiTinh.setText("Nam");
+                else {textFieldGioiTinh.setText("Nữ");}
+                textFieldThuongTru.setText(CTLNhanKhau.get_NoiThuongTru(NhanKhau.getSoHoKhau()));
+                textFieldChoOHienTai.setText(NhanKhau.getNoiOHienTai());
+                textFieldTonGiao.setText(NhanKhau.getTonGiao());
+                textFieldChuyenMon.setText(NhanKhau.getTrinhDoChuyenMon());
+                textFieldDanToc.setText(NhanKhau.getDanToc());
+                textFieldGhiChu.setText(NhanKhau.getGhiChu());
+                textFieldHoVaTen.setText(NhanKhau.getHoVaTen());
+                textFieldHocVan.setText(NhanKhau.getTrinhDoHocVan());
+                textFieldMaSHK.setText(NhanKhau.getSoHoKhau());
+                textFieldNgaysinh.setText(NhanKhau.getNgaySinh());
+                textFieldNgheNghiep.setText(NhanKhau.getNgheNghiepHienTai());
+                textFieldNoiSinh.setText(NhanKhau.getNoiSinh());
+                textFieldQuanHeChuHo.setText(NhanKhau.getQuanHeChuHo());
+                textFieldQueQuan.setText(NhanKhau.getQueQuan());
+                textFieldQuocTich.setText(NhanKhau.getQuocTich());
+                textFieldTenGoiKhac.setText(NhanKhau.getTenGoiKhac());
+            }
+            else{
+                showMessage("Sổ hộ khẩu không tồn tại.", 2);
+            }
+
         }catch(Exception e){};
         
-        
-
-        textFieldNhapCMND.setText("");
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButton1ActionPerformed
-        // TODO add your handling code here:
+        if(textFieldNhapCMND.getText().equals("")){
+            showMessage("Vui lòng nhập tìm kiếm", 2);
+        }
+        else{
+            try {
+                String loc = ".\\demo.pdf";
+                PdfWriter writer = new PdfWriter(loc);
+                PdfDocument pdf = new PdfDocument(writer);
+                pdf.addNewPage();
+                PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
+
+                Document document = new Document(pdf);
+
+                String para = "Chứng minh nhân dân: " + textFieldNhapCMND.getText();
+                Paragraph paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Mã số sổ hộ khẩu: " + textFieldMaSHK.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Quan hệ với chủ hộ: " + textFieldQuanHeChuHo.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);        
+                document.close();
+                System.out.println("PDF created");
+            } catch (Exception e) {
+              System.out.println(e);
+            }
+        }
     }//GEN-LAST:event_searchButton1ActionPerformed
+
+    private void textFieldNhapCMNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNhapCMNDMousePressed
+        if(flag==true){
+            boolean ans = showMessageOption("Bạn có muốn nhập sổ hộ khẩu khác hay không?");
+            if(ans==true){
+                textFieldNhapCMND.setFocusable(true);
+                textFieldThuongTru.setText(" ");
+                textFieldChoOHienTai.setText(" ");
+                textFieldTonGiao.setText(" ");
+                textFieldChuyenMon.setText(" ");
+                textFieldDanToc.setText(" ");
+                textFieldGhiChu.setText(" ");
+                textFieldHoVaTen.setText(" ");
+                textFieldHocVan.setText(" ");
+                textFieldMaSHK.setText(" ");
+                textFieldNgaysinh.setText(" ");
+                textFieldNgheNghiep.setText(" ");
+                textFieldNoiSinh.setText(" ");
+                textFieldQuanHeChuHo.setText(" ");
+                textFieldQueQuan.setText(" ");
+                textFieldQuocTich.setText(" ");
+                textFieldTenGoiKhac.setText(" ");
+                textFieldGioiTinh.setText(" ");
+                textFieldNhapCMND.setText("");
+
+                flag = false;
+            }
+            else{
+                textFieldNhapCMND.setFocusable(false);
+            }
+        }
+    }//GEN-LAST:event_textFieldNhapCMNDMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -350,6 +452,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private views.swing.Button searchButton;
     private views.swing.Button searchButton1;
+    private views.swing.textfield.TextField textFieldChoOHienTai;
     private views.swing.textfield.TextField textFieldChuyenMon;
     private views.swing.textfield.TextField textFieldDanToc;
     private views.swing.textfield.TextField textFieldGhiChu;
@@ -367,6 +470,5 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
     private views.swing.textfield.TextField textFieldTenGoiKhac;
     private views.swing.textfield.TextField textFieldThuongTru;
     private views.swing.textfield.TextField textFieldTonGiao;
-    private views.swing.textfield.TextField textFieldcChoOHienTai;
     // End of variables declaration//GEN-END:variables
 }

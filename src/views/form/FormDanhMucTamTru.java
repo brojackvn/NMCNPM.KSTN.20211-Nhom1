@@ -5,6 +5,15 @@
 package views.form;
 
 
+import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
 import models.ModelTamTru;
 import controllers.ControllerTamTru;
 import java.sql.SQLException;
@@ -96,7 +105,49 @@ public class FormDanhMucTamTru extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
+        try {
+            String loc = ".\\demo.pdf";
+            PdfWriter writer = new PdfWriter(loc);
+            PdfDocument pdf = new PdfDocument(writer);
+            pdf.addNewPage();
+            PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
 
+            Document document = new Document(pdf);
+            String para1 = "Danh mục tạm trú: ";
+            Paragraph paragraph1 = new Paragraph(para1).setFont(font);
+            document.add(paragraph1);
+
+
+            Table table = new Table(new float[]{100F, 200F, 200F});
+
+            Cell cell1 = new Cell();
+            cell1.add(new Paragraph("Họ tên").setFont(font));
+            table.addCell(cell1);
+
+            Cell cell2 = new Cell();
+            cell2.add(new Paragraph("Địa chỉ tạm trú").setFont(font));
+            table.addCell(cell2);
+
+            Cell cell3 = new Cell();
+            cell3.add(new Paragraph("Lý do").setFont(font));
+            table.addCell(cell3);
+
+
+            ArrayList<String> arr = table1.readTable();
+            for (int i = 0; i < arr.size(); ++i) {
+//                System.out.println(i);
+                Cell cell = new Cell();
+                cell.add(new Paragraph(arr.get(i)).setFont(font));
+                table.addCell(cell);
+            }
+
+            document.add(table);
+
+            document.close();
+            System.out.println("PDF created");
+        } catch (Exception e) {
+          System.out.println(e);
+        }
     }//GEN-LAST:event_ButtonTimKiemActionPerformed
 
 

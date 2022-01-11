@@ -1,24 +1,73 @@
 package views.form;
 
+import controllers.ControllerLichSu;
 import controllers.ControllerNhanKhau;
 import java.util.ArrayList;
 import models.ModelNhanKhau;
 import models.ModelSoHoKhau;
 import controllers.ControllerSoHoKhau;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.ModelLichSu;
 import test.Main;
 import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
 
 public class FormDangKiHoKhau extends javax.swing.JPanel {
+    
+    private String userName;
+    private String chucVu;
+    private String hoVaTen;
+    private String passWord;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
+    }
+
+    public String getHoVaTen() {
+        return hoVaTen;
+    }
+
+    public void setHoVaTen(String hoVaTen) {
+        this.hoVaTen = hoVaTen;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+    
     private ArrayList<ModelNhanKhau> listNhanKhau = new ArrayList<ModelNhanKhau>();
     private ModelSoHoKhau SHK = new ModelSoHoKhau();
     
-    public FormDangKiHoKhau() {
+    
+    public FormDangKiHoKhau(String username, String chucvu, String hoVaTen, String password ) {
+        this.hoVaTen = hoVaTen;
+        this.chucVu = chucvu;
+        this.passWord = password;
+        this.userName = username;
         initComponents();
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -450,6 +499,13 @@ public class FormDangKiHoKhau extends javax.swing.JPanel {
                 textMaSHK.setText("");
                 textHoTenChuHo.setText("");
                 textNgayDangKi.setText("");
+                
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                ControllerLichSu lichsuController = new ControllerLichSu();
+                
+                boolean t = lichsuController.insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Đăng kí hộ khẩu", this.chucVu));
+
             }
             
         } catch(Exception e){};

@@ -4,6 +4,15 @@
  */
 package views.form;
 
+import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
 import controllers.ControllerNhanKhau;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -110,7 +119,63 @@ public class FormDanhMucNhanKhau extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
+        try {
+            String loc = ".\\demo.pdf";
+            PdfWriter writer = new PdfWriter(loc);
+            PdfDocument pdf = new PdfDocument(writer);
+            pdf.addNewPage();
+            PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
 
+            Document document = new Document(pdf);
+            String para1 = "Danh mục nhân khẩu: ";
+            Paragraph paragraph1 = new Paragraph(para1).setFont(font);
+            document.add(paragraph1);
+
+
+            Table table = new Table(new float[]{100F, 70F, 50F, 70F, 70F, 150F, 150F});
+
+            Cell cell = new Cell();
+            cell.add(new Paragraph("Họ tên").setFont(font));
+            table.addCell(cell);
+
+            cell = new Cell();
+            cell.add(new Paragraph("Ngày sinh").setFont(font));
+            table.addCell(cell);
+
+            cell = new Cell();
+            cell.add(new Paragraph("Giới tính").setFont(font));
+            table.addCell(cell);
+            
+            cell = new Cell();
+            cell.add(new Paragraph("Nghề nghiệp").setFont(font));
+            table.addCell(cell);
+            
+            cell = new Cell();
+            cell.add(new Paragraph("Dân tộc").setFont(font));
+            table.addCell(cell);
+            
+            cell = new Cell();
+            cell.add(new Paragraph("Nơi ở hiện tại").setFont(font));
+            table.addCell(cell);
+            
+            cell = new Cell();
+            cell.add(new Paragraph("Nơi thường trú").setFont(font));
+            table.addCell(cell);
+
+            ArrayList<String> arr = table1.readTable();
+            for (int i = 0; i < arr.size(); ++i) {
+                cell = new Cell();
+                cell.add(new Paragraph(arr.get(i)).setFont(font));
+                table.addCell(cell);
+            }
+
+            document.add(table);
+
+            document.close();
+            System.out.println("PDF created");
+        } catch (Exception e) {
+          System.out.println(e);
+        }
     }//GEN-LAST:event_ButtonTimKiemActionPerformed
 
 
