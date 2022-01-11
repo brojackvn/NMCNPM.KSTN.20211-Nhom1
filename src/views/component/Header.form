@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="cmdMenu" min="-2" pref="53" max="-2" attributes="0"/>
-              <EmptySpace pref="332" max="32767" attributes="0"/>
+              <EmptySpace pref="422" max="32767" attributes="0"/>
               <Component id="buttonBadges5" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="buttonBadges4" min="-2" pref="35" max="-2" attributes="0"/>
@@ -100,13 +100,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nh&#xf3;m 1_CNPM"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbRole">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="T&#x1ed5; tr&#x1b0;&#x1edf;ng"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>

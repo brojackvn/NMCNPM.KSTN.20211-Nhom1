@@ -8,6 +8,7 @@ import controllers.ControllerDangNhap;
 import controllers.ControllerUser;
 import javax.swing.JOptionPane;
 import models.ModelUser;
+import views.component.Header;
 
 /**
  *
@@ -39,12 +40,15 @@ public class LogIn extends javax.swing.JFrame {
         matKhauTextField = new views.login.PasswordField();
         tendangNhapTextField = new views.login.TextField();
         dangNhapButton = new views.swing.Button();
+        dangNhapButton1 = new views.swing.Button();
 
         button1.setText("button1");
 
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 137, 222), 2));
 
         javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
         background1.setLayout(background1Layout);
@@ -54,19 +58,21 @@ public class LogIn extends javax.swing.JFrame {
         );
         background1Layout.setVerticalGroup(
             background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 149, Short.MAX_VALUE)
+            .addGap(0, 122, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        matKhauTextField.setLabelText("Mật khẩu");
+        matKhauTextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        matKhauTextField.setLabelText("MẬT KHẨU");
         matKhauTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 matKhauTextFieldActionPerformed(evt);
             }
         });
 
-        tendangNhapTextField.setLabelText("Tên đăng nhập");
+        tendangNhapTextField.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tendangNhapTextField.setLabelText("TÊN ĐĂNG NHẬP");
         tendangNhapTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tendangNhapTextFieldActionPerformed(evt);
@@ -83,19 +89,30 @@ public class LogIn extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(113, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(tendangNhapTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(matKhauTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        dangNhapButton.setBackground(new java.awt.Color(51, 102, 255));
+        dangNhapButton.setBackground(new java.awt.Color(84, 137, 222));
         dangNhapButton.setForeground(new java.awt.Color(255, 255, 255));
-        dangNhapButton.setLabel("Đăng nhập");
+        dangNhapButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dangNhapButton.setLabel("ĐĂNG NHẬP");
         dangNhapButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dangNhapButtonActionPerformed(evt);
+            }
+        });
+
+        dangNhapButton1.setBackground(new java.awt.Color(84, 137, 222));
+        dangNhapButton1.setForeground(new java.awt.Color(255, 255, 255));
+        dangNhapButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        dangNhapButton1.setLabel("THOÁT");
+        dangNhapButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dangNhapButton1ActionPerformed(evt);
             }
         });
 
@@ -104,14 +121,15 @@ public class LogIn extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(472, Short.MAX_VALUE)
-                .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(467, 467, 467))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dangNhapButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +137,9 @@ public class LogIn extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dangNhapButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(background1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -128,9 +148,7 @@ public class LogIn extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +182,7 @@ public class LogIn extends javax.swing.JFrame {
                             userModel =  userController.findAllByusername(tendangNhapTextField.getText());
                             //String userName, String chucVu, String hoVaTen, String passWord
                             System.out.println("Đã đăng nhập");
-                            new Main(userModel.getUsername(), userModel.getChucVu(), userModel.getHoVaTen(), userModel.getPassword()).setVisible(true);
+                            new Main(userModel.getUsername(), userModel.getChucVu(), userModel.getHoVaTen(), userModel.getPassword(), new Header(userModel.getUsername(), userModel.getChucVu(), userModel.getHoVaTen(), userModel.getPassword())).setVisible(true);
                             this.setVisible(false);
                             
                             
@@ -184,6 +202,10 @@ public class LogIn extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_dangNhapButtonActionPerformed
+
+    private void dangNhapButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangNhapButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_dangNhapButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +246,7 @@ public class LogIn extends javax.swing.JFrame {
     private views.login.Background background1;
     private views.login.Button button1;
     private views.swing.Button dangNhapButton;
+    private views.swing.Button dangNhapButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private views.login.PasswordField matKhauTextField;

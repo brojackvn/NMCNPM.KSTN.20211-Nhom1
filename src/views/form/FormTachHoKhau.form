@@ -28,19 +28,33 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="448" max="32767" attributes="0"/>
-                  <Component id="textFieldCMNDMuonTach" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="textFieldCMNDMuonTach" min="-2" pref="408" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane2" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="textFieldNgayDangKi" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" alignment="0" pref="449" max="32767" attributes="0"/>
-                  <Component id="textFieldCMNDSauTach" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="textFieldCMNDSauTach" alignment="1" min="-2" pref="430" max="-2" attributes="0"/>
+                          <Component id="textFieldNgayDangKi" alignment="1" min="-2" pref="430" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -49,15 +63,15 @@
               <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="134" max="32767" attributes="0"/>
               <Component id="textFieldNhapSoHoKhauMuonTach" min="-2" pref="430" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               <Component id="ButtonTimKiem" min="-2" pref="144" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="134" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="ButtonHoanThanh" min="-2" pref="144" max="-2" attributes="0"/>
+              <Component id="ButtonTiepTuc" min="-2" pref="144" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -82,24 +96,24 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Component id="textFieldCMNDSauTach" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                      <Component id="textFieldNgayDangKi" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="textFieldNgayDangKi" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="textFieldCMNDMuonTach" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" pref="306" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="297" max="32767" attributes="0"/>
                   <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="ButtonHoanThanh" min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="ButtonTiepTuc" min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,7 +142,7 @@
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldNhapSoHoKhauMuonTachActionPerformed"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldNhapSoHoKhauMuonTachMousePressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -183,8 +197,8 @@
               <Table columnCount="4" rowCount="0">
                 <Column editable="false" title="CMND" type="java.lang.Object"/>
                 <Column editable="false" title="NH&#xc2;N KH&#x1ea8;U" type="java.lang.Object"/>
-                <Column editable="false" title="QUAN H&#x1ec6; CH&#x1ee6; H&#x1ed8;" type="java.lang.Object"/>
-                <Column editable="false" title="H&#xc0;NH &#x110;&#x1ed8;NG" type="java.lang.Object"/>
+                <Column editable="true" title="QUAN H&#x1ec6; CH&#x1ee6; H&#x1ed8;" type="java.lang.Object"/>
+                <Column editable="true" title="H&#xc0;NH &#x110;&#x1ed8;NG" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -229,7 +243,7 @@
         <Property name="text" type="java.lang.String" value="NH&#x1eac;P TH&#xd4;NG TIN S&#x1ed4; H&#x1ed8; KH&#x1ea8;U MU&#x1ed0;N T&#xc1;CH"/>
       </Properties>
     </Component>
-    <Component class="views.swing.Button" name="ButtonHoanThanh">
+    <Component class="views.swing.Button" name="ButtonTiepTuc">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="59" red="59" type="rgb"/>
@@ -237,14 +251,14 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="HO&#xc0;N TH&#xc0;NH"/>
+        <Property name="text" type="java.lang.String" value="TI&#x1ebe;P T&#x1ee4;C"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="SansSerif" size="12" style="1"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonHoanThanhActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonTiepTucActionPerformed"/>
       </Events>
     </Component>
     <Component class="views.swing.textfield.TextField" name="textFieldCMNDSauTach">
@@ -299,8 +313,8 @@
               <Table columnCount="4" rowCount="0">
                 <Column editable="false" title="CMND" type="java.lang.Object"/>
                 <Column editable="false" title="NH&#xc2;N KH&#x1ea8;U" type="java.lang.Object"/>
-                <Column editable="false" title="QUAN H&#x1ec6; CH&#x1ee6; H&#x1ed8;" type="java.lang.Object"/>
-                <Column editable="false" title="H&#xc0;NH &#x110;&#x1ed8;NG" type="java.lang.Object"/>
+                <Column editable="true" title="QUAN H&#x1ec6; CH&#x1ee6; H&#x1ed8;" type="java.lang.Object"/>
+                <Column editable="true" title="H&#xc0;NH &#x110;&#x1ed8;NG" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

@@ -52,7 +52,7 @@ public class Main extends javax.swing.JFrame {
     private String userName;
     private String chucVu;
     private String hoVaTen;
-
+    
     public String getUserName() {
         return userName;
     }
@@ -86,10 +86,10 @@ public class Main extends javax.swing.JFrame {
     }
     private String passWord;
     
-    public Main(String userName, String chucVu, String hoVaTen, String passWord) {
-
+    public Main(String userName, String chucVu, String hoVaTen, String passWord, Header header) {
+        this.header = header;
         initComponents();
-        init();
+        init(header);
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,21 +99,21 @@ public class Main extends javax.swing.JFrame {
         this.passWord = passWord;
     }
       public Main() {
-
         initComponents();
-        init();
+        init(header);
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
     }
     
-    private void init() {
+    private void init(Header header) {
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         
         bg.setLayout(layout);
         menu = new Menu();
-        header = new Header();
+        this.header = header;
+//        header = new Header(userName, chucVu, hoVaTen, passWord);
         main = new MainForm();
         menu.addEvent(new EventMenuSelected() {
             @Override
@@ -135,11 +135,11 @@ public class Main extends javax.swing.JFrame {
                     }
                 } else if (menuIndex == 3) { // Thủ tục nhân khẩu
                     if (subMenuIndex == 0) { // Thêm mới nhân khẩu
-                        main.showForm(new FormThemNhanKhau());
+                        main.showForm(new FormThemNhanKhau(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 1) { // Sua Nhan Khẩu
-                        main.showForm(new FormSuaNhanKhau());
+                        main.showForm(new FormSuaNhanKhau(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 2) { // Xoa Nhan Khẩu
-                        main.showForm(new FormXoaNhanKhau());
+                        main.showForm(new FormXoaNhanKhau(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 3) { // Tạm Vắng
                         main.showForm(new FormTamVang(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 4) { // Tạm trú

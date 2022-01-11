@@ -1,21 +1,32 @@
 package views.form;
 
+import controllers.ControllerLichSu;
 import controllers.ControllerNhanKhau;
 import controllers.ControllerSoHoKhau;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.ModelLichSu;
 import models.ModelNhanKhau;
 import test.Main;
 import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
 
 public class FormThemNhanKhau extends javax.swing.JPanel {
-
     private boolean flag = false;
-
-    public FormThemNhanKhau() {
+    private String username;
+    private String chucVu;
+    private String hoVaTen;
+    private String password;
+    
+    public FormThemNhanKhau(String userName, String chucVu, String hoVaTen, String passWord) {
         initComponents();
+        this.username = userName;
+        this.chucVu = chucVu;
+        this.hoVaTen = hoVaTen;
+        this.password = password;
     }
 
     private void showMessage(String message, int func) {
@@ -357,6 +368,11 @@ public class FormThemNhanKhau extends javax.swing.JPanel {
                 if (ans) {
                     new ControllerNhanKhau().insert(modelNhanKhau);
                     showMessage("Lưu thành công nhân khẩu vào CSDL", 1);
+                    
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    Date date = new Date();
+                    new ControllerLichSu().insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Thêm nhân khẩu", this.chucVu));
+                            
                     textFieldCMND.setEditable(false);
                     textFieldQuanHeVoiChuHo.setEditable(false);
                     textFieldHoVaTen.setEditable(false);
