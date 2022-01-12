@@ -14,9 +14,13 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import controllers.ControllerNhanKhau;
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import models.ModelNhanKhau;
+import test.Main;
+import views.dialog.MessageConfirm;
 
 /**
  *
@@ -34,6 +38,11 @@ public class FormDanhMucNhanKhau extends javax.swing.JPanel {
         try{
            initDataTable();
         }catch(Exception e){};
+    }
+    
+    private void showMessage(String message, int func) {
+        MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
+        obj.showMessage(message);
     }
     
     public void initDataTable() throws SQLException, ClassNotFoundException {
@@ -120,8 +129,13 @@ public class FormDanhMucNhanKhau extends javax.swing.JPanel {
 
     private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
         try {
-            String loc = ".\\demo.pdf";
-            PdfWriter writer = new PdfWriter(loc);
+            JFileChooser chooser = new JFileChooser();
+            String currentDirectory = System.getProperty("user.dir");
+            chooser.setSelectedFile(new File("Untitled.pdf"));
+            chooser.setCurrentDirectory(new File(currentDirectory));
+            chooser.showSaveDialog(null);
+            String path = chooser.getSelectedFile().getAbsolutePath();
+            PdfWriter writer = new PdfWriter(path);
             PdfDocument pdf = new PdfDocument(writer);
             pdf.addNewPage();
             PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
@@ -172,6 +186,7 @@ public class FormDanhMucNhanKhau extends javax.swing.JPanel {
             document.add(table);
 
             document.close();
+            showMessage("Bạn đã in PDF thành công", 1);
             System.out.println("PDF created");
         } catch (Exception e) {
           System.out.println(e);

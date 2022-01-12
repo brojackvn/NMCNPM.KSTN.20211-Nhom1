@@ -1,5 +1,6 @@
 package views.form;
 
+import controllers.ControllerThongKe;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.Icon;
@@ -25,12 +26,16 @@ public class FormHome extends javax.swing.JPanel {
     }
   
     private void initCardData() {
-        Icon icon = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255,255,255,100), new Color(255,255,255,15));
-        card1.setData(new ModelCard("Hộ gia đình", 100, 20, icon));
+        try {
+            Icon icon = IconFontSwing.buildIcon(GoogleMaterialDesignIcons.PEOPLE, 60, new Color(255, 255, 255, 100), new Color(255, 255, 255, 15));
+
+            card1.setData(new ModelCard("Đã tiêm", new ControllerThongKe().thongKeNam() + new ControllerThongKe().thongKeNu(), new ControllerThongKe().thongKeMotMuiTiem() + new ControllerThongKe().thongKeHaiMuiTiem(), icon));
+
+            card4.setData(new ModelCard("Cách ly", new ControllerThongKe().thongKeNam() + new ControllerThongKe().thongKeNu(), new ControllerThongKe().thongKeF0() + new ControllerThongKe().thongKeF1() + new ControllerThongKe().thongKeF2(), null));
+
+            card5.setData(new ModelCard("Nhân khẩu", 100, new ControllerThongKe().thongKeNam() + new ControllerThongKe().thongKeNu(), null));
+        } catch(Exception e){};
         
-        card4.setData(new ModelCard("Test Covid", 500, 10, null));
-        
-        card5.setData(new ModelCard("Nhân Khẩu", 500, 100, null));
     }
     
     private void initNoticeBoard() {

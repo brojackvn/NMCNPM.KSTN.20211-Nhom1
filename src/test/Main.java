@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
@@ -22,7 +23,6 @@ import views.form.FormDanhMucNhanKhau;
 import views.form.FormDanhMucTamTru;
 import views.form.FormDanhMucTamVang;
 import views.form.FormDoiMatKhau;
-import views.form.FormHeThong;
 import views.form.FormHome;
 import views.form.FormKhaiBaoCovid;
 import views.form.FormLichSu;
@@ -97,14 +97,15 @@ public class Main extends javax.swing.JFrame {
         this.chucVu = chucVu;
         this.hoVaTen = hoVaTen;
         this.passWord = passWord;
+        this.setIconImage(new ImageIcon(getClass().getResource("/resources/logo.png")).getImage());
     }
-      public Main() {
+    
+    public Main() {
         initComponents();
         init(header);
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
     }
     
     private void init(Header header) {
@@ -174,15 +175,12 @@ public class Main extends javax.swing.JFrame {
                 } else if (menuIndex == 8) { // Hệ thống
                     if (subMenuIndex == 0){
                         main.showForm(new FormDoiMatKhau(userName, chucVu, hoVaTen, passWord));
-                    }
-                    if (subMenuIndex == 1){
+                    } else if (subMenuIndex == 1){
                         new LogIn().setVisible(true);
+                        dispose();
                         setVisible(false);
-                        
-                    }
-                    if (subMenuIndex == 2){
-                        
-                        setVisible(false);
+                    } else if (subMenuIndex == 2){
+                        System.exit(0);
                     }
                     
                 }

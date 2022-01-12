@@ -49,13 +49,9 @@ public class ControllerTruyVetDiaDiem {
            
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-              
-                if(rs.getString("CMND").equals(CMND)){
-          
-                return rs.getString("hoVaTen");
+                if (rs.getString("CMND").equals(CMND)) {
+                    return rs.getString("hoVaTen");
                 }
-              
-                
             }
             return null;
         }
@@ -74,7 +70,7 @@ public class ControllerTruyVetDiaDiem {
                
             while (rs.next()) {
 
-                if(rs.getString("diaDiemDaDiQua").contains(diaDiem)){
+                if(rs.getString("diaDiemDaDiQua").toLowerCase().contains(diaDiem.toLowerCase())){
                     ControllerTruyVetDiaDiem truyvetdiadiem = new ControllerTruyVetDiaDiem();
                     ModelTruyVetDiaDiem x = new ModelTruyVetDiaDiem();
                     String hoVaTen;

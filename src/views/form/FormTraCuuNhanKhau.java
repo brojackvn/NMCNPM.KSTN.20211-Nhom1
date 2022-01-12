@@ -12,7 +12,9 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import models.ModelNhanKhau;
 import controllers.ControllerNhanKhau;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import test.Main;
 import views.dialog.MessageConfirm;
 import views.dialog.MessageOption;
@@ -30,7 +32,7 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         
     }
     
-        private void showMessage(String message, int func) {
+    private void showMessage(String message, int func) {
         MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
         obj.showMessage(message);
     }
@@ -386,8 +388,14 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
         }
         else{
             try {
-                String loc = ".\\demo.pdf";
-                PdfWriter writer = new PdfWriter(loc);
+                JFileChooser chooser = new JFileChooser();
+                String currentDirectory = System.getProperty("user.dir");
+                chooser.setSelectedFile(new File("Untitled.pdf"));
+                chooser.setCurrentDirectory(new File(currentDirectory));
+                chooser.showSaveDialog(null);
+                String path = chooser.getSelectedFile().getAbsolutePath();
+                PdfWriter writer = new PdfWriter(path);
+                
                 PdfDocument pdf = new PdfDocument(writer);
                 pdf.addNewPage();
                 PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
@@ -404,8 +412,66 @@ public class FormTraCuuNhanKhau extends javax.swing.JPanel {
 
                 para = "Quan hệ với chủ hộ: " + textFieldQuanHeChuHo.getText();
                 paragraph = new Paragraph(para).setFont(font);
-                document.add(paragraph);        
+                document.add(paragraph);
+
+                para = "Tên gọi khác: " + textFieldTenGoiKhac.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Ngày sinh: " + textFieldNgaysinh.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Giới tính: " + textFieldGioiTinh.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Dân tộc: " + textFieldDanToc.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Tôn giáo: " + textFieldTonGiao.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Quốc tịch: " + textFieldQuocTich.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Trình độ học vấn: " + textFieldHocVan.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Trình độ chuyên môn: " + textFieldChuyenMon.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Nghề nghiệp hiện tại: " + textFieldNgheNghiep.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Nơi sinh: " + textFieldNoiSinh.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Quê quán: " + textFieldQueQuan.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Nơi thường trú: " + textFieldThuongTru.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Chỗ ở hiện tại: " + textFieldChoOHienTai.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+
+                para = "Ghi chú: " + textFieldGhiChu.getText();
+                paragraph = new Paragraph(para).setFont(font);
+                document.add(paragraph);
+                
                 document.close();
+                showMessage("Bạn đã in PDF thành công", 1);
                 System.out.println("PDF created");
             } catch (Exception e) {
               System.out.println(e);

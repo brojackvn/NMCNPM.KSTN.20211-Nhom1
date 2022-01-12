@@ -49,7 +49,7 @@ public class ControllerSoHoKhau {
     }
     
     public boolean checkMaSHKIsExist(String maSHK) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT soHoKhau FROM nhan_khau";
+        String sql = "SELECT soHoKhau FROM ho_khau";
         try (
                 Connection con = ConnectDatabase.openConnection();
                 PreparedStatement pstmt = con.prepareStatement(sql);

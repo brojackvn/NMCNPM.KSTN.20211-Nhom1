@@ -336,7 +336,7 @@ public class FormXoaNhanKhau extends javax.swing.JPanel {
                 
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
-                new ControllerLichSu().insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Thêm nhân khẩu", this.chucVu));
+                new ControllerLichSu().insertLichSu(new ModelLichSu(formatter.format(date).toString(), this.hoVaTen, "Xóa nhân khẩu", this.chucVu));
             }
         } catch (SQLException ex) {
             Logger.getLogger(FormThemNhanKhau.class.getName()).log(Level.SEVERE, null, ex);

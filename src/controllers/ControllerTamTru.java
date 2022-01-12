@@ -19,12 +19,13 @@ import models.ModelTamTru;
  */
 public class ControllerTamTru {
     public boolean insertTamTru(ModelTamTru modelTamTru) throws SQLException, ClassNotFoundException{
-        String sql = "INSERT INTO `tam_tru`(`hoVaTen`, `ngaySinh`, `CMND`, diaChiThuongTru, ngayCap, nguoiTao, lyDo, thoiHan, diaChiTamTru ) VALUES (?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO `tam_tru`(`hoVaTen`, `ngaySinh`, `CMND`, diaChiThuongTru, ngayCap, nguoiTao, lyDo, thoiHan, diaChiTamTru ) "
+                + "VALUES (?,?,?,?,?,?,?,?,?)";
         try (
                 Connection connection = ConnectDatabase.openConnection();
                 PreparedStatement pstm = connection.prepareStatement(sql);
         ) {
-            pstm.setString(1,modelTamTru.getHoVaTen());
+            pstm.setString(1, modelTamTru.getHoVaTen());
             pstm.setString(2, modelTamTru.getNgaySinh());
             pstm.setString(3, modelTamTru.getCMND());
             pstm.setString(4, modelTamTru.getDiaChiThuongTru());

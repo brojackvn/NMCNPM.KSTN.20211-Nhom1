@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.ModelUser;
+import test.Main;
+import views.dialog.MessageConfirm;
+import views.dialog.MessageOption;
 import views.form.FormThemNhanKhau;
 
 public class Header extends javax.swing.JPanel {
@@ -31,6 +34,16 @@ public class Header extends javax.swing.JPanel {
         cmdMenu.addActionListener(event);
     }
     
+    private void showMessage(String message, int func) {
+        MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
+        obj.showMessage(message);
+    }
+
+    private boolean showMessageOption(String message) {
+        MessageOption obj = new MessageOption(Main.getFrames()[0], true);
+        obj.showMessage(message);
+        return obj.isOk();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -60,7 +73,7 @@ public class Header extends javax.swing.JPanel {
             }
         });
 
-        pic.setIcon(new javax.swing.ImageIcon("E:\\My picture\\Photoshop\\DSC00330.jpg")); // NOI18N
+        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/user.png"))); // NOI18N
 
         lbUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
@@ -75,6 +88,11 @@ public class Header extends javax.swing.JPanel {
         });
 
         buttonBadges5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/message.png"))); // NOI18N
+        buttonBadges5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBadges5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,8 +141,12 @@ public class Header extends javax.swing.JPanel {
     }//GEN-LAST:event_buttonBadges2ActionPerformed
 
     private void buttonBadges4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges4ActionPerformed
-        // TODO add your handling code here:
+        showMessage("Chức năng đang trong giai đoạn phát triển", 3);
     }//GEN-LAST:event_buttonBadges4ActionPerformed
+
+    private void buttonBadges5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges5ActionPerformed
+        showMessage("Chức năng đang trong giai đoạn phát triển", 3);
+    }//GEN-LAST:event_buttonBadges5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

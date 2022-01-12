@@ -19,9 +19,13 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import controllers.ControllerSoHoKhau;
 import java.awt.Color;
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import models.ModelSoHoKhau;
+import test.Main;
+import views.dialog.MessageConfirm;
 
 public class FormDanhMucHoKhau extends javax.swing.JPanel {
 
@@ -47,7 +51,10 @@ public class FormDanhMucHoKhau extends javax.swing.JPanel {
         }
     }
 
-
+    private void showMessage(String message, int func) {
+        MessageConfirm obj = new MessageConfirm(Main.getFrames()[0], true, func);
+        obj.showMessage(message);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -137,8 +144,13 @@ public class FormDanhMucHoKhau extends javax.swing.JPanel {
 
     private void ButtonTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTimKiemActionPerformed
         try {
-            String loc = ".\\demo.pdf";
-            PdfWriter writer = new PdfWriter(loc);
+            JFileChooser chooser = new JFileChooser();
+            String currentDirectory = System.getProperty("user.dir");
+            chooser.setSelectedFile(new File("Untitled.pdf"));
+            chooser.setCurrentDirectory(new File(currentDirectory));
+            chooser.showSaveDialog(null);
+            String path = chooser.getSelectedFile().getAbsolutePath();
+            PdfWriter writer = new PdfWriter(path);
             PdfDocument pdf = new PdfDocument(writer);
             pdf.addNewPage();
             PdfFont font = PdfFontFactory.createFont(".\\resources\\fonts\\calibri.ttf", PdfEncodings.IDENTITY_H);
@@ -173,8 +185,8 @@ public class FormDanhMucHoKhau extends javax.swing.JPanel {
             }
 
             document.add(table);
-
             document.close();
+            showMessage("Bạn đã in PDF thành công", 1);
             System.out.println("PDF created");
         } catch (Exception e) {
           System.out.println(e);
