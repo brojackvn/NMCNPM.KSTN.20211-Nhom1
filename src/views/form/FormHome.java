@@ -39,14 +39,16 @@ public class FormHome extends javax.swing.JPanel {
     }
     
     private void initNoticeBoard() {
-        noticeBoard.addDate("04/10/2021");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Hidemode", "Now", "Sets the hide mode for the component. If the hide mode has been specified in the This hide mode can be overridden by the component constraint."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(218, 49, 238), "Tag", "2h ago", "Tags the component with metadata name that can be used by the layout engine. The tag can be used to explain for the layout manager what the components is showing, such as an OK or Cancel button."));
-        noticeBoard.addDate("03/10/2021");
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(32, 171, 43), "Further Reading", "12:30 PM", "There are more information to digest regarding MigLayout. The resources are all available at www.migcomponents.com"));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(50, 93, 215), "Span", "10:30 AM", "Spans the current cell (merges) over a number of cells. Practically this means that this cell and the count number of cells will be treated as one cell and the component can use the space that all these cells have."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(27, 188, 204), "Skip ", "9:00 AM", "Skips a number of cells in the flow. This is used to jump over a number of cells before the next free cell is looked for. The skipping is done before this component is put in a cell and thus this cells is affected by it. \"count\" defaults to 1 if not specified."));
-        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Push", "7:15 AM", "Makes the row and/or column that the component is residing in grow with \"weight\". This can be used instead of having a \"grow\" keyword in the column/row constraints."));
+        noticeBoard.addDate("12/01/2021");
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Khen thưởng", "7:00 AM", "Thông báo tiêm vaccine mũi 3: Những cá nhân trong tổ dân phố đã được tiêm đầy đủ 2 mũi vaccine covid-19 có mặt tại y tế phường vào ngày thứ 7 15/01/2022 để thực hiện tiêm mũi 3."));
+        noticeBoard.addDate("11/01/2021");
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(94, 49, 238), "Khen thưởng", "Now", "Tổ chức khen thưởng cho các cháu có thành tích học tập xuất sắc trong năm học vừa quá"));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(218, 49, 238), "Khẩn", "2h ago", "Tình hình dịch Covid đang rất phức tạp, đề nghị các tổ phó rà soát, nhắc nhở các hộ gia đình tuân thủ quy tắc 5K"));
+        noticeBoard.addDate("10/01/2021");
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(32, 171, 43), "Thông tin Covid", "12:30 PM", "ộ Y tế cho biết có 16.035 ca mắc COVID-19 trên cả nước, Hà Nội tiếp tục nhiều nhất, gần 2.900 ca; trong ngày có gần 6.900 bệnh nhân khỏi; 256 ca tử vong"));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(50, 93, 215), "Thông tin Covid", "10:30 AM", "Tính đến hiện nay tổ dân phố chúng ta có nhiều ca dịch, người dân hạn chế tập trung đông người"));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(27, 188, 204), "Thông báo dọn vệ sinh ", "9:00 AM", "Thông báo về việc dọn vệ sinh tổ dân phố: Chủ nhật ngày 16/01/2022, tổ dân phố thực hiện công tác dọn vệ sinh theo quy định của phường nhằm mục đích giữ môi trường xanh, sạch, đẹp."));
+        noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Thông báo khen thưởng", "7:15 AM", "Trên cơ sở đối tượng, tiêu chí theo quy định, các địa phương xem xét, lựa chọn, khen thưởng và đề nghị cấp trên khen thưởng. Hồ sơ khen thưởng phải được các địa phương gửi về Sở Văn hóa và Thể thao chậm nhất là 9 giờ thứ Năm hàng tuần để tổng hợp."));
 //        noticeBoard.scrollToTop();
     }
     

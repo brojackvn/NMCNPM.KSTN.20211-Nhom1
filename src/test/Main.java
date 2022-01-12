@@ -37,6 +37,7 @@ import views.form.FormTraCuuNhanKhau;
 import views.form.FormTruyVetDiaDiem;
 import views.form.FormTruyVetTiepXuc;
 import views.form.FormXoaNhanKhau;
+import views.form.FormXoaSoHoKhau;
 import views.form.MainForm;
 import views.swing.MenuItem;
 import views.swing.PopupMenu;
@@ -133,6 +134,8 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new FormDangKiHoKhau(userName, chucVu, hoVaTen, passWord));
                     } else if (subMenuIndex == 1) { // Tách Hộ Khẩu
                         main.showForm(new FormTachHoKhau());
+                    } else if (subMenuIndex == 2) {
+                        main.showForm(new FormXoaSoHoKhau(userName, chucVu, hoVaTen, passWord));
                     }
                 } else if (menuIndex == 3) { // Thủ tục nhân khẩu
                     if (subMenuIndex == 0) { // Thêm mới nhân khẩu

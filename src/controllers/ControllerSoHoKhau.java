@@ -98,4 +98,19 @@ public class ControllerSoHoKhau {
             return (pstm.executeUpdate() > 0 ? true : false);
         }
     }
+    
+    public void deleteMaSHK(String maSHK) throws SQLException, ClassNotFoundException {
+        String sql1 = "DELETE FROM `nhan_khau` WHERE `soHoKhau` = ?";
+        String sql2 = "DELETE FROM `ho_khau` WHERE `soHoKhau` = ?";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt1 = con.prepareStatement(sql1);
+                PreparedStatement pstmt2 = con.prepareStatement(sql2);
+        ) {
+            pstmt1.setString(1, maSHK);
+            pstmt2.setString(1, maSHK);
+            pstmt1.executeUpdate();
+            pstmt2.executeUpdate();
+        }
+    }
 }
