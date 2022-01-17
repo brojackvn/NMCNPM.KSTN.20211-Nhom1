@@ -8,10 +8,23 @@ public class ModelBaoTu {
     private String nguoiKhai;
     private String nguoiTao;
     private String ghiChu;
+    private String hoVaTen;
+    private String lyDo;
     
     public ModelBaoTu() {
     }
 
+    public ModelBaoTu(String ngayMat, String hoVaTen, String nguoiKhai, String lyDo) {
+        this.ngayMat = ngayMat;
+        this.nguoiKhai = nguoiKhai;
+        this.hoVaTen = hoVaTen;
+        this.lyDo = lyDo;
+    }
+
+    public Object[] toRowTable() {
+        return new Object[]{ngayMat, hoVaTen, nguoiKhai, lyDo};
+    }
+    
     public String getSoHoKhau() {
         return soHoKhau;
     }
@@ -67,6 +80,4 @@ public class ModelBaoTu {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
-
-    
 }

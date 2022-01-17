@@ -1,5 +1,7 @@
 package models;
 
+import views.event.EventActionFormTach;
+
 public class ModelKhaiTu {
     private String soHoKhau;
     private String hoVaTenNguoiKhai;
@@ -21,9 +23,17 @@ public class ModelKhaiTu {
         this.nguoiTao = nguoiTao;
         this.ngayKhai = ngayKhai;
     }
-    
-    
 
+    public ModelKhaiTu(String CMNDNguoiMat, String ngayMat, String hoVaTenNguoiKhai, String lyDo) {
+        this.hoVaTenNguoiKhai = hoVaTenNguoiKhai;
+        this.CMNDNguoiMat = CMNDNguoiMat;
+        this.ngayMat = ngayMat;
+        this.lyDo = lyDo;
+    }
+    
+    public Object[] toRowTable() {
+        return new Object[]{CMNDNguoiMat, ngayMat, hoVaTenNguoiKhai, lyDo};
+    }
     public String getSoHoKhau() {
         return soHoKhau;
     }

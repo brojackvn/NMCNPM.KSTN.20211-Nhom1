@@ -44,7 +44,7 @@ public class Menu extends javax.swing.JPanel {
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/3.png")), "TRA CỨU", "Hộ Khẩu", "Nhân Khẩu"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/7.png")), "THỦ TỤC HỘ KHẨU", "Đăng Kí Hộ Khẩu", "Tách Hộ Khẩu", "Xóa Hộ Khẩu"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/5.png")), "THỦ TỤC NHÂN KHẨU", "Thêm Nhân Khẩu", "Sửa Nhân Khẩu" , "Xóa Nhân Khẩu", "Tạm vắng", "Tạm trú", "Báo tử"));
-        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/12.png")), "DANH MỤC", "Hộ Khẩu", "Nhân Khẩu", "Tạm Trú", "Tạm Vắng"));
+        addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/12.png")), "DANH MỤC", "Hộ Khẩu", "Nhân Khẩu", "Tạm Trú", "Tạm Vắng", "Báo tử"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/4.png")), "COVID", "Khai báo COVID", "Khai báo Cách Ly", "Truy vết Tiếp Xúc", "Truy vết Địa Điểm"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/14.png")), "THỐNG KÊ"));
         addMenu(new ModelMenu(new ImageIcon(getClass().getResource("/resources/8.png")), "LỊCH SỬ"));

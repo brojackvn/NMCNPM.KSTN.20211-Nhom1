@@ -244,4 +244,16 @@ public class ControllerNhanKhau {
             return pstm.executeUpdate() > 0 ? true:false;
         }
     }
+ 
+    public String gethoVaTenFromCMND(String CMND) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM nhan_khau WHERE CMND = ?";
+        try (
+                Connection con = ConnectDatabase.openConnection();
+                PreparedStatement pstmt = con.prepareStatement(sql);) {
+            pstmt.setString(1, CMND);
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            return rs.getString("hoVaTen");
+        }
+    }
 }

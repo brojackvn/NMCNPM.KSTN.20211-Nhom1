@@ -49,7 +49,6 @@ public class FormHome extends javax.swing.JPanel {
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(50, 93, 215), "Thông tin Covid", "10:30 AM", "Tính đến hiện nay tổ dân phố chúng ta có nhiều ca dịch, người dân hạn chế tập trung đông người"));
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(27, 188, 204), "Thông báo dọn vệ sinh ", "9:00 AM", "Thông báo về việc dọn vệ sinh tổ dân phố: Chủ nhật ngày 16/01/2022, tổ dân phố thực hiện công tác dọn vệ sinh theo quy định của phường nhằm mục đích giữ môi trường xanh, sạch, đẹp."));
         noticeBoard.addNoticeBoard(new ModelNoticeBoard(new Color(238, 46, 57), "Thông báo khen thưởng", "7:15 AM", "Trên cơ sở đối tượng, tiêu chí theo quy định, các địa phương xem xét, lựa chọn, khen thưởng và đề nghị cấp trên khen thưởng. Hồ sơ khen thưởng phải được các địa phương gửi về Sở Văn hóa và Thể thao chậm nhất là 9 giờ thứ Năm hàng tuần để tổng hợp."));
-//        noticeBoard.scrollToTop();
     }
     
     private void showMessage(String message) {

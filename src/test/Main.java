@@ -18,6 +18,7 @@ import views.event.EventShowPopupMenu;
 import views.form.FormBaoTu;
 import views.form.FormCachLy;
 import views.form.FormDangKiHoKhau;
+import views.form.FormDanhMucBaoTu;
 import views.form.FormDanhMucHoKhau;
 import views.form.FormDanhMucNhanKhau;
 import views.form.FormDanhMucTamTru;
@@ -160,6 +161,8 @@ public class Main extends javax.swing.JFrame {
                         main.showForm(new FormDanhMucTamTru());
                     } else if (subMenuIndex == 3) {
                         main.showForm(new FormDanhMucTamVang());
+                    } else if (subMenuIndex == 4) {
+                        main.showForm(new FormDanhMucBaoTu());
                     }
                 } else if (menuIndex == 5) { 
                     if (subMenuIndex == 0) { // Khai báo covid
