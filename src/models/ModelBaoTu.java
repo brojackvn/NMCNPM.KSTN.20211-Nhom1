@@ -1,6 +1,7 @@
 package models;
 
 public class ModelBaoTu {
+
     private String soHoKhau;
     private String CMND;
     private String ngayKhai;
@@ -10,7 +11,7 @@ public class ModelBaoTu {
     private String ghiChu;
     private String hoVaTen;
     private String lyDo;
-    
+
     public ModelBaoTu() {
     }
 
@@ -24,7 +25,7 @@ public class ModelBaoTu {
     public Object[] toRowTable() {
         return new Object[]{ngayMat, hoVaTen, nguoiKhai, lyDo};
     }
-    
+
     public String getSoHoKhau() {
         return soHoKhau;
     }

@@ -47,7 +47,7 @@ public class LogIn extends javax.swing.JFrame {
         matKhauTextField = new views.login.PasswordField();
         tendangNhapTextField = new views.login.TextField();
         dangNhapButton = new views.swing.Button();
-        dangNhapButton1 = new views.swing.Button();
+        thoatButton = new views.swing.Button();
 
         button1.setText("button1");
 
@@ -113,13 +113,13 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        dangNhapButton1.setBackground(new java.awt.Color(84, 137, 222));
-        dangNhapButton1.setForeground(new java.awt.Color(255, 255, 255));
-        dangNhapButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        dangNhapButton1.setLabel("THOÁT");
-        dangNhapButton1.addActionListener(new java.awt.event.ActionListener() {
+        thoatButton.setBackground(new java.awt.Color(84, 137, 222));
+        thoatButton.setForeground(new java.awt.Color(255, 255, 255));
+        thoatButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        thoatButton.setLabel("THOÁT");
+        thoatButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dangNhapButton1ActionPerformed(evt);
+                thoatButtonActionPerformed(evt);
             }
         });
 
@@ -134,7 +134,7 @@ public class LogIn extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dangNhapButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(thoatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
@@ -146,7 +146,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dangNhapButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dangNhapButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(thoatButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addComponent(background1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -199,9 +199,9 @@ public class LogIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_dangNhapButtonActionPerformed
 
-    private void dangNhapButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangNhapButton1ActionPerformed
+    private void thoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thoatButtonActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_dangNhapButton1ActionPerformed
+    }//GEN-LAST:event_thoatButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,10 +242,10 @@ public class LogIn extends javax.swing.JFrame {
     private views.login.Background background1;
     private views.login.Button button1;
     private views.swing.Button dangNhapButton;
-    private views.swing.Button dangNhapButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private views.login.PasswordField matKhauTextField;
     private views.login.TextField tendangNhapTextField;
+    private views.swing.Button thoatButton;
     // End of variables declaration//GEN-END:variables
 }

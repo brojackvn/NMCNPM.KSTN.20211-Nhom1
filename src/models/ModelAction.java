@@ -4,9 +4,10 @@ import views.event.EventActionFormTach;
 import views.event.EventActionFormXoa;
 
 public class ModelAction {
+
     private ModelNhanKhau nhanKhau;
     private EventActionFormXoa event;
-    
+
     public ModelAction() {
     }
 
@@ -14,7 +15,7 @@ public class ModelAction {
         this.nhanKhau = nhanKhau;
         this.event = event;
     }
-    
+
     public ModelNhanKhau getNhanKhau() {
         return nhanKhau;
     }
@@ -29,5 +30,5 @@ public class ModelAction {
 
     public void setEvent(EventActionFormXoa event) {
         this.event = event;
-    } 
+    }
 }

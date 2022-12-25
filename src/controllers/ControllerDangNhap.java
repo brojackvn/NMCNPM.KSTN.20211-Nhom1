@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controllers;
 
 import connection.ConnectDatabase;
@@ -17,44 +13,33 @@ import models.ModelKhaiTu;
  * @author huutu
  */
 public class ControllerDangNhap {
-      public String getPassWordFromUserName(String username) throws SQLException, ClassNotFoundException {
+
+    public String getPassWordFromUserName(String username) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM users";
         try (
                 Connection con = ConnectDatabase.openConnection();
-                PreparedStatement pstmt = con.prepareStatement(sql);
-        ) {
-           
+                PreparedStatement pstmt = con.prepareStatement(sql);) {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-      
-               
-                if(rs.getString("username").equals(username)){
-                      
-                return rs.getString("password");
+                if (rs.getString("username").equals(username)) {
+                    return rs.getString("password");
                 }
-              
-                
             }
             return null;
         }
     }
+
     public boolean checkUserName(String username) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM users";
         try (
                 Connection con = ConnectDatabase.openConnection();
-                PreparedStatement pstmt = con.prepareStatement(sql);
-        ) {
-           
+                PreparedStatement pstmt = con.prepareStatement(sql);) {
+
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-      
-                
-                if(rs.getString("username").equals(username)){
-             
-                return true;
+                if (rs.getString("username").equals(username)) {
+                    return true;
                 }
-              
-                
             }
             return false;
         }

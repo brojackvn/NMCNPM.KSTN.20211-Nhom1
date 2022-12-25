@@ -65,7 +65,7 @@
                       <Group type="102" attributes="0">
                           <Component id="dangNhapButton" min="-2" pref="165" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="dangNhapButton1" min="-2" pref="165" max="-2" attributes="0"/>
+                          <Component id="thoatButton" min="-2" pref="165" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -81,7 +81,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="dangNhapButton" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="dangNhapButton1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="thoatButton" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="background1" min="-2" max="-2" attributes="0"/>
@@ -173,7 +173,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dangNhapButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="views.swing.Button" name="dangNhapButton1">
+        <Component class="views.swing.Button" name="thoatButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="de" green="89" red="54" type="rgb"/>
@@ -187,7 +187,7 @@
             <Property name="label" type="java.lang.String" value="THO&#xc1;T"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dangNhapButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="thoatButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

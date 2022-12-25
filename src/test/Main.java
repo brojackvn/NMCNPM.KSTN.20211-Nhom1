@@ -95,11 +95,12 @@ public class Main extends javax.swing.JFrame {
         setTitle("Quản lý nhân khẩu - Ver 1.0.0");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        this.setIconImage(new ImageIcon(getClass().getResource("/resources/logo.png")).getImage());
         this.userName = userName;
         this.chucVu = chucVu;
         this.hoVaTen = hoVaTen;
         this.passWord = passWord;
-        this.setIconImage(new ImageIcon(getClass().getResource("/resources/logo.png")).getImage());
     }
     
     public Main() {
@@ -289,7 +290,7 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -313,11 +314,11 @@ public class Main extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-            java.awt.EventQueue.invokeLater(new Runnable(){
-    
-            public void run(){
-                new Main().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(new Runnable(){
+
+        public void run(){
+            new Main().setVisible(true);
+        }
     });
         /* Create and display the form */
         
